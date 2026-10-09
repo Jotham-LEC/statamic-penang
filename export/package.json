@@ -1,0 +1,21 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite",
+        "watch": "vite"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.3.3",
+        "concurrently": "^10.0.3",
+        "laravel-vite-plugin": "^3.1",
+        "lucide-static": "^1.54.0",
+        "prettier": "^3.9.9",
+        "prettier-plugin-blade": "^3.3.3",
+        "prettier-plugin-tailwindcss": "^0.8.1",
+        "tailwindcss": "^4.3.3",
+        "vite": "^8.0.0"
+    }
+}

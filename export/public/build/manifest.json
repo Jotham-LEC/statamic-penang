@@ -1,0 +1,89 @@
+{
+  "resources/css/site.css": {
+    "file": "assets/site-JSqok7hh.css",
+    "name": "site",
+    "names": [
+      "site.css"
+    ],
+    "src": "resources/css/site.css",
+    "isEntry": true,
+    "assets": [
+      "assets/inter-latin-wght-normal-Dx4kXJAl.woff2",
+      "assets/inter-latin-wght-italic-DpCbqKDY.woff2",
+      "assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+      "assets/plus-jakarta-sans-latin-wght-normal-eXO_dkmS.woff2",
+      "assets/plus-jakarta-sans-latin-wght-italic-DnD1KgkH.woff2",
+      "assets/figtree-latin-wght-normal-D_ZTVpCC.woff2",
+      "assets/figtree-latin-wght-italic-BEAWuiTz.woff2",
+      "assets/outfit-latin-wght-normal-Bc-8i84L.woff2",
+      "assets/lora-latin-wght-normal-BiLcIKcI.woff2",
+      "assets/lora-latin-wght-italic-DBI-iqMr.woff2",
+      "assets/fraunces-latin-wght-normal-ukD16Tqj.woff2",
+      "assets/fraunces-latin-wght-italic-Py8at3oI.woff2",
+      "assets/source-serif-4-latin-wght-normal-D9elroTD.woff2",
+      "assets/source-serif-4-latin-wght-italic-D2yaqPoE.woff2"
+    ]
+  },
+  "resources/fonts/figtree/figtree-latin-wght-italic.woff2": {
+    "file": "assets/figtree-latin-wght-italic-BEAWuiTz.woff2",
+    "src": "resources/fonts/figtree/figtree-latin-wght-italic.woff2"
+  },
+  "resources/fonts/figtree/figtree-latin-wght-normal.woff2": {
+    "file": "assets/figtree-latin-wght-normal-D_ZTVpCC.woff2",
+    "src": "resources/fonts/figtree/figtree-latin-wght-normal.woff2"
+  },
+  "resources/fonts/fraunces/fraunces-latin-wght-italic.woff2": {
+    "file": "assets/fraunces-latin-wght-italic-Py8at3oI.woff2",
+    "src": "resources/fonts/fraunces/fraunces-latin-wght-italic.woff2"
+  },
+  "resources/fonts/fraunces/fraunces-latin-wght-normal.woff2": {
+    "file": "assets/fraunces-latin-wght-normal-ukD16Tqj.woff2",
+    "src": "resources/fonts/fraunces/fraunces-latin-wght-normal.woff2"
+  },
+  "resources/fonts/inter/inter-latin-wght-italic.woff2": {
+    "file": "assets/inter-latin-wght-italic-DpCbqKDY.woff2",
+    "src": "resources/fonts/inter/inter-latin-wght-italic.woff2"
+  },
+  "resources/fonts/inter/inter-latin-wght-normal.woff2": {
+    "file": "assets/inter-latin-wght-normal-Dx4kXJAl.woff2",
+    "src": "resources/fonts/inter/inter-latin-wght-normal.woff2"
+  },
+  "resources/fonts/lora/lora-latin-wght-italic.woff2": {
+    "file": "assets/lora-latin-wght-italic-DBI-iqMr.woff2",
+    "src": "resources/fonts/lora/lora-latin-wght-italic.woff2"
+  },
+  "resources/fonts/lora/lora-latin-wght-normal.woff2": {
+    "file": "assets/lora-latin-wght-normal-BiLcIKcI.woff2",
+    "src": "resources/fonts/lora/lora-latin-wght-normal.woff2"
+  },
+  "resources/fonts/manrope/manrope-latin-wght-normal.woff2": {
+    "file": "assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+    "src": "resources/fonts/manrope/manrope-latin-wght-normal.woff2"
+  },
+  "resources/fonts/outfit/outfit-latin-wght-normal.woff2": {
+    "file": "assets/outfit-latin-wght-normal-Bc-8i84L.woff2",
+    "src": "resources/fonts/outfit/outfit-latin-wght-normal.woff2"
+  },
+  "resources/fonts/plus-jakarta-sans/plus-jakarta-sans-latin-wght-italic.woff2": {
+    "file": "assets/plus-jakarta-sans-latin-wght-italic-DnD1KgkH.woff2",
+    "src": "resources/fonts/plus-jakarta-sans/plus-jakarta-sans-latin-wght-italic.woff2"
+  },
+  "resources/fonts/plus-jakarta-sans/plus-jakarta-sans-latin-wght-normal.woff2": {
+    "file": "assets/plus-jakarta-sans-latin-wght-normal-eXO_dkmS.woff2",
+    "src": "resources/fonts/plus-jakarta-sans/plus-jakarta-sans-latin-wght-normal.woff2"
+  },
+  "resources/fonts/source-serif-4/source-serif-4-latin-wght-italic.woff2": {
+    "file": "assets/source-serif-4-latin-wght-italic-D2yaqPoE.woff2",
+    "src": "resources/fonts/source-serif-4/source-serif-4-latin-wght-italic.woff2"
+  },
+  "resources/fonts/source-serif-4/source-serif-4-latin-wght-normal.woff2": {
+    "file": "assets/source-serif-4-latin-wght-normal-D9elroTD.woff2",
+    "src": "resources/fonts/source-serif-4/source-serif-4-latin-wght-normal.woff2"
+  },
+  "resources/js/site.js": {
+    "file": "assets/site-CCA8MYVF.js",
+    "name": "site",
+    "src": "resources/js/site.js",
+    "isEntry": true
+  }
+}

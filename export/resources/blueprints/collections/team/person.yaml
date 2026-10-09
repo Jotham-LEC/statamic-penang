@@ -1,0 +1,45 @@
+title: Person
+tabs:
+  main:
+    display: Person
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Name
+              validate:
+                - required
+          -
+            handle: role
+            field:
+              type: text
+              display: Role
+              validate:
+                - required
+              width: 50
+          -
+            handle: profile
+            field:
+              type: link
+              display: 'Profile link'
+              instructions: 'LinkedIn or another page about them. Optional.'
+              width: 50
+          -
+            handle: photo
+            field:
+              type: assets
+              display: Photo
+              container: assets
+              folder: images
+              max_files: 1
+              mode: grid
+              instructions: 'A portrait, at least 800 pixels tall.'
+          -
+            handle: bio
+            field:
+              type: textarea
+              display: 'Short bio'
+              character_limit: 300

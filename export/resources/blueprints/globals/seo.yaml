@@ -1,0 +1,421 @@
+tabs:
+  brand:
+    display: 'marketing-toolkit::fields.brand.tabs.brand'
+    sections:
+      -
+        fields:
+          -
+            handle: title_site_name
+            field:
+              type: toggle
+              display: 'marketing-toolkit::fields.brand.title_site_name.display'
+              width: 50
+          -
+            handle: title_separator
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.title_separator.display'
+              width: 50
+              placeholder: ·
+              if:
+                title_site_name: 'true'
+          -
+            handle: title_brand
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.title_brand.display'
+              instructions: 'marketing-toolkit::fields.brand.title_brand.instructions'
+              width: 50
+              if:
+                title_site_name: 'true'
+          -
+            handle: default_description
+            field:
+              type: textarea
+              display: 'marketing-toolkit::fields.brand.default_description.display'
+              character_limit: 160
+          -
+            handle: default_image
+            field:
+              type: assets
+              display: 'marketing-toolkit::fields.brand.default_image.display'
+              max_files: 1
+              container: assets
+          -
+            handle: site_alternate_name
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.site_alternate_name.display'
+              width: 50
+          -
+            handle: twitter_handle
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.twitter_handle.display'
+              width: 50
+              prepend: '@'
+      -
+        display: 'marketing-toolkit::fields.brand.sections.icon.display'
+        fields:
+          -
+            handle: favicon
+            field:
+              type: assets
+              display: 'marketing-toolkit::fields.brand.favicon.display'
+              max_files: 1
+              container: assets
+          -
+            handle: theme_color
+            field:
+              type: color
+              display: 'marketing-toolkit::fields.brand.theme_color.display'
+              width: 50
+          -
+            handle: background_color
+            field:
+              type: color
+              display: 'marketing-toolkit::fields.brand.background_color.display'
+              width: 50
+  publisher:
+    display: 'marketing-toolkit::fields.brand.tabs.publisher'
+    sections:
+      -
+        fields:
+          -
+            handle: publisher_type
+            field:
+              type: select
+              display: 'marketing-toolkit::fields.brand.publisher_type.display'
+              width: 50
+              multiple: true
+              taggable: true
+              default:
+                - Organization
+              options:
+                Organization: 'marketing-toolkit::fields.brand.publisher_type.options.organization'
+                Corporation: 'marketing-toolkit::fields.brand.publisher_type.options.corporation'
+                EducationalOrganization: 'marketing-toolkit::fields.brand.publisher_type.options.educational_organization'
+                NGO: 'marketing-toolkit::fields.brand.publisher_type.options.ngo'
+                LocalBusiness: 'marketing-toolkit::fields.brand.publisher_type.options.local_business'
+                Store: 'marketing-toolkit::fields.brand.publisher_type.options.store'
+                ProfessionalService: 'marketing-toolkit::fields.brand.publisher_type.options.professional_service'
+                Restaurant: 'marketing-toolkit::fields.brand.publisher_type.options.restaurant'
+                Person: 'marketing-toolkit::fields.brand.publisher_type.options.person'
+          -
+            handle: publisher_name
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.publisher_name.display'
+              width: 50
+          -
+            handle: publisher_alternate_name
+            field:
+              type: list
+              display: 'marketing-toolkit::fields.brand.publisher_alternate_name.display'
+              width: 50
+          -
+            handle: legal_name
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.legal_name.display'
+              instructions: 'marketing-toolkit::fields.brand.legal_name.instructions'
+              width: 50
+          -
+            handle: founding_date
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.founding_date.display'
+              instructions: 'marketing-toolkit::fields.brand.founding_date.instructions'
+              width: 50
+              placeholder: '2014'
+              validate:
+                - nullable
+                - 'regex:/^\d{4}(-\d{2}(-\d{2})?)?$/'
+          -
+            handle: publisher_description
+            field:
+              type: textarea
+              display: 'marketing-toolkit::fields.brand.publisher_description.display'
+          -
+            handle: publisher_logo
+            field:
+              type: assets
+              display: 'marketing-toolkit::fields.brand.publisher_logo.display'
+              max_files: 1
+              container: assets
+          -
+            handle: job_title
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.job_title.display'
+              width: 50
+              if:
+                publisher_type: 'contains Person'
+          -
+            handle: telephone
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.telephone.display'
+              width: 50
+          -
+            handle: email
+            field:
+              type: text
+              input_type: email
+              display: 'marketing-toolkit::fields.brand.email.display'
+              width: 50
+          -
+            handle: area_served
+            field:
+              type: list
+              display: 'marketing-toolkit::fields.brand.area_served.display'
+              width: 50
+          -
+            handle: same_as
+            field:
+              type: list
+              display: 'marketing-toolkit::fields.brand.same_as.display'
+          -
+            handle: contact_points
+            field:
+              type: grid
+              display: 'marketing-toolkit::fields.brand.contact_points.display'
+              mode: table
+              add_row: 'marketing-toolkit::fields.brand.contact_points.add_row'
+              fields:
+                -
+                  handle: contact_type
+                  field:
+                    type: text
+                    display: 'marketing-toolkit::fields.brand.contact_type.display'
+                    placeholder: 'marketing-toolkit::fields.brand.contact_type.placeholder'
+                -
+                  handle: telephone
+                  field:
+                    type: text
+                    display: 'marketing-toolkit::fields.brand.telephone.display'
+                -
+                  handle: email
+                  field:
+                    type: text
+                    display: 'marketing-toolkit::fields.brand.email.display'
+      -
+        display: 'marketing-toolkit::fields.brand.sections.address.display'
+        fields:
+          -
+            handle: street_address
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.street_address.display'
+          -
+            handle: address_locality
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.address_locality.display'
+              width: 50
+          -
+            handle: address_region
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.address_region.display'
+              width: 50
+          -
+            handle: postal_code
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.postal_code.display'
+              width: 50
+          -
+            handle: address_country
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.address_country.display'
+              width: 50
+              placeholder: 'MY, AU, US…'
+      -
+        display: 'marketing-toolkit::fields.brand.sections.local_business.display'
+        fields:
+          -
+            handle: price_range
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.price_range.display'
+              width: 33
+              placeholder: $$
+          -
+            handle: latitude
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.latitude.display'
+              width: 33
+          -
+            handle: longitude
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.longitude.display'
+              width: 33
+          -
+            handle: opening_hours
+            field:
+              type: grid
+              display: 'marketing-toolkit::fields.brand.opening_hours.display'
+              mode: table
+              add_row: 'marketing-toolkit::fields.brand.opening_hours.add_row'
+              fields:
+                -
+                  handle: days
+                  field:
+                    type: checkboxes
+                    display: 'marketing-toolkit::fields.brand.days.display'
+                    inline: true
+                    options:
+                      Monday: 'marketing-toolkit::fields.brand.days.options.monday'
+                      Tuesday: 'marketing-toolkit::fields.brand.days.options.tuesday'
+                      Wednesday: 'marketing-toolkit::fields.brand.days.options.wednesday'
+                      Thursday: 'marketing-toolkit::fields.brand.days.options.thursday'
+                      Friday: 'marketing-toolkit::fields.brand.days.options.friday'
+                      Saturday: 'marketing-toolkit::fields.brand.days.options.saturday'
+                      Sunday: 'marketing-toolkit::fields.brand.days.options.sunday'
+                -
+                  handle: opens
+                  field:
+                    type: time
+                    display: 'marketing-toolkit::fields.brand.opens.display'
+                -
+                  handle: closes
+                  field:
+                    type: time
+                    display: 'marketing-toolkit::fields.brand.closes.display'
+  shop:
+    display: 'marketing-toolkit::fields.brand.tabs.shop'
+    sections:
+      -
+        fields:
+          -
+            handle: currency
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.currency.display'
+              width: 33
+              placeholder: 'MYR, AUD, USD…'
+      -
+        display: 'marketing-toolkit::fields.brand.sections.returns.display'
+        fields:
+          -
+            handle: return_category
+            field:
+              type: select
+              display: 'marketing-toolkit::fields.brand.return_category.display'
+              width: 33
+              options:
+                MerchantReturnFiniteReturnWindow: 'marketing-toolkit::fields.brand.return_category.options.finite_window'
+                MerchantReturnUnlimitedWindow: 'marketing-toolkit::fields.brand.return_category.options.unlimited_window'
+                MerchantReturnNotPermitted: 'marketing-toolkit::fields.brand.return_category.options.not_permitted'
+          -
+            handle: return_days
+            field:
+              type: integer
+              display: 'marketing-toolkit::fields.brand.return_days.display'
+              width: 33
+              if:
+                return_category: 'equals MerchantReturnFiniteReturnWindow'
+          -
+            handle: return_country
+            field:
+              type: text
+              display: 'marketing-toolkit::fields.brand.return_country.display'
+              width: 33
+              placeholder: MY
+          -
+            handle: return_policy_link
+            field:
+              type: text
+              input_type: url
+              display: 'marketing-toolkit::fields.brand.return_policy_link.display'
+      -
+        display: 'marketing-toolkit::fields.brand.sections.shipping.display'
+        fields:
+          -
+            handle: shipping_rates
+            field:
+              type: grid
+              display: 'marketing-toolkit::fields.brand.shipping_rates.display'
+              mode: table
+              add_row: 'marketing-toolkit::fields.brand.shipping_rates.add_row'
+              fields:
+                -
+                  handle: country
+                  field:
+                    type: text
+                    display: 'marketing-toolkit::fields.brand.country.display'
+                -
+                  handle: region
+                  field:
+                    type: text
+                    display: 'marketing-toolkit::fields.brand.region.display'
+                -
+                  handle: min_order
+                  field:
+                    type: float
+                    display: 'marketing-toolkit::fields.brand.min_order.display'
+                -
+                  handle: max_order
+                  field:
+                    type: float
+                    display: 'marketing-toolkit::fields.brand.max_order.display'
+                -
+                  handle: rate
+                  field:
+                    type: float
+                    display: 'marketing-toolkit::fields.brand.rate.display'
+                -
+                  handle: min_days
+                  field:
+                    type: integer
+                    display: 'marketing-toolkit::fields.brand.min_days.display'
+                -
+                  handle: max_days
+                  field:
+                    type: integer
+                    display: 'marketing-toolkit::fields.brand.max_days.display'
+  share_cards:
+    display: 'marketing-toolkit::fields.brand.tabs.share_cards'
+    sections:
+      -
+        fields:
+          -
+            handle: og_background
+            field:
+              type: color
+              display: 'marketing-toolkit::fields.brand.og_background.display'
+              width: 33
+          -
+            handle: og_text
+            field:
+              type: color
+              display: 'marketing-toolkit::fields.brand.og_text.display'
+              width: 33
+          -
+            handle: og_accent
+            field:
+              type: color
+              display: 'marketing-toolkit::fields.brand.og_accent.display'
+              width: 33
+          -
+            handle: og_logo
+            field:
+              type: assets
+              display: 'marketing-toolkit::fields.brand.og_logo.display'
+              instructions: 'marketing-toolkit::fields.brand.og_logo.instructions'
+              max_files: 1
+              validate:
+                - 'mimes:png,jpg,jpeg,webp,gif'
+              container: assets
+          -
+            handle: og_picture
+            field:
+              type: assets
+              display: 'marketing-toolkit::fields.brand.og_picture.display'
+              instructions: 'marketing-toolkit::fields.brand.og_picture.instructions'
+              max_files: 1
+              container: assets

@@ -1,0 +1,46 @@
+title: Page
+tabs:
+  main:
+    display: Page
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Title
+              validate:
+                - required
+          -
+            import: page_builder
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              display: Slug
+              localizable: true
+              validate:
+                - 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              display: Parent
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true
+  seo:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            import: 'marketing-toolkit::seo'

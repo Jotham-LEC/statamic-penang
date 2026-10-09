@@ -1,0 +1,86 @@
+title: Article
+tabs:
+  main:
+    display: Article
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Title
+              validate:
+                - required
+          -
+            handle: excerpt
+            field:
+              type: textarea
+              display: Summary
+              instructions: 'One or two sentences for the blog list and search results.'
+              character_limit: 200
+          -
+            handle: image
+            field:
+              type: assets
+              display: 'Main picture'
+              container: assets
+              folder: images
+              max_files: 1
+              mode: grid
+              instructions: 'Landscape, at least 1600 pixels wide.'
+          -
+            handle: content
+            field:
+              type: bard
+              display: Article
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - quote
+                - anchor
+                - image
+              save_html: false
+              toolbar_mode: fixed
+              reading_time: false
+              remove_empty_nodes: trailing
+              container: assets
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              display: Slug
+              validate:
+                - 'max:200'
+          -
+            handle: date
+            field:
+              type: date
+              display: Date
+              validate:
+                - required
+          -
+            handle: author
+            field:
+              type: entries
+              display: 'Written by'
+              collections:
+                - team
+              max_items: 1
+              mode: select
+  seo:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            import: 'marketing-toolkit::seo'

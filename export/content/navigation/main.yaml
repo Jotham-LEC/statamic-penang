@@ -1,0 +1,6 @@
+title: 'Main menu'
+collections:
+  - pages
+  - articles
+  - products
+max_depth: 1

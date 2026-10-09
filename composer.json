@@ -1,0 +1,9 @@
+{
+    "name": "jotham-lec/statamic-penang",
+    "extra": {
+        "statamic": {
+            "name": "Penang",
+            "description": "A finished small-business site for Statamic Core: a page builder of fourteen sections and a theme builder"
+        }
+    }
+}

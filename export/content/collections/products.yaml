@@ -1,0 +1,10 @@
+title: Products
+template: products/show
+mount: 014b815c-eb39-4717-8c4d-88f72e5c7a00
+taxonomies:
+  - product_categories
+revisions: false
+route: '/products/{slug}'
+structure:
+  root: false
+  max_depth: 1

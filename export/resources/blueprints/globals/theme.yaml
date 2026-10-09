@@ -1,0 +1,184 @@
+title: Theme
+tabs:
+  main:
+    display: Theme
+    sections:
+      -
+        display: 'Start from'
+        instructions: 'Choose a preset, then change any setting below. A setting left empty takes the preset’s. See every section in your theme at [/components](/components).'
+        fields:
+          -
+            handle: preset
+            field:
+              type: select
+              display: Preset
+              options:
+                default: Default
+                kopitiam: 'Kopitiam (warm)'
+                pantai: 'Pantai (sea)'
+                hutan: 'Hutan (forest)'
+                batik: 'Batik (indigo and gold)'
+              default: default
+              validate:
+                - required
+      -
+        display: Fonts
+        fields:
+          -
+            handle: heading_font
+            field:
+              type: select
+              display: Headings
+              options:
+                inter: Inter
+                manrope: Manrope
+                plus-jakarta-sans: 'Plus Jakarta Sans'
+                figtree: Figtree
+                outfit: Outfit
+                lora: 'Lora (serif)'
+                fraunces: 'Fraunces (serif)'
+                source-serif-4: 'Source Serif (serif)'
+              clearable: true
+              placeholder: 'From the preset'
+              width: 50
+          -
+            handle: body_font
+            field:
+              type: select
+              display: Text
+              options:
+                inter: Inter
+                manrope: Manrope
+                plus-jakarta-sans: 'Plus Jakarta Sans'
+                figtree: Figtree
+                outfit: Outfit
+                lora: 'Lora (serif)'
+                fraunces: 'Fraunces (serif)'
+                source-serif-4: 'Source Serif (serif)'
+              clearable: true
+              placeholder: 'From the preset'
+              width: 50
+      -
+        display: 'Shape and colour'
+        fields:
+          -
+            handle: radius
+            field:
+              type: button_group
+              display: Corners
+              options:
+                none: None
+                small: Small
+                medium: Medium
+                large: Large
+                full: Full
+              clearable: true
+          -
+            handle: base
+            field:
+              type: button_group
+              display: 'Base colour'
+              instructions: 'The greys of backgrounds, text and borders.'
+              options:
+                stone: Stone
+                zinc: Zinc
+                slate: Slate
+                neutral: Neutral
+                gray: Gray
+              clearable: true
+          -
+            handle: primary
+            field:
+              type: select
+              display: 'Primary colour'
+              instructions: 'Buttons and links. A light colour is shown in a darker shade where text must stay readable.'
+              options:
+                red: Red
+                orange: Orange
+                amber: Amber
+                yellow: Yellow
+                lime: Lime
+                green: Green
+                emerald: Emerald
+                teal: Teal
+                cyan: Cyan
+                sky: Sky
+                blue: Blue
+                indigo: Indigo
+                violet: Violet
+                purple: Purple
+                fuchsia: Fuchsia
+                pink: Pink
+                rose: Rose
+                custom: 'Custom colour…'
+              clearable: true
+              placeholder: 'From the preset'
+              width: 50
+          -
+            handle: primary_custom
+            field:
+              type: color
+              display: 'Custom primary colour'
+              swatches: {}
+              allow_any: true
+              width: 50
+              if:
+                primary: 'equals custom'
+          -
+            handle: secondary
+            field:
+              type: select
+              display: 'Secondary colour'
+              instructions: 'Highlights and badges.'
+              options:
+                red: Red
+                orange: Orange
+                amber: Amber
+                yellow: Yellow
+                lime: Lime
+                green: Green
+                emerald: Emerald
+                teal: Teal
+                cyan: Cyan
+                sky: Sky
+                blue: Blue
+                indigo: Indigo
+                violet: Violet
+                purple: Purple
+                fuchsia: Fuchsia
+                pink: Pink
+                rose: Rose
+                custom: 'Custom colour…'
+              clearable: true
+              placeholder: 'From the preset'
+              width: 50
+          -
+            handle: secondary_custom
+            field:
+              type: color
+              display: 'Custom secondary colour'
+              swatches: {}
+              allow_any: true
+              width: 50
+              if:
+                secondary: 'equals custom'
+      -
+        display: 'Light and dark'
+        fields:
+          -
+            handle: mode
+            field:
+              type: button_group
+              display: 'Show the site in'
+              options:
+                system: 'Follow the visitor’s device'
+                light: Light
+                dark: Dark
+              default: system
+          -
+            handle: mode_toggle
+            field:
+              type: toggle
+              display: 'Let visitors switch'
+              instructions: 'A sun and moon button in the header.'
+              default: true

@@ -1,0 +1,40 @@
+default_description: 'Small-batch coffee roasted every week in George Town, Penang. Beans, drip bags and brewing gear delivered across Malaysia, and a café on Lorong Kopi.'
+publisher_type:
+  - LocalBusiness
+  - Store
+publisher_name: 'Kopi Lane Roasters'
+publisher_description: 'A small-batch coffee roaster and café in George Town, Penang.'
+founding_date: '2016'
+telephone: '+60 4-000 0000'
+email: hello@kopilane.example
+area_served:
+  - Malaysia
+same_as:
+  - 'https://www.instagram.com/kopilane.example'
+  - 'https://www.facebook.com/kopilane.example'
+street_address: '28 Lorong Kopi'
+address_locality: 'George Town'
+address_region: 'Pulau Pinang'
+postal_code: '10200'
+address_country: MY
+price_range: RM
+latitude: '5.4206'
+longitude: '100.3436'
+opening_hours:
+  -
+    id: aprUrmgM
+    days:
+      - Monday
+      - Wednesday
+      - Thursday
+      - Friday
+    opens: '08:00'
+    closes: '18:00'
+  -
+    id: ZZ1DAWuy
+    days:
+      - Saturday
+      - Sunday
+    opens: '09:00'
+    closes: '17:00'
+currency: MYR

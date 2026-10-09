@@ -1,0 +1,6 @@
+title: 'Footer menu'
+collections:
+  - pages
+  - articles
+  - products
+max_depth: 2

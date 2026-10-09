@@ -1,0 +1,56 @@
+title: Enquiry
+tabs:
+  main:
+    sections:
+      -
+        fields:
+          -
+            handle: name
+            field:
+              type: text
+              display: 'Your name'
+              validate:
+                - required
+                - 'max:120'
+              width: 50
+              autocomplete: name
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+              input_type: email
+              validate:
+                - required
+                - email
+                - 'max:200'
+              width: 50
+              autocomplete: email
+          -
+            handle: phone
+            field:
+              type: text
+              display: Phone
+              input_type: tel
+              validate:
+                - nullable
+                - 'max:40'
+              width: 50
+              autocomplete: tel
+          -
+            handle: subject
+            field:
+              type: text
+              display: About
+              validate:
+                - nullable
+                - 'max:120'
+              width: 50
+          -
+            handle: message
+            field:
+              type: textarea
+              display: Message
+              validate:
+                - required
+                - 'max:5000'

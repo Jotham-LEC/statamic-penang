@@ -1,0 +1,55 @@
+title: 'Site settings'
+tabs:
+  main:
+    display: 'Site settings'
+    sections:
+      -
+        display: WhatsApp
+        instructions: 'A WhatsApp button shows on every page when there is a number.'
+        fields:
+          -
+            handle: whatsapp_number
+            field:
+              type: text
+              display: 'WhatsApp number'
+              instructions: 'With the country code, e.g. 60123456789 (Malaysia is 60). Spaces and + are fine.'
+              validate:
+                - nullable
+                - 'regex:/^[+\d\s\-()]{8,20}$/'
+              width: 50
+          -
+            handle: whatsapp_message
+            field:
+              type: text
+              display: 'First message'
+              instructions: 'Filled in for the visitor, who can change it.'
+              width: 50
+              placeholder: 'Hello! I have a question.'
+      -
+        display: Header
+        fields:
+          -
+            handle: header_button_label
+            field:
+              type: text
+              display: 'Button label'
+              width: 50
+              placeholder: 'Contact us'
+          -
+            handle: header_button_link
+            field:
+              type: link
+              display: 'Button link'
+              collections:
+                - pages
+              width: 50
+      -
+        display: Footer
+        instructions: 'Phone, email, address and social links come from Marketing → Brand → Publisher.'
+        fields:
+          -
+            handle: footer_text
+            field:
+              type: textarea
+              display: 'About the business'
+              character_limit: 240

@@ -1,0 +1,5 @@
+default:
+  name: 'Kopi Lane Roasters'
+  url: /
+  locale: en_MY
+  lang: en

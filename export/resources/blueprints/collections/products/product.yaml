@@ -1,0 +1,109 @@
+title: Product
+tabs:
+  main:
+    display: Product
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Name
+              validate:
+                - required
+          -
+            handle: summary
+            field:
+              type: textarea
+              display: Summary
+              instructions: 'One or two sentences for the product cards.'
+              character_limit: 200
+          -
+            handle: images
+            field:
+              type: assets
+              display: Pictures
+              instructions: 'The first is the main one. Square or landscape.'
+              container: assets
+              folder: images
+              mode: grid
+          -
+            handle: content
+            field:
+              type: bard
+              display: Description
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - quote
+                - anchor
+              save_html: false
+              toolbar_mode: fixed
+              reading_time: false
+              remove_empty_nodes: trailing
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              display: Slug
+              validate:
+                - 'max:200'
+          -
+            handle: price
+            field:
+              type: float
+              display: Price
+              instructions: 'Leave empty for "Ask for a price".'
+              prepend: RM
+          -
+            handle: price_note
+            field:
+              type: text
+              display: 'Price note'
+              placeholder: 'per box'
+              character_limit: 30
+          -
+            handle: in_stock
+            field:
+              type: toggle
+              display: 'In stock'
+              default: true
+          -
+            handle: featured
+            field:
+              type: toggle
+              display: Featured
+              instructions: 'Shown first in Products sections set to Featured.'
+              default: false
+          -
+            handle: sku
+            field:
+              type: text
+              display: SKU
+              instructions: 'Your own product code. Optional.'
+          -
+            handle: product_categories
+            field:
+              type: terms
+              display: Categories
+              taxonomies:
+                - product_categories
+              mode: select
+              create: true
+  seo:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            import: 'marketing-toolkit::seo'

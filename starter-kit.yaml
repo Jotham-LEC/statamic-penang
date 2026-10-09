@@ -1,0 +1,27 @@
+export_paths:
+  - app/Support
+  - app/Theme
+  - bootstrap/app.php
+  - config/penang.php
+  - config/marketing-toolkit.php
+  - config/statamic/cp.php
+  - content
+  - resources/blueprints
+  - resources/fieldsets
+  - resources/forms
+  - resources/sites.yaml
+  - resources/views
+  - resources/css
+  - resources/js
+  - resources/fonts
+  - resources/icons
+  - package.json
+  - package-lock.json
+  - vite.config.js
+  - public/build
+  - public/assets
+  - resources/asset-meta
+  - docs
+  - NOTICE.md
+dependencies:
+  jotham-lec/statamic-marketing-toolkit: 0.25.0

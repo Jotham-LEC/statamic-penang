@@ -1,0 +1,43 @@
+title: Buttons
+fields:
+  -
+    handle: buttons
+    field:
+      type: grid
+      display: Buttons
+      mode: stacked
+      max_rows: 2
+      add_row: 'Add a button'
+      fields:
+        -
+          handle: label
+          field:
+            type: text
+            display: Label
+            character_limit: 30
+            width: 33
+            validate:
+              - required
+        -
+          handle: link
+          field:
+            type: link
+            display: Link
+            collections:
+              - pages
+              - articles
+              - products
+            width: 33
+            validate:
+              - required
+        -
+          handle: style
+          field:
+            type: button_group
+            display: Style
+            options:
+              primary: Primary
+              secondary: Secondary
+              outline: Outline
+            default: primary
+            width: 33

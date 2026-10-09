@@ -1,0 +1,877 @@
+title: 'Page builder'
+fields:
+  -
+    handle: blocks
+    field:
+      type: replicator
+      display: Sections
+      instructions: 'The page, from top to bottom. Add sections, drag them into order, and switch one off to hide it.'
+      collapse: accordion
+      previews: true
+      button_label: 'Add a section'
+      sets:
+        sections:
+          display: Sections
+          sets:
+            hero:
+              display: Hero
+              instructions: 'A big opening: heading, text, buttons and a picture.'
+              image: hero.jpg
+              fields:
+                -
+                  handle: layout
+                  field:
+                    type: button_group
+                    display: Layout
+                    options:
+                      centred: Centred
+                      split: 'Text beside a picture'
+                      background: 'Text on a photo'
+                    default: split
+                -
+                  handle: image_position
+                  field:
+                    type: button_group
+                    display: 'Picture on the'
+                    options:
+                      left: Left
+                      right: Right
+                    default: right
+                    if:
+                      layout: 'equals split'
+                -
+                  handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    character_limit: 40
+                    width: 33
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    width: 66
+                    validate:
+                      - required
+                -
+                  handle: text
+                  field:
+                    type: textarea
+                    display: Text
+                    character_limit: 280
+                -
+                  import: buttons
+                -
+                  handle: image
+                  field:
+                    type: assets
+                    display: Picture
+                    container: assets
+                    folder: images
+                    max_files: 1
+                    mode: grid
+                    instructions: 'Landscape, at least 1600 pixels wide. Centred heroes show it below the text.'
+                -
+                  import: section_options
+            text:
+              display: Text
+              instructions: 'Paragraphs, headings and lists.'
+              image: text.jpg
+              fields:
+                -
+                  handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    instructions: 'A few words above the heading. Optional.'
+                    character_limit: 40
+                    width: 33
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    width: 66
+                -
+                  handle: intro
+                  field:
+                    type: textarea
+                    display: Introduction
+                    character_limit: 280
+                -
+                  handle: content
+                  field:
+                    type: bard
+                    display: Text
+                    buttons:
+                      - h2
+                      - h3
+                      - bold
+                      - italic
+                      - unorderedlist
+                      - orderedlist
+                      - quote
+                      - anchor
+                    save_html: false
+                    toolbar_mode: fixed
+                    reading_time: false
+                    remove_empty_nodes: trailing
+                -
+                  handle: alignment
+                  field:
+                    type: button_group
+                    display: Alignment
+                    options:
+                      left: Left
+                      centre: Centred
+                    default: left
+                    width: 50
+                -
+                  import: section_options
+            image_text:
+              display: 'Picture and text'
+              instructions: 'A picture beside a heading, text and a button.'
+              image: image-text.jpg
+              fields:
+                -
+                  handle: image
+                  field:
+                    type: assets
+                    display: Picture
+                    container: assets
+                    folder: images
+                    max_files: 1
+                    mode: grid
+                    validate:
+                      - required
+                -
+                  handle: image_position
+                  field:
+                    type: button_group
+                    display: 'Picture on the'
+                    options:
+                      left: Left
+                      right: Right
+                    default: left
+                    width: 50
+                -
+                  handle: image_shape
+                  field:
+                    type: button_group
+                    display: 'Picture shape'
+                    options:
+                      landscape: Landscape
+                      square: Square
+                      portrait: Portrait
+                    default: landscape
+                    width: 50
+                -
+                  handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    character_limit: 40
+                    width: 33
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    width: 66
+                -
+                  handle: content
+                  field:
+                    type: bard
+                    display: Text
+                    buttons:
+                      - h2
+                      - h3
+                      - bold
+                      - italic
+                      - unorderedlist
+                      - orderedlist
+                      - quote
+                      - anchor
+                    save_html: false
+                    toolbar_mode: fixed
+                    reading_time: false
+                    remove_empty_nodes: trailing
+                -
+                  import: buttons
+                -
+                  import: section_options
+            feature_grid:
+              display: Features
+              instructions: 'What you offer or why choose you, as a grid of short points.'
+              image: feature-grid.jpg
+              fields:
+                -
+                  handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    instructions: 'A few words above the heading. Optional.'
+                    character_limit: 40
+                    width: 33
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    width: 66
+                -
+                  handle: intro
+                  field:
+                    type: textarea
+                    display: Introduction
+                    character_limit: 280
+                -
+                  handle: layout
+                  field:
+                    type: button_group
+                    display: Layout
+                    options:
+                      grid: Icons
+                      cards: Cards
+                      offset: 'Heading beside the list'
+                    default: grid
+                    width: 50
+                -
+                  handle: columns
+                  field:
+                    type: button_group
+                    display: Columns
+                    options:
+                      2: '2'
+                      3: '3'
+                      4: '4'
+                    default: '3'
+                    width: 50
+                    unless:
+                      layout: 'equals offset'
+                -
+                  handle: items
+                  field:
+                    type: grid
+                    display: Points
+                    mode: stacked
+                    min_rows: 1
+                    add_row: 'Add a point'
+                    fields:
+                      -
+                        handle: icon
+                        field:
+                          type: select
+                          display: Icon
+                          options:
+                            award: Award
+                            badge-percent: 'Badge percent'
+                            calendar: Calendar
+                            check: Check
+                            clock: Clock
+                            coffee: Coffee
+                            gift: Gift
+                            heart: Heart
+                            leaf: Leaf
+                            mail: Mail
+                            map-pin: 'Map pin'
+                            message-circle: 'Message circle'
+                            navigation: Navigation
+                            package: Package
+                            phone: Phone
+                            quote: Quote
+                            shield-check: 'Shield check'
+                            smile: Smile
+                            sparkles: Sparkles
+                            star: Star
+                            store: Store
+                            thumbs-up: 'Thumbs up'
+                            truck: Truck
+                            users: Users
+                            wrench: Wrench
+                            zap: Zap
+                          clearable: true
+                          width: 33
+                      -
+                        handle: title
+                        field:
+                          type: text
+                          display: Title
+                          character_limit: 60
+                          width: 66
+                          validate:
+                            - required
+                      -
+                        handle: text
+                        field:
+                          type: textarea
+                          display: Text
+                          character_limit: 240
+                -
+                  import: section_options
+            product_cards:
+              display: Products
+              instructions: 'Product cards from the Products collection.'
+              image: product-cards.jpg
+              fields:
+                -
+                  handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    instructions: 'A few words above the heading. Optional.'
+                    character_limit: 40
+                    width: 33
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    width: 66
+                -
+                  handle: intro
+                  field:
+                    type: textarea
+                    display: Introduction
+                    character_limit: 280
+                -
+                  handle: source
+                  field:
+                    type: button_group
+                    display: Show
+                    options:
+                      featured: Featured
+                      latest: 'In list order'
+                      picked: 'Chosen below'
+                    default: featured
+                    width: 50
+                -
+                  handle: columns
+                  field:
+                    type: button_group
+                    display: Columns
+                    options:
+                      3: '3'
+                      4: '4'
+                    default: '3'
+                    width: 25
+                -
+                  handle: limit
+                  field:
+                    type: integer
+                    display: 'How many'
+                    default: 3
+                    min: 1
+                    width: 25
+                    unless:
+                      source: 'equals picked'
+                -
+                  handle: products
+                  field:
+                    type: entries
+                    display: Products
+                    collections:
+                      - products
+                    mode: default
+                    if:
+                      source: 'equals picked'
+                -
+                  handle: all_link
+                  field:
+                    type: toggle
+                    display: 'Link to every product'
+                    default: true
+                -
+                  import: section_options
+            team:
+              display: Team
+              instructions: 'Your people, from the Team collection.'
+              image: team.jpg
+              fields:
+                -
+                  handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    instructions: 'A few words above the heading. Optional.'
+                    character_limit: 40
+                    width: 33
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    width: 66
+                -
+                  handle: intro
+                  field:
+                    type: textarea
+                    display: Introduction
+                    character_limit: 280
+                -
+                  handle: layout
+                  field:
+                    type: button_group
+                    display: Layout
+                    options:
+                      cards: Portraits
+                      compact: 'Small photos'
+                    default: cards
+                    width: 50
+                -
+                  handle: members
+                  field:
+                    type: entries
+                    display: People
+                    instructions: 'Leave empty for everyone, in the Team collection’s order.'
+                    collections:
+                      - team
+                    mode: default
+                -
+                  import: section_options
+            recent_posts:
+              display: 'Latest articles'
+              instructions: 'The newest blog articles.'
+              image: recent-posts.jpg
+              fields:
+                -
+                  handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    instructions: 'A few words above the heading. Optional.'
+                    character_limit: 40
+                    width: 33
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    width: 66
+                -
+                  handle: intro
+                  field:
+                    type: textarea
+                    display: Introduction
+                    character_limit: 280
+                -
+                  handle: layout
+                  field:
+                    type: button_group
+                    display: Layout
+                    options:
+                      cards: Cards
+                      list: List
+                    default: cards
+                    width: 50
+                -
+                  handle: limit
+                  field:
+                    type: integer
+                    display: 'How many'
+                    default: 3
+                    min: 1
+                    max: 12
+                    width: 25
+                -
+                  handle: all_link
+                  field:
+                    type: toggle
+                    display: 'Link to the blog'
+                    default: true
+                    width: 25
+                -
+                  import: section_options
+            testimonial:
+              display: Testimonials
+              instructions: 'What customers say.'
+              image: testimonial.jpg
+              fields:
+                -
+                  handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    instructions: 'A few words above the heading. Optional.'
+                    character_limit: 40
+                    width: 33
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    width: 66
+                -
+                  handle: intro
+                  field:
+                    type: textarea
+                    display: Introduction
+                    character_limit: 280
+                -
+                  handle: layout
+                  field:
+                    type: button_group
+                    display: Layout
+                    options:
+                      single: 'One large quote'
+                      grid: Grid
+                    default: grid
+                    width: 50
+                -
+                  handle: testimonials
+                  field:
+                    type: grid
+                    display: Testimonials
+                    mode: stacked
+                    min_rows: 1
+                    add_row: 'Add a testimonial'
+                    fields:
+                      -
+                        handle: quote
+                        field:
+                          type: textarea
+                          display: Quote
+                          character_limit: 400
+                          validate:
+                            - required
+                      -
+                        handle: name
+                        field:
+                          type: text
+                          display: Name
+                          width: 33
+                          validate:
+                            - required
+                      -
+                        handle: role
+                        field:
+                          type: text
+                          display: 'Role or company'
+                          width: 33
+                      -
+                        handle: photo
+                        field:
+                          type: assets
+                          display: Photo
+                          container: assets
+                          folder: images
+                          max_files: 1
+                          mode: grid
+                          width: 33
+                -
+                  import: section_options
+            logo_strip:
+              display: Logos
+              instructions: 'Clients, partners or press, as a row of logos.'
+              image: logo-strip.jpg
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                -
+                  handle: layout
+                  field:
+                    type: button_group
+                    display: Layout
+                    options:
+                      row: Row
+                      grid: 'Boxed grid'
+                    default: row
+                    width: 50
+                -
+                  handle: logos
+                  field:
+                    type: assets
+                    display: Logos
+                    instructions: 'SVG or PNG on a transparent background. Each logo’s alt text is its name.'
+                    container: assets
+                    folder: logos
+                    mode: grid
+                    validate:
+                      - required
+                -
+                  import: section_options
+            stats:
+              display: Figures
+              instructions: 'A few numbers that tell your story.'
+              image: stats.jpg
+              fields:
+                -
+                  handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    instructions: 'A few words above the heading. Optional.'
+                    character_limit: 40
+                    width: 33
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    width: 66
+                -
+                  handle: intro
+                  field:
+                    type: textarea
+                    display: Introduction
+                    character_limit: 280
+                -
+                  handle: layout
+                  field:
+                    type: button_group
+                    display: Layout
+                    options:
+                      row: Row
+                      split: 'Beside a picture'
+                    default: row
+                    width: 50
+                -
+                  handle: image
+                  field:
+                    type: assets
+                    display: Picture
+                    container: assets
+                    folder: images
+                    max_files: 1
+                    mode: grid
+                    if:
+                      layout: 'equals split'
+                -
+                  handle: stats
+                  field:
+                    type: grid
+                    display: Figures
+                    mode: table
+                    min_rows: 1
+                    max_rows: 4
+                    add_row: 'Add a figure'
+                    fields:
+                      -
+                        handle: value
+                        field:
+                          type: text
+                          display: Figure
+                          character_limit: 12
+                          validate:
+                            - required
+                      -
+                        handle: label
+                        field:
+                          type: text
+                          display: Label
+                          character_limit: 60
+                          validate:
+                            - required
+                -
+                  import: section_options
+            faq:
+              display: Questions
+              instructions: 'Frequently asked questions, each opening to its answer.'
+              image: faq.jpg
+              fields:
+                -
+                  handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    instructions: 'A few words above the heading. Optional.'
+                    character_limit: 40
+                    width: 33
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    width: 66
+                -
+                  handle: intro
+                  field:
+                    type: textarea
+                    display: Introduction
+                    character_limit: 280
+                -
+                  handle: layout
+                  field:
+                    type: button_group
+                    display: Layout
+                    options:
+                      accordion: Accordion
+                      side: 'Heading beside the questions'
+                    default: accordion
+                    width: 50
+                -
+                  handle: items
+                  field:
+                    type: grid
+                    display: Questions
+                    mode: stacked
+                    min_rows: 1
+                    add_row: 'Add a question'
+                    fields:
+                      -
+                        handle: question
+                        field:
+                          type: text
+                          display: Question
+                          validate:
+                            - required
+                      -
+                        handle: answer
+                        field:
+                          type: markdown
+                          display: Answer
+                          buttons:
+                            - bold
+                            - italic
+                            - unorderedlist
+                            - link
+                          validate:
+                            - required
+                -
+                  import: section_options
+            cta:
+              display: 'Call to action'
+              instructions: 'Ask the visitor to take the next step.'
+              image: cta.jpg
+              fields:
+                -
+                  handle: layout
+                  field:
+                    type: button_group
+                    display: Layout
+                    options:
+                      centred: Centred
+                      panel: Panel
+                      split: 'Beside a picture'
+                    default: panel
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    validate:
+                      - required
+                -
+                  handle: text
+                  field:
+                    type: textarea
+                    display: Text
+                    character_limit: 240
+                -
+                  import: buttons
+                -
+                  handle: whatsapp
+                  field:
+                    type: toggle
+                    display: 'Add a WhatsApp button'
+                    instructions: 'Uses the number under Globals → Site settings.'
+                    default: false
+                -
+                  handle: image
+                  field:
+                    type: assets
+                    display: Picture
+                    container: assets
+                    folder: images
+                    max_files: 1
+                    mode: grid
+                    if:
+                      layout: 'equals split'
+                -
+                  import: section_options
+            contact_form:
+              display: 'Enquiry form'
+              instructions: 'The enquiry form, with your contact details beside it.'
+              image: contact-form.jpg
+              fields:
+                -
+                  handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    instructions: 'A few words above the heading. Optional.'
+                    character_limit: 40
+                    width: 33
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    width: 66
+                -
+                  handle: intro
+                  field:
+                    type: textarea
+                    display: Introduction
+                    character_limit: 280
+                -
+                  handle: show_details
+                  field:
+                    type: toggle
+                    display: 'Show contact details'
+                    instructions: 'Phone, email, address and WhatsApp, from Marketing → Brand → Publisher and Globals → Site settings.'
+                    default: true
+                -
+                  import: section_options
+            map_address:
+              display: 'Map and address'
+              instructions: 'A map of where you are, the address, opening hours and directions.'
+              image: map-address.jpg
+              fields:
+                -
+                  handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    instructions: 'A few words above the heading. Optional.'
+                    character_limit: 40
+                    width: 33
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    width: 66
+                -
+                  handle: intro
+                  field:
+                    type: textarea
+                    display: Introduction
+                    character_limit: 280
+                -
+                  handle: show_hours
+                  field:
+                    type: toggle
+                    display: 'Show opening hours'
+                    default: true
+                    width: 50
+                -
+                  handle: zoom
+                  field:
+                    type: range
+                    display: 'Map zoom'
+                    min: 12
+                    max: 18
+                    step: 1
+                    default: 16
+                    width: 50
+                -
+                  import: section_options

@@ -1,0 +1,33 @@
+title: 'Section options'
+fields:
+  -
+    handle: tone
+    field:
+      type: button_group
+      display: Background
+      options:
+        default: Page
+        muted: Muted
+        primary: 'Primary colour'
+        inverted: Inverted
+      default: default
+      width: 50
+  -
+    handle: spacing
+    field:
+      type: button_group
+      display: Spacing
+      options:
+        compact: Compact
+        normal: Normal
+        roomy: Roomy
+      default: normal
+      width: 25
+  -
+    handle: anchor
+    field:
+      type: slug
+      display: Anchor
+      instructions: 'Lets a link jump to this section: `#anchor`.'
+      width: 25
+      generate: false
