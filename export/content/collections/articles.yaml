@@ -1,6 +1,6 @@
 title: Blog
 template: articles/show
-mount: c39e68f3-1f81-4600-9f5f-1b0a5cad0d63
+mount: 889e5c40-efe2-4cb0-ba5e-022f74d85062
 revisions: false
 route: '/blog/{slug}'
 date: true

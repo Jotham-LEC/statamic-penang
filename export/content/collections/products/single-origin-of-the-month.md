@@ -1,5 +1,5 @@
 ---
-id: 6efe1fbc-7e7e-491c-bca8-3e58a70c7252
+id: 998de41b-68f2-47e0-9c21-e838f1d253a1
 blueprint: product
 title: 'Single Origin of the Month'
 summary: 'A small lot we are excited about, different every month. Ask us what’s in the bag.'

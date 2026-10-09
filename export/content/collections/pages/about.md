@@ -1,10 +1,10 @@
 ---
-id: e59972cd-836d-44dd-ba8a-434fd06a1ddf
+id: a37f048c-770c-4468-96f7-b2e188bbf7e3
 blueprint: page
 title: About
 blocks:
   -
-    id: yJNmmHwE
+    id: PbnxvvFo
     type: hero
     enabled: true
     tone: default
@@ -17,12 +17,12 @@ blocks:
     image: images/espresso-machine.jpg
     buttons:
       -
-        id: qey0JP1H
+        id: mtoXKLKU
         label: 'Meet the team'
         link: '#team'
         style: outline
   -
-    id: hVv9s8jt
+    id: JUA1lKaE
     type: text
     enabled: true
     tone: default
@@ -55,7 +55,7 @@ blocks:
             type: text
             text: 'The café on Lorong Kopi is where you can taste all of it, and where we test every new coffee before it goes in a bag.'
   -
-    id: uue3uXqf
+    id: CCFlsuL9
     type: image_text
     enabled: true
     tone: muted
@@ -105,7 +105,7 @@ blocks:
                     type: text
                     text: 'We buy again from the same farms every year'
   -
-    id: yl31MxDJ
+    id: 9AWYSaXo
     type: team
     enabled: true
     tone: default
@@ -116,7 +116,7 @@ blocks:
     layout: cards
     anchor: team
   -
-    id: siesCtEF
+    id: FcbEzd4a
     type: logo_strip
     enabled: true
     tone: muted
@@ -130,7 +130,7 @@ blocks:
       - logos/pulau-print.svg
       - logos/seri-hotel.svg
   -
-    id: HrCsmyu3
+    id: BbLOZzcK
     type: cta
     enabled: true
     tone: default
@@ -140,8 +140,8 @@ blocks:
     text: 'The café is open six days a week. The first cup for anyone who mentions this page is on us.'
     buttons:
       -
-        id: aCpVNuLf
+        id: 2jTGiPfG
         label: 'Find the café'
-        link: 'entry::4988d002-00c4-4063-b10b-0939b3abbc19'
+        link: 'entry::5729ae1e-120a-4769-9935-a32a4ef59ecb'
         style: primary
 ---
