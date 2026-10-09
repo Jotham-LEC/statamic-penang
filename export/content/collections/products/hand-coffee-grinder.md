@@ -1,5 +1,5 @@
 ---
-id: 056ace10-1f21-440f-9d43-7461b0d5d880
+id: 57c8bab6-6d37-4e34-ace4-3e176966c59d
 blueprint: product
 title: 'Hand Coffee Grinder'
 summary: 'Steel burrs, 40 settings, grinds enough for two cups in under a minute.'

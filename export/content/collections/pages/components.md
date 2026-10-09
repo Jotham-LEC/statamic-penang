@@ -1,5 +1,5 @@
 ---
-id: 494c4804-4f13-4b66-a6e3-93765159b75c
+id: 449e5d6f-8dc5-41ba-9ebe-3169c106f7fb
 blueprint: page
 title: Components
 template: showcase
@@ -8,7 +8,7 @@ seo:
   sitemap: false
 blocks:
   -
-    id: LwrnX1cm
+    id: UgP3IyFS
     type: hero
     enabled: true
     tone: default
@@ -20,17 +20,17 @@ blocks:
     image: images/cafe-evening.jpg
     buttons:
       -
-        id: z0BTBbOc
+        id: hjn773Ld
         label: Primary
         link: '#'
         style: primary
       -
-        id: 9guGKMIY
+        id: Cgo38eVc
         label: Outline
         link: '#'
         style: outline
   -
-    id: 4kPejdFN
+    id: KvoaoHsA
     type: text
     enabled: true
     tone: muted
@@ -87,7 +87,7 @@ blocks:
                     type: text
                     text: 'And one more'
   -
-    id: daqkJ5Ri
+    id: sN9QN9II
     type: image_text
     enabled: true
     tone: default
@@ -108,12 +108,12 @@ blocks:
             text: 'The picture can sit on either side, in landscape, square or portrait.'
     buttons:
       -
-        id: 6ycsHbiO
+        id: XmFH17d6
         label: 'A button'
         link: '#'
         style: primary
   -
-    id: aK44RvRz
+    id: eziiV3jl
     type: feature_grid
     enabled: true
     tone: muted
@@ -124,27 +124,27 @@ blocks:
     columns: '4'
     items:
       -
-        id: Zf71Glhh
+        id: RRqfThie
         icon: coffee
         title: Icons
         text: 'Each point can have an icon.'
       -
-        id: MVtn5Hkk
+        id: UuyMzerR
         icon: award
         title: Cards
         text: 'Points as cards, as plain icons, or listed beside the heading.'
       -
-        id: iBXFYYMB
+        id: RzIDNLHW
         icon: users
         title: Columns
         text: 'Two, three or four columns.'
       -
-        id: ktRuOUIM
+        id: 3awe6ocX
         icon: sparkles
         title: Tones
         text: 'Any section can sit on any background.'
   -
-    id: Nz9yedTE
+    id: UXEcTQv7
     type: feature_grid
     enabled: true
     tone: default
@@ -155,27 +155,27 @@ blocks:
     layout: offset
     items:
       -
-        id: olbw97Pa
+        id: s5sHHcFw
         icon: shield-check
         title: One
         text: 'A point with an icon.'
       -
-        id: Q42ViswZ
+        id: Wi7ELupP
         icon: heart
         title: Two
         text: 'Another point.'
       -
-        id: BKTkciuG
+        id: pjH1bTxn
         icon: gift
         title: Three
         text: 'A third.'
       -
-        id: 6d9FcFTR
+        id: CVgzBpf4
         icon: package
         title: Four
         text: 'And a fourth.'
   -
-    id: Zx69oFUR
+    id: SFV4EBWF
     type: product_cards
     enabled: true
     tone: muted
@@ -184,13 +184,13 @@ blocks:
     heading: 'Three products chosen by hand'
     source: picked
     products:
-      - 056ace10-1f21-440f-9d43-7461b0d5d880
-      - 57b28e7b-961f-4665-bca8-0bb66695aa2e
-      - 9f8d7e1c-0315-4e0a-92cb-06e188cfea62
+      - 57c8bab6-6d37-4e34-ace4-3e176966c59d
+      - 6a99329d-7e2d-4238-a890-95b9889ee8e0
+      - 7b7c6c23-7ee7-4e22-b9b6-0ee24d3cd676
     columns: '3'
     all_link: false
   -
-    id: VRg7DPDF
+    id: U7PdZ7Yc
     type: team
     enabled: true
     tone: default
@@ -199,7 +199,7 @@ blocks:
     heading: 'Small photos'
     layout: compact
   -
-    id: q1hnKrzw
+    id: ZveFRgxU
     type: recent_posts
     enabled: true
     tone: muted
@@ -210,7 +210,7 @@ blocks:
     limit: 2
     all_link: false
   -
-    id: uBQVGfBV
+    id: LdZguXCJ
     type: testimonial
     enabled: true
     tone: default
@@ -218,12 +218,12 @@ blocks:
     layout: single
     testimonials:
       -
-        id: xwyOm555
+        id: a8lVN011
         quote: 'We switched our café to Kopi Lane’s Liberica last year. Customers ask for it by name now.'
         name: 'Tan Wei Ming'
         role: 'Owner, Roti Ah Seng'
   -
-    id: qBK62Wyy
+    id: 0s2d0q8r
     type: logo_strip
     enabled: true
     tone: muted
@@ -236,7 +236,7 @@ blocks:
       - logos/tanjung-florist.svg
       - logos/pulau-print.svg
   -
-    id: 5XVndQcu
+    id: z3gdfSsH
     type: stats
     enabled: true
     tone: default
@@ -247,23 +247,23 @@ blocks:
     image: images/beans-light-wood.jpg
     stats:
       -
-        id: NtucVMm9
+        id: khwSj306
         value: '12'
         label: 'A figure'
       -
-        id: uTaKIZBt
+        id: xyfkGBUQ
         value: 98%
         label: Another
       -
-        id: mAV0S9eb
+        id: uwSXd5VA
         value: 'RM 2k'
         label: 'Any short text'
       -
-        id: xSnsQeIy
+        id: o18oh0KW
         value: 24/7
         label: 'Up to four'
   -
-    id: I0ZvUbtK
+    id: 4bSzXPCx
     type: faq
     enabled: true
     tone: muted
@@ -273,19 +273,19 @@ blocks:
     layout: side
     items:
       -
-        id: lxQGk4nb
+        id: mHkNeUSK
         question: 'How do I order?'
         answer: 'Send us a WhatsApp message or the enquiry form with what you would like. We reply with the total and payment details (DuitNow QR or bank transfer), and post your order once it is paid.'
       -
-        id: pE4myQkm
+        id: whvT0P3x
         question: 'Do you deliver outside Penang?'
         answer: 'Yes, anywhere in Malaysia, usually in one to three working days. Delivery is free on orders over RM 150; below that it is RM 10 to the peninsula and RM 15 to Sabah and Sarawak.'
       -
-        id: iPv4ZcxJ
+        id: rB8VlXBa
         question: 'When are the beans roasted?'
         answer: 'Every Tuesday and Friday. We post within two days of roasting, so your coffee is never more than a week old when it arrives.'
   -
-    id: cX0YsPyl
+    id: M4mCdRUR
     type: cta
     enabled: true
     tone: default
@@ -296,18 +296,18 @@ blocks:
     image: images/latte-table.jpg
     buttons:
       -
-        id: U2HpxT45
+        id: N0vxx5Vb
         label: Primary
         link: '#'
         style: primary
       -
-        id: lA4ekG6P
+        id: ByxhhKIV
         label: Secondary
         link: '#'
         style: secondary
     whatsapp: true
   -
-    id: 6gPwPPIa
+    id: 9Vx9IOjD
     type: cta
     enabled: true
     tone: muted
@@ -317,17 +317,17 @@ blocks:
     text: 'The panel takes the primary colour; its buttons turn around to stay readable.'
     buttons:
       -
-        id: 0DLZGXdb
+        id: puHY9pEs
         label: Primary
         link: '#'
         style: primary
       -
-        id: 2siF9Bvk
+        id: lkC6FtQQ
         label: Outline
         link: '#'
         style: outline
   -
-    id: k1UsATjy
+    id: GpEAKQbn
     type: contact_form
     enabled: true
     tone: default
@@ -336,7 +336,7 @@ blocks:
     heading: 'The form on its own'
     show_details: false
   -
-    id: ErGspf3W
+    id: L7SjBoRl
     type: map_address
     enabled: true
     tone: muted
@@ -346,7 +346,7 @@ blocks:
     show_hours: true
     zoom: 15
   -
-    id: nNNuCs8F
+    id: 9AlH9rtb
     type: hero
     enabled: true
     tone: primary
@@ -359,12 +359,12 @@ blocks:
     image: images/espresso-machine.jpg
     buttons:
       -
-        id: sp0m0JDg
+        id: yBGsxaJC
         label: Primary
         link: '#'
         style: primary
       -
-        id: coGGP6tC
+        id: AwHDtTuJ
         label: Outline
         link: '#'
         style: outline

@@ -4,7 +4,7 @@ blueprint: page
 title: Home
 blocks:
   -
-    id: EP2pazRB
+    id: BLzbVNpK
     type: hero
     enabled: true
     tone: default
@@ -16,17 +16,17 @@ blocks:
     image: images/hero-baristas.jpg
     buttons:
       -
-        id: vGfE8bOx
+        id: TT3x0sYT
         label: 'Shop our coffee'
-        link: 'entry::014b815c-eb39-4717-8c4d-88f72e5c7a00'
+        link: 'entry::349922db-881e-4830-9399-649d02334011'
         style: primary
       -
-        id: WNP1TJXO
+        id: Z59hPXVT
         label: 'Visit the café'
-        link: 'entry::cd0442a7-c520-4ea9-a95b-916ac7fdc0c2'
+        link: 'entry::4988d002-00c4-4063-b10b-0939b3abbc19'
         style: outline
   -
-    id: ibkwqSYH
+    id: VKlbc7LO
     type: feature_grid
     enabled: true
     tone: default
@@ -38,22 +38,22 @@ blocks:
     columns: '3'
     items:
       -
-        id: ZhbadjQW
+        id: x5KMvgcp
         icon: leaf
         title: 'Bought from people we know'
         text: 'We buy straight from farms in Sabah, Johor and Sumatra, and pay well above the market price.'
       -
-        id: y2DY6u44
+        id: rSU9N7cF
         icon: clock
         title: 'Roasted twice a week'
         text: 'Every Tuesday and Friday, in small batches, so your coffee is never more than a week old.'
       -
-        id: MFMa387j
+        id: Jcc6Wyzb
         icon: truck
         title: 'Delivered across Malaysia'
         text: 'Order by noon and we post the same day. Free delivery on orders over RM 150.'
   -
-    id: l8OHxPa0
+    id: Ee11X47a
     type: product_cards
     enabled: true
     tone: muted
@@ -65,7 +65,7 @@ blocks:
     columns: '4'
     all_link: true
   -
-    id: 08eRzxhU
+    id: LrbkNzWz
     type: image_text
     enabled: true
     tone: default
@@ -94,12 +94,12 @@ blocks:
             text: 'Come for a kopi, stay for a pour-over, and leave with a bag of whatever you liked best.'
     buttons:
       -
-        id: SLuydfBY
+        id: j2DlyQFu
         label: 'Opening hours'
-        link: 'entry::cd0442a7-c520-4ea9-a95b-916ac7fdc0c2'
+        link: 'entry::4988d002-00c4-4063-b10b-0939b3abbc19'
         style: outline
   -
-    id: TbfGyqEv
+    id: dp5Dm0yn
     type: stats
     enabled: true
     tone: primary
@@ -108,23 +108,23 @@ blocks:
     layout: row
     stats:
       -
-        id: 4iV6sWGl
+        id: IRIMPHSJ
         value: '2016'
         label: 'Roasting since'
       -
-        id: 8aEJcFVj
+        id: uoadD6iW
         value: '14'
         label: 'Farms we buy from'
       -
-        id: sRLy5mCV
+        id: ZDLoKId6
         value: '6,000+'
         label: 'Bags roasted last year'
       -
-        id: pByTZLIJ
+        id: BBh41puT
         value: '4.9'
         label: 'Average Google rating'
   -
-    id: DutSxeVe
+    id: CRL7Yb5s
     type: testimonial
     enabled: true
     tone: default
@@ -134,22 +134,22 @@ blocks:
     layout: grid
     testimonials:
       -
-        id: hiaiIQmm
+        id: vsTMdg62
         quote: 'The House Blend is the only coffee my whole office agrees on. Orders arrive two days after roasting, every time.'
         name: 'Farah Aziz'
         role: 'Office manager, Lorong Studio'
       -
-        id: xwyOm555
+        id: a8lVN011
         quote: 'We switched our café to Kopi Lane’s Liberica last year. Customers ask for it by name now.'
         name: 'Tan Wei Ming'
         role: 'Owner, Roti Ah Seng'
       -
-        id: 0A0QfWYM
+        id: jauzsBst
         quote: 'Mei Ling spent an hour helping me set up my new grinder. That’s the kind of shop this is.'
         name: 'Priya Raman'
         role: 'Home brewer'
   -
-    id: DBeqNX9k
+    id: tWWH9I64
     type: recent_posts
     enabled: true
     tone: muted
@@ -160,7 +160,7 @@ blocks:
     limit: 3
     all_link: true
   -
-    id: k3ixN5uS
+    id: bzrdxH5u
     type: cta
     enabled: true
     tone: default
@@ -170,9 +170,9 @@ blocks:
     text: 'Wholesale prices from 5 kg a month, a grinder on loan, and training for your staff.'
     buttons:
       -
-        id: ghsYc670
+        id: SIFAxvEG
         label: 'Ask about wholesale'
-        link: 'entry::cd0442a7-c520-4ea9-a95b-916ac7fdc0c2'
+        link: 'entry::4988d002-00c4-4063-b10b-0939b3abbc19'
         style: primary
     whatsapp: true
 seo:

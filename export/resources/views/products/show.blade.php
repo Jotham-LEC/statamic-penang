@@ -14,7 +14,7 @@
     $categories = collect(value($page->product_categories) ?? []);
     $index = \Statamic\Facades\Collection::findByHandle('products')->mount();
     $whatsapp = Business::whatsappUrl(__('Hello! I’d like to ask about :product: :url', ['product' => $page->title, 'url' => $page->absolute_url]));
-    $contact = \Statamic\Facades\Entry::findByUri('/contact');
+    $contact = Business::contactUrl();
     $related = $categories->isNotEmpty()
         ? collect(\Statamic\Statamic::tag('collection:products')->params(['taxonomy:product_categories' => $categories->first()->slug(), 'id:not' => $page->id, 'limit' => 3])->fetch())
         : collect();
@@ -81,11 +81,7 @@
                         </x-ui.button>
                     @endif
                     @if ($contact)
-                        <x-ui.button
-                            :href="$contact->url().'#enquiry'"
-                            size="lg"
-                            :variant="$whatsapp ? 'outline' : 'primary'"
-                        >
+                        <x-ui.button :href="$contact.'#enquiry'" size="lg" :variant="$whatsapp ? 'outline' : 'primary'">
                             {{ __('Send an enquiry') }}</x-ui.button>
                     @endif
                 </div>

@@ -9,8 +9,8 @@
             </p>
             <div class="mt-10 flex flex-wrap justify-center gap-3">
                 <x-ui.button href="/">{{ __('Go to the home page') }}</x-ui.button>
-                @if ($contact = \Statamic\Facades\Entry::findByUri('/contact'))
-                    <x-ui.button :href="$contact->url()" variant="outline">{{ __('Contact us') }}</x-ui.button>
+                @if ($contact = \App\Support\Business::contactUrl())
+                    <x-ui.button :href="$contact" variant="outline">{{ __('Contact us') }}</x-ui.button>
                 @endif
             </div>
         </div>

@@ -1,5 +1,5 @@
 ---
-id: 0a805fff-772d-4c5a-bc50-5202a9fe0bce
+id: 66a35888-5929-48e0-b133-d59a6f15964d
 blueprint: product
 title: 'Johor Liberica'
 summary: 'Malaysia’s own coffee: fruity, smoky and like nothing else. Our customers’ favourite.'

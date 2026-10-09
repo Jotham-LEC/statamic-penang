@@ -13,7 +13,13 @@
 @if ($layout === 'background')
     <section @if ($block->anchor) id="{{ $block->anchor }}" @endif class="relative isolate overflow-hidden">
         <x-picture :image="$image" alt="" :eager="$first" class="absolute inset-0 -z-10 size-full object-cover" />
-        <div class="bg-overlay/65 absolute inset-0 -z-10" aria-hidden="true"></div>
+        {{-- Dark enough behind the text for AA (4.5:1) even on a white photo:
+             all over on phones, where the text spans the width; from lg, on
+             the left where the text is, fading out to show the picture. --}}
+        <div
+            class="bg-overlay/85 from-overlay/90 via-overlay/85 to-overlay/30 absolute inset-0 -z-10 from-0% via-70% lg:bg-transparent lg:bg-linear-to-r"
+            aria-hidden="true"
+        ></div>
         <div data-tone="overlay" class="text-foreground mx-auto max-w-7xl px-4 py-28 sm:px-6 sm:py-40 lg:px-8">
             <div class="max-w-2xl">
                 @if (filled((string) $block->eyebrow))

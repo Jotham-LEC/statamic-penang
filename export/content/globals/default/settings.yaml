@@ -1,5 +1,7 @@
 whatsapp_number: '60 12-000 0000'
 whatsapp_message: 'Hello Kopi Lane! I have a question.'
+contact_page:
+  - 4988d002-00c4-4063-b10b-0939b3abbc19
 header_button_label: 'Visit the café'
-header_button_link: 'entry::cd0442a7-c520-4ea9-a95b-916ac7fdc0c2'
+header_button_link: 'entry::4988d002-00c4-4063-b10b-0939b3abbc19'
 footer_text: 'Small-batch coffee roasted every week in George Town, Penang, and poured in our café on Lorong Kopi.'

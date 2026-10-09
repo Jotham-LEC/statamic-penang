@@ -26,6 +26,19 @@ tabs:
               width: 50
               placeholder: 'Hello! I have a question.'
       -
+        display: 'Contact page'
+        fields:
+          -
+            handle: contact_page
+            field:
+              type: entries
+              display: 'Contact page'
+              instructions: 'The page with the enquiry form. Product pages and the "page not found" page link to it.'
+              collections:
+                - pages
+              max_items: 1
+              mode: select
+      -
         display: Header
         fields:
           -

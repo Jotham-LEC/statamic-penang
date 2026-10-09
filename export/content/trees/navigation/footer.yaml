@@ -3,7 +3,7 @@ tree:
     title: Shop
     children:
       -
-        entry: 014b815c-eb39-4717-8c4d-88f72e5c7a00
+        entry: 349922db-881e-4830-9399-649d02334011
         title: 'All products'
       -
         url: /product-categories/coffee
@@ -18,10 +18,10 @@ tree:
     title: 'Kopi Lane'
     children:
       -
-        entry: 5c1d6ae2-50c6-45fd-88f3-2b546219e3a2
+        entry: e59972cd-836d-44dd-ba8a-434fd06a1ddf
       -
-        entry: 147e5ba0-cee9-4439-99fd-891448f5498a
+        entry: c39e68f3-1f81-4600-9f5f-1b0a5cad0d63
       -
-        entry: cd0442a7-c520-4ea9-a95b-916ac7fdc0c2
+        entry: 4988d002-00c4-4063-b10b-0939b3abbc19
       -
-        entry: 494c4804-4f13-4b66-a6e3-93765159b75c
+        entry: 449e5d6f-8dc5-41ba-9ebe-3169c106f7fb

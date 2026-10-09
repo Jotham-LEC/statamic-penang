@@ -161,6 +161,15 @@ final class Business
         return 'https://wa.me/'.$number.($message !== '' ? '?text='.rawurlencode($message) : '');
     }
 
+    /** The page with the enquiry form (Site settings → Contact page), wherever it moves. */
+    public static function contactUrl(): ?string
+    {
+        $page = GlobalSet::findByHandle('settings')?->inCurrentSite()?->augmentedValue('contact_page')?->value();
+        $page = $page instanceof Collection ? $page->first() : $page;
+
+        return $page?->published() ? $page->url() : null;
+    }
+
     /** A price as the shop's currency writes it: "RM 45.00", from Marketing → Brand → Shop. */
     public static function price(mixed $amount): ?string
     {

@@ -1,5 +1,5 @@
 ---
-id: 08ebd373-ae21-4847-af52-d39922b470bb
+id: e2cd89da-7d59-450f-b57c-11d77339da18
 blueprint: product
 title: 'Kopi Drip Bags, Pack of 10'
 summary: 'Fresh House Blend in single-cup drip bags. Hang on a mug, pour, wait three minutes.'

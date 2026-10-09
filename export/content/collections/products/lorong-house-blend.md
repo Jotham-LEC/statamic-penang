@@ -1,5 +1,5 @@
 ---
-id: 3e45fcde-f55d-4a71-bab2-40f096d98ac7
+id: 308b1da7-6ca6-40db-af7a-8e72b8417a2b
 blueprint: product
 title: 'Lorong House Blend'
 summary: 'Our everyday espresso and kopi: dark chocolate, palm sugar and a little roasted nut.'

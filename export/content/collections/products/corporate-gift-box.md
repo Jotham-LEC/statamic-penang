@@ -1,5 +1,5 @@
 ---
-id: 57b28e7b-961f-4665-bca8-0bb66695aa2e
+id: 6a99329d-7e2d-4238-a890-95b9889ee8e0
 blueprint: product
 title: 'Corporate Gift Box'
 summary: 'Coffee, drip bags and a card with your message, packed for clients and staff.'

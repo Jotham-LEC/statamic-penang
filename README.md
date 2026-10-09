@@ -80,10 +80,10 @@ Penang is a paid starter kit on the [Statamic Marketplace](https://statamic.com/
 statamic new my-site jotham-lec/statamic-penang
 ```
 
-or, in a new Statamic site:
+or, in a new Statamic site (`--clear-site` removes the new site's own sample views first, as `statamic new` does; don't use it on a site with content you want to keep):
 
 ```bash
-php please starter-kit:install jotham-lec/statamic-penang
+php please starter-kit:install jotham-lec/statamic-penang --clear-site
 ```
 
 The installer runs the Marketing Toolkit's migrations and offers to remove the empty `public/robots.txt` and `public/favicon.ico` a new site has, so the toolkit can serve its own. Then:
