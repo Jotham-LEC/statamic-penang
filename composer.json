@@ -1,5 +1,19 @@
 {
     "name": "jotham-lec/statamic-penang",
+    "description": "Penang: a Statamic 6 starter kit for small-business websites, with a page builder and a theme builder, on Statamic Core.",
+    "license": "proprietary",
+    "homepage": "https://penang.cothink.ing",
+    "support": {
+        "issues": "https://github.com/Jotham-LEC/statamic-penang/issues",
+        "source": "https://github.com/Jotham-LEC/statamic-penang"
+    },
+    "keywords": [
+        "statamic",
+        "starter-kit",
+        "tailwindcss",
+        "page-builder",
+        "theme"
+    ],
     "extra": {
         "statamic": {
             "name": "Penang",

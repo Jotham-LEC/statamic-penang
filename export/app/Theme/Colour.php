@@ -4,7 +4,7 @@ namespace App\Theme;
 
 /**
  * A colour in OKLCH (lightness 0–1, chroma, hue in degrees), with the sums the
- * theme needs: WCAG contrast, mixing as CSS's color-mix(in oklch) does, and
+ * theme needs: WCAG contrast, mixing as CSS's color-mix(in oklab) does, and
  * reading a hex value an editor picks.
  */
 final readonly class Colour
@@ -128,26 +128,28 @@ final readonly class Colour
     }
 
     /**
-     * $this with $amount (0–1) of $other, as `color-mix(in oklch, this, other
-     * amount)` does: lightness, chroma and hue each interpolated, the hue the
-     * shorter way round. A grey's hue is "missing" and takes the other's.
+     * $this with $amount (0–1) of $other, as `color-mix(in oklab, this, other
+     * amount)` does: lightness and the two colour axes each interpolated, so
+     * a little green in an off-white is a green tint, whatever the hues.
      */
     public function mix(self $other, float $amount): self
     {
-        $h1 = $this->c < 0.0001 ? $other->h : $this->h;
-        $h2 = $other->c < 0.0001 ? $h1 : $other->h;
-        $delta = fmod($h2 - $h1 + 540, 360) - 180;
+        [$a1, $b1] = [$this->c * cos(deg2rad($this->h)), $this->c * sin(deg2rad($this->h))];
+        [$a2, $b2] = [$other->c * cos(deg2rad($other->h)), $other->c * sin(deg2rad($other->h))];
+        $a = $a1 + ($a2 - $a1) * $amount;
+        $b = $b1 + ($b2 - $b1) * $amount;
+        $c = sqrt($a * $a + $b * $b);
 
         return new self(
             $this->l + ($other->l - $this->l) * $amount,
-            $this->c + ($other->c - $this->c) * $amount,
-            fmod($h1 + $delta * $amount + 360, 360),
+            $c,
+            $c < 0.0001 ? 0.0 : fmod(rad2deg(atan2($b, $a)) + 360, 360),
         );
     }
 
     /**
-     * A grey's hue is written `none`, "missing": color-mix() then takes the
-     * other colour's hue, as mix() does, instead of swinging through red.
+     * A grey's hue is written `none`, "missing", as CSS writes a colour
+     * without one.
      */
     public function css(): string
     {

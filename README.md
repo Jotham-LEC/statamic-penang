@@ -57,10 +57,11 @@ Every section also takes a background (page, muted, primary colour, inverted), s
 How it works:
 
 1. `App\Theme\Theme` turns the settings into semantic tokens, as shadcn names them: `background`, `foreground`, `card`, `muted`, `primary`, `primary-foreground`, `secondary`, `accent`, `border`, `input`, `ring`, `destructive`, `radius` and the two font families. Each colour comes in light and dark, as `light-dark()`.
-2. Each `*-foreground` is picked for WCAG AA contrast with its background, and so is the shade of the primary colour: a yellow becomes a deeper gold where it has to carry text. Hover colours are mixed in the browser with `color-mix(in oklch, …)`.
-3. The layout prints the tokens as CSS custom properties in `<head>`; `resources/css/site.css` maps them to Tailwind with `@theme inline`, so `bg-primary`, `text-muted-foreground` and `rounded-lg` follow the theme. Saving the theme changes the site at once, with no build.
-4. Each section background (`data-tone`) sets the same tokens again for what's inside it, so buttons and cards in a primary-coloured band stay readable.
-5. Tailwind's own palette is switched off (`--color-*: initial`): views can only use the theme's colours.
+2. Each `*-foreground` is picked for WCAG AA contrast with its background, and so is the shade of the primary colour: a yellow becomes a deeper gold where it has to carry text. Hover colours and tints are mixed in the browser with `color-mix(in oklab, …)`.
+3. Nothing is pure white or black. The light page is an off-white in the base colour's tone (warm with stone, cool with slate), text a deep grey in the same tone, and the dark page a deep toned grey; buttons, hovers, the photo scrim and shadows use those ends too.
+4. The layout prints the tokens as CSS custom properties in `<head>`; `resources/css/site.css` maps them to Tailwind with `@theme inline`, so `bg-primary`, `text-muted-foreground` and `rounded-lg` follow the theme. Saving the theme changes the site at once, with no build.
+5. Each section background (`data-tone`) sets the same tokens again for what's inside it, so buttons and cards in a primary-coloured band stay readable.
+6. Tailwind's own palette is switched off (`--color-*: initial`): views can only use the theme's colours.
 
 Signed in to the control panel, you get a **Theme** button on the site to try presets and settings before saving them; only you see them.
 

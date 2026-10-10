@@ -34,6 +34,11 @@ final class Theme
     /** @var array<string, array<string, array<string, Colour|Mix>>>|null */
     private ?array $palette = null;
 
+    /** The theme's lightest and darkest colours: an off-white and a deep grey, toned. */
+    private Colour $paper;
+
+    private Colour $ink;
+
     /**
      * @param  array<string, string|null>  $settings  a preset and any of Options::SETTINGS
      *                                                (a colour may be a name or a hex value);
@@ -102,6 +107,7 @@ final class Theme
         $base = self::scale($this->settings['base']);
         $primary = self::scale($this->settings['primary']);
         $secondary = self::scale($this->settings['secondary']);
+        [$this->paper, $this->ink] = [$this->tone($base, $primary, 0.99, 50, 0.005), $this->tone($base, $primary, 0.22, 950, 0.016)];
 
         $default = [
             'light' => $this->surface($base, $primary, $secondary, 'light'),
@@ -134,9 +140,11 @@ final class Theme
             '--body-font' => $this->fontStack('body'),
             '--radius' => $radius['radius'],
             '--control-radius' => $radius['control'],
-            // Behind text on a photo, in either mode.
-            '--overlay' => $base[950]->css(),
-            '--overlay-foreground' => Colour::white()->css(),
+            // Behind text on a photo, in either mode: the dark page's colour.
+            '--overlay' => $this->palette()['default']['dark']['background']->css(),
+            '--overlay-foreground' => $this->paper->css(),
+            // Shadows in the theme's own dark, never black.
+            '--shadow' => $this->ink->css(),
         ];
 
         $css = ':root{color-scheme:light dark;'.self::declarations($root).self::declarations($this->tokens('default')).'}';
@@ -191,13 +199,37 @@ final class Theme
         return $scale;
     }
 
-    /** @return array<string, Colour|Mix> */
+    /**
+     * A neutral at lightness $l, in the base colour's tone: its own chroma at
+     * that shade, at least $minChroma, so even "neutral" isn't a dead grey,
+     * and at most 0.025, so a page stays a grey with a tone, not a colour.
+     * A base without a hue of its own takes the primary colour's.
+     */
+    private function tone(array $base, array $primary, float $l, int $shade, float $minChroma): Colour
+    {
+        $hue = $base[500]->c > 0.01 ? $base[500]->h : $primary[500]->h;
+
+        return (new Colour($l, min(max($base[$shade]->c, $minChroma), 0.025), $hue))->toGamut();
+    }
+
+    /**
+     * The page's tokens in one mode. Nothing is pure white or black: the light
+     * page is an off-white in the base colour's tone (cream with stone, cool
+     * with slate), the dark page a deep toned grey, and text on fills is the
+     * theme's paper or ink.
+     *
+     * @return array<string, Colour|Mix>
+     */
     private function surface(array $base, array $primary, array $secondary, string $mode): array
     {
         $light = $mode === 'light';
-        $background = $light ? Colour::white() : $base[950];
-        $muted = $light ? $base[100] : $base[900];
-        $foregrounds = $light ? [Colour::white(), $base[950]] : [$base[950], Colour::white()];
+        $tone = fn (float $l, int $shade, float $min) => $this->tone($base, $primary, $l, $shade, $min);
+
+        $background = $light ? $tone(0.98, 50, 0.006) : $tone(0.2, 950, 0.012);
+        $card = $light ? $this->paper : $tone(0.24, 900, 0.014);
+        $muted = $light ? $tone(0.953, 100, 0.008) : $tone(0.255, 900, 0.014);
+        $foreground = $light ? $this->ink : $tone(0.95, 50, 0.008);
+        $foregrounds = $light ? [$this->paper, $this->ink] : [$this->ink, $this->paper];
 
         // The primary is a button's fill and the colour of links, so it must
         // read on the page and on a muted band, and carry its own text.
@@ -213,7 +245,7 @@ final class Theme
         $secondaryFill = self::firstShade(
             $secondary,
             [500, 400, 600, 300, 700, 200, 800],
-            fn (Colour $c) => self::readableOn($c, [Colour::white(), $base[950]])->contrast($c) >= self::AA,
+            fn (Colour $c) => self::readableOn($c, [$this->paper, $this->ink])->contrast($c) >= self::AA,
         );
         // Errors, as text on the page and as a fill.
         $red = self::scale('red');
@@ -223,26 +255,26 @@ final class Theme
             fn (Colour $c) => $c->contrast($background) >= self::AA && $c->contrast($muted) >= self::AA,
         );
         $primaryText = self::readableOn($primaryFill, $foregrounds);
-        $secondaryText = self::readableOn($secondaryFill, [Colour::white(), $base[950]]);
+        $secondaryText = self::readableOn($secondaryFill, [$this->paper, $this->ink]);
 
         return [
             'background' => $background,
-            'foreground' => $light ? $base[950] : $base[50],
-            'card' => $light ? Colour::white() : $base[900],
-            'card-foreground' => $light ? $base[950] : $base[50],
+            'foreground' => $foreground,
+            'card' => $card,
+            'card-foreground' => $foreground,
             'muted' => $muted,
             'muted-foreground' => $light ? $base[600] : $base[400],
             'primary' => $primaryFill,
             'primary-foreground' => $primaryText,
-            'primary-hover' => self::hover($primaryFill, $primaryText),
+            'primary-hover' => $this->hover($primaryFill, $primaryText),
             'secondary' => $secondaryFill,
             'secondary-foreground' => $secondaryText,
-            'secondary-hover' => self::hover($secondaryFill, $secondaryText),
+            'secondary-hover' => $this->hover($secondaryFill, $secondaryText),
             'destructive' => $destructive,
             'destructive-foreground' => self::readableOn($destructive, $foregrounds),
             'accent' => new Mix($background, $primaryFill, 0.1),
-            'accent-foreground' => $light ? $base[950] : $base[50],
-            'border' => $light ? $base[200] : $base[800],
+            'accent-foreground' => $foreground,
+            'border' => $light ? $tone(0.905, 200, 0.01) : $tone(0.32, 800, 0.014),
             // A field's edge: 3:1 against the page (WCAG 1.4.11).
             'input' => self::firstShade($base, $light ? [400, 500, 600] : [600, 500, 400], fn (Colour $c) => $c->contrast($background) >= self::NON_TEXT && $c->contrast($muted) >= self::NON_TEXT),
             'ring' => $primaryFill,
@@ -271,7 +303,7 @@ final class Theme
         $text = $page['primary-foreground'];
         // Cards and highlights on the band step away from its text (darker
         // under white text), which only adds contrast.
-        $away = $text->luminance() > $fill->luminance() ? Colour::black() : Colour::white();
+        $away = $text->luminance() > $fill->luminance() ? $this->ink : $this->paper;
         $surface = new Mix($fill, $away, 0.12);
 
         // Quieter text, as close to the band as AA allows on the band and on
@@ -295,7 +327,7 @@ final class Theme
             'muted-foreground' => $quiet,
             'primary' => $text,
             'primary-foreground' => $fill,
-            'primary-hover' => self::hover($text, $fill),
+            'primary-hover' => $this->hover($text, $fill),
             'accent' => $surface,
             'accent-foreground' => $text,
             // An error on the band is in the band's own text colour.
@@ -308,13 +340,13 @@ final class Theme
     }
 
     /**
-     * A fill's hover: towards black or white, whichever adds contrast with its
+     * A fill's hover: towards the ink or the paper, whichever adds contrast with its
      * text; for a fill already at the end (a white button), a little towards
      * its text, as far as AA allows.
      */
-    private static function hover(Colour $fill, Colour $text): Mix
+    private function hover(Colour $fill, Colour $text): Mix
     {
-        $away = $text->luminance() > $fill->luminance() ? Colour::black() : Colour::white();
+        $away = $text->luminance() > $fill->luminance() ? $this->ink : $this->paper;
         $hover = new Mix($fill, $away, 0.15);
         if (abs($hover->colour()->l - $fill->l) >= 0.03) {
             return $hover;

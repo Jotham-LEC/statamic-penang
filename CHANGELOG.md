@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.0 (unreleased)
+
+- Softer themes: no pure white or black anywhere. The light page is an off-white in the base colour's tone, cards a lighter off-white, text a deep toned grey; the dark page is a deep toned grey rather than near-black. Text on buttons, hovers, the photo scrim and shadows use the same toned ends. A test checks no theme produces pure white or black.
+- Colours are mixed in OKLab, so tints (success messages, highlights) keep their colour on any base.
+- `composer.json` declares the licence (proprietary; see LICENSE.md).
+
 ## 1.0.0 (2026-10-10)
 
 The first release.

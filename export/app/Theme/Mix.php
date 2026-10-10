@@ -3,7 +3,7 @@
 namespace App\Theme;
 
 /**
- * A colour worked out in the browser, as `color-mix(in oklch, …)`, from two
+ * A colour worked out in the browser, as `color-mix(in oklab, …)`, from two
  * the theme chose; colour() gives what the browser will get, for the tests.
  */
 final readonly class Mix
@@ -21,6 +21,6 @@ final readonly class Mix
 
     public function css(): string
     {
-        return sprintf('color-mix(in oklch, %s, %s %s%%)', $this->base->css(), $this->with->css(), round($this->amount * 100, 1));
+        return sprintf('color-mix(in oklab, %s, %s %s%%)', $this->base->css(), $this->with->css(), round($this->amount * 100, 1));
     }
 }
