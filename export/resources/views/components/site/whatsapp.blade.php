@@ -1,11 +1,12 @@
-{{-- The WhatsApp button, on every page once Site settings has a number. --}}
+{{-- The WhatsApp button, on every page once Site settings has a number: a
+     deep fill with a light icon and label in light and dark mode alike. --}}
 @php($url = \App\Support\Business::whatsappUrl())
 @if ($url)
     <a
         href="{{ $url }}"
         target="_blank"
         rel="noopener"
-        class="bg-primary text-primary-foreground hover:bg-primary-hover fixed right-4 bottom-4 z-30 inline-flex items-center gap-2 rounded-full p-3.5 shadow-lg transition-colors sm:right-6 sm:bottom-6 sm:px-5"
+        class="bg-solid text-solid-foreground hover:bg-solid-hover fixed right-4 bottom-4 z-30 inline-flex items-center gap-2 rounded-full p-3.5 shadow-lg transition-colors sm:right-6 sm:bottom-6 sm:px-5"
         data-whatsapp
     >
         <x-icon name="brands/whatsapp" class="size-6" />

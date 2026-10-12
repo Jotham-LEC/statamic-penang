@@ -9,4 +9,6 @@
     $a11y = $label ? 'role="img" aria-label="'.e($label).'"' : 'aria-hidden="true" focusable="false"';
     $class = e($attributes->get('class', 'size-5'));
 @endphp
-{!! preg_replace('/<svg\b/', "<svg class=\"{$class} shrink-0\" {$a11y}", $svg, 1) !!}
+{{-- Brand icons are filled shapes with no colour of their own: they take the text's. --}}
+@php($fill = str_starts_with($name, 'brands/') ? ' fill="currentColor"' : '')
+{!! preg_replace('/<svg\b/', "<svg class=\"{$class} shrink-0\"{$fill} {$a11y}", $svg, 1) !!}

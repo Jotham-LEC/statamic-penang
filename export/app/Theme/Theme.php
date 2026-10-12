@@ -148,6 +148,11 @@ final class Theme
             '--overlay-foreground' => $this->paper->css(),
             // Shadows in the theme's own dark, never black.
             '--shadow' => $this->ink->css(),
+            // A fill that carries light text in either mode (the light mode's
+            // primary): the floating WhatsApp button, white on colour in dark mode too.
+            '--solid' => $this->palette()['default']['light']['primary']->css(),
+            '--solid-foreground' => $this->palette()['default']['light']['primary-foreground']->css(),
+            '--solid-hover' => $this->palette()['default']['light']['primary-hover']->css(),
         ];
 
         $css = ':root{color-scheme:light dark;'.self::declarations($root).self::declarations($this->tokens('default')).'}';

@@ -55,6 +55,9 @@
     --color-ring: var(--ring);
     --color-overlay: var(--overlay);
     --color-overlay-foreground: var(--overlay-foreground);
+    --color-solid: var(--solid);
+    --color-solid-foreground: var(--solid-foreground);
+    --color-solid-hover: var(--solid-hover);
     --color-transparent: transparent;
     --color-current: currentColor;
 

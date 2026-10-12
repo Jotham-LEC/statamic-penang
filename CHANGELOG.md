@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.5.1 (2026-10-12)
+
+### Fixed
+
+- **The WhatsApp icon is white.** Brand icons (WhatsApp, Facebook, Instagram…) were drawn in pure black whatever their colour around them; they now take their text's colour. The floating WhatsApp button keeps a deep fill in dark mode too (the preset's light-mode primary, the new `--solid` tokens), so its icon and label are always the theme's off-white.
+
+### Changed
+
+- **Buttons have a subtle shadow**: secondary and outline buttons now have the primary's soft shadow, in the theme's own dark.
+
 ## 1.5.0 (2026-10-12)
 
 ### Changed

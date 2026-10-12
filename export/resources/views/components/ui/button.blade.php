@@ -9,8 +9,8 @@
     $classes = [
         'inline-flex items-center justify-center gap-2 rounded-control font-semibold whitespace-nowrap transition-colors disabled:pointer-events-none disabled:opacity-50',
         match ($variant) {
-            'secondary' => 'bg-secondary text-secondary-foreground hover:bg-secondary-hover',
-            'outline' => 'border border-input text-foreground hover:bg-accent hover:text-accent-foreground',
+            'secondary' => 'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary-hover',
+            'outline' => 'border border-input text-foreground shadow-sm hover:bg-accent hover:text-accent-foreground',
             'ghost' => 'text-foreground hover:bg-accent hover:text-accent-foreground',
             'link' => 'text-primary underline-offset-4 hover:underline',
             default => 'bg-primary text-primary-foreground shadow-sm hover:bg-primary-hover',
