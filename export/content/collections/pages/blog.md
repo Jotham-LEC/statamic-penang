@@ -1,11 +1,11 @@
 ---
-id: e1acf55a-7d7e-4bb1-99f1-a0e3a55dc806
+id: 324bbb4c-ccf1-4a76-9e7e-10df3707774a
 blueprint: page
 title: Blog
 template: articles/index
 blocks:
   -
-    id: GqnZAwrT
+    id: YeOmJkCc
     type: hero
     enabled: true
     tone: default

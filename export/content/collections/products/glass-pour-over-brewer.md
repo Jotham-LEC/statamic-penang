@@ -1,5 +1,5 @@
 ---
-id: 5d936032-9c2f-4238-ba2f-468fd4b6957e
+id: 83b3cff5-294a-4b77-a377-86758a92e411
 blueprint: product
 title: 'Glass Pour-over Brewer'
 summary: 'A borosilicate glass brewer for up to six cups, with a wooden collar.'

@@ -4,7 +4,7 @@ blueprint: page
 title: Home
 blocks:
   -
-    id: JL5r1Fub
+    id: 850c8pa3
     type: hero
     enabled: true
     tone: default
@@ -28,20 +28,20 @@ blocks:
     image: images/hero-baristas.jpg
     buttons:
       -
-        id: 9DmRdv0d
+        id: Pd57ma1V
         type: link
         label: 'Shop our coffee'
-        link: 'entry::3e795523-56e7-40b6-a29c-d39e26947a63'
+        link: 'entry::16955a7e-519d-4b0e-ae6f-473b9fcbee32'
         style: primary
       -
-        id: oi0BVtOF
+        id: 0z5dz3E9
         type: link
         label: 'Visit the café'
-        link: 'entry::6226ac0a-09f6-4f56-b65e-87dfae10b80f'
+        link: 'entry::4b1ffb72-a6a0-4827-b826-57e4fa06ad13'
         style: outline
     from_price: true
   -
-    id: JwIHU6s5
+    id: Lz8btAgX
     type: feature_grid
     enabled: true
     tone: default
@@ -56,22 +56,22 @@ blocks:
     columns: '3'
     items:
       -
-        id: 3D2LeAwd
+        id: VmEcayvA
         icon: leaf
         title: 'Bought from people we know'
         text: 'We buy straight from farms in Sabah, Johor and Sumatra, and pay well above the market price.'
       -
-        id: SZHlieOW
+        id: qz1Xk9nQ
         icon: clock
         title: 'Roasted twice a week'
         text: 'Every Tuesday and Friday, in small batches, so your coffee is never more than a week old.'
       -
-        id: ec8aHoZU
+        id: f2RK3h2K
         icon: truck
         title: 'Delivered across Malaysia'
         text: 'Order by noon and we post the same day. Free delivery on orders over RM 150.'
   -
-    id: 2fEPlb7k
+    id: qvBGEWfY
     type: product_cards
     enabled: true
     tone: muted
@@ -83,7 +83,7 @@ blocks:
     columns: '4'
     all_link: true
   -
-    id: yGZvzeA6
+    id: dmMdpQWp
     type: image_text
     enabled: true
     tone: default
@@ -112,13 +112,13 @@ blocks:
             text: 'Come for a kopi, stay for a pour-over, and leave with a bag of whatever you liked best.'
     buttons:
       -
-        id: QQUD3JER
+        id: TFIFR2bR
         type: link
         label: 'Opening hours'
-        link: 'entry::6226ac0a-09f6-4f56-b65e-87dfae10b80f'
+        link: 'entry::4b1ffb72-a6a0-4827-b826-57e4fa06ad13'
         style: outline
   -
-    id: XEPV7Xlh
+    id: BX7U13rZ
     type: stats
     enabled: true
     tone: primary
@@ -127,23 +127,23 @@ blocks:
     layout: row
     stats:
       -
-        id: rjZ3ePGM
+        id: UH5pQLDb
         value: '2016'
         label: 'Roasting since'
       -
-        id: PVFY7yuB
+        id: GA4FIbCN
         value: '14'
         label: 'Farms we buy from'
       -
-        id: HB5RSUGB
+        id: dDe9PseS
         value: '6,000+'
         label: 'Bags roasted last year'
       -
-        id: MRfx2wBh
+        id: f9pHjaB1
         value: '4.9'
         label: 'Average Google rating'
   -
-    id: qy2djcAJ
+    id: U1hLB6jr
     type: testimonial
     enabled: true
     tone: default
@@ -153,28 +153,28 @@ blocks:
     layout: grid
     testimonials:
       -
-        id: BqapzKgV
+        id: 3L19EqR2
         quote: 'The House Blend is the only coffee my whole office agrees on. Orders arrive two days after roasting, every time.'
         name: 'Farah Aziz'
         role: 'Office manager, Lorong Studio'
         rating: '5'
         source: google
       -
-        id: zEvexP0P
+        id: nndctlrf
         quote: 'We switched our café to Kopi Lane’s Liberica last year. Customers ask for it by name now.'
         name: 'Tan Wei Ming'
         role: 'Owner, Roti Ah Seng'
         rating: '5'
         logo: logos/roti-ah-seng.svg
       -
-        id: xsj1SBga
+        id: eCFtysjG
         quote: 'Mei Ling spent an hour helping me set up my new grinder. That’s the kind of shop this is.'
         name: 'Priya Raman'
         role: 'Home brewer'
         rating: '5'
         source: facebook
   -
-    id: bNzsK4DS
+    id: X9USMJtB
     type: recent_posts
     enabled: true
     tone: muted
@@ -185,7 +185,7 @@ blocks:
     limit: 3
     all_link: true
   -
-    id: ECX6Dkcv
+    id: 49sXStZP
     type: cta
     enabled: true
     tone: default
@@ -198,13 +198,13 @@ blocks:
         text: 'Wholesale prices from 5 kg a month, a grinder on loan, and training for your staff.'
     buttons:
       -
-        id: 08AESJFo
+        id: mJYSi8R2
         type: link
         label: 'Ask about wholesale'
-        link: 'entry::6226ac0a-09f6-4f56-b65e-87dfae10b80f'
+        link: 'entry::4b1ffb72-a6a0-4827-b826-57e4fa06ad13'
         style: primary
       -
-        id: 17RoUXyp
+        id: ziHgDhtM
         type: whatsapp
         label: 'WhatsApp us'
         style: outline

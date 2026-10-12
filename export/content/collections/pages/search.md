@@ -1,5 +1,5 @@
 ---
-id: f2b80668-f000-424b-bfe0-5eb0cb2ebea4
+id: 063b871a-1851-4b2c-b8ff-4e623d965d7c
 blueprint: page
 title: Search
 template: search
@@ -8,7 +8,7 @@ seo:
   sitemap: false
 blocks:
   -
-    id: 29eYOH4t
+    id: v8sADto2
     type: hero
     enabled: true
     tone: default

@@ -6,11 +6,12 @@ use Statamic\Facades\GlobalSet;
 use Statamic\Facades\User;
 
 /**
- * The theme a request is shown in: the Theme global's settings, and on top of
- * them a preview from the theme switcher (the `penang_theme` cookie) where
- * previews are allowed: for someone signed in to the control panel, and for
- * everyone on a demo site (`PENANG_THEME_PREVIEW=true`). The cookie only
- * holds choices; each is checked against the options before it is used.
+ * The theme a request is shown in: the Theme global's preset and light/dark
+ * setting, or a preset chosen in the theme switcher (the `penang_theme`
+ * cookie) where previews are allowed: for someone signed in to the control
+ * panel, and for everyone on a demo site (`PENANG_THEME_PREVIEW=true`). A
+ * preset is the whole look (fonts, corners and colours): nothing else is
+ * read, so a preset is never mixed with settings of another.
  */
 final class SiteTheme
 {
@@ -27,18 +28,12 @@ final class SiteTheme
         return $attributes->get('penang.theme');
     }
 
-    /** @return array<string, string|null> the Theme global's settings, custom colours as hex */
+    /** @return array<string, string|null> the Theme global's preset and light/dark setting */
     public static function saved(): array
     {
         $values = GlobalSet::findByHandle('theme')?->inCurrentSite()?->data()->all() ?? [];
 
-        foreach (['primary', 'secondary'] as $key) {
-            if (($values[$key] ?? null) === 'custom') {
-                $values[$key] = $values["{$key}_custom"] ?? null;
-            }
-        }
-
-        return array_intersect_key($values, array_flip(['preset', 'mode', ...Options::SETTINGS]));
+        return array_intersect_key($values, array_flip(['preset', 'mode']));
     }
 
     /** Whether the switcher shows, and its cookie counts, for this request. */
@@ -47,7 +42,7 @@ final class SiteTheme
         return (bool) config('penang.theme_preview') || (bool) User::current()?->can('access cp');
     }
 
-    /** @return array<string, string> the switcher's choices that are valid */
+    /** @return array<string, string> the preset chosen in the switcher, if it is one */
     public static function preview(): array
     {
         if (! self::previewing()) {
@@ -55,20 +50,9 @@ final class SiteTheme
         }
 
         $choices = json_decode((string) request()->cookie(self::COOKIE), true);
-        if (! is_array($choices)) {
-            return [];
-        }
+        $preset = is_array($choices) ? ($choices['preset'] ?? null) : null;
 
-        // A preset chosen in the switcher replaces the saved settings, as
-        // choosing it in the control panel with every setting cleared would.
-        $base = isset($choices['preset']) && Theme::valid('preset', $choices['preset'])
-            ? array_fill_keys(Options::SETTINGS, null)
-            : [];
-
-        return [
-            ...$base,
-            ...array_filter($choices, fn ($value, $key) => Theme::valid($key, $value), ARRAY_FILTER_USE_BOTH),
-        ];
+        return Theme::valid('preset', $preset) ? ['preset' => $preset] : [];
     }
 
     /** Whether the visitor may switch between light and dark. */

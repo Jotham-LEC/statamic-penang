@@ -68,8 +68,11 @@ final class Options
     ];
 
     /**
-     * Ready-made themes. A setting left empty in the Theme global takes the
-     * chosen preset's value.
+     * The themes editors choose from (Globals → Theme): each a whole look.
+     * A colour is one of COLOURS or a hex value, used exactly as given where
+     * it reads (Theme::surface()). `primary_dark`, optional, is dark mode's
+     * primary where the light one would only turn pale. Add a preset here for
+     * a brand of your own.
      */
     public const PRESETS = [
         'default' => [
@@ -92,10 +95,13 @@ final class Options
             'heading_font' => 'lora', 'body_font' => 'inter', 'radius' => 'medium',
             'base' => 'stone', 'primary' => 'emerald', 'secondary' => 'lime',
         ],
+        // Batik's own colours: indigo (tarum) and soga brown, the two dyes of
+        // classic batik, on the warm cream of undyed cotton. In the dark, a
+        // light soga on deep brown, as sogan batik is, rather than a pale indigo.
         'batik' => [
-            'label' => 'Batik (indigo and gold)',
-            'heading_font' => 'source-serif-4', 'body_font' => 'plus-jakarta-sans', 'radius' => 'full',
-            'base' => 'zinc', 'primary' => 'indigo', 'secondary' => 'amber',
+            'label' => 'Batik (indigo and soga brown)',
+            'heading_font' => 'source-serif-4', 'body_font' => 'plus-jakarta-sans', 'radius' => 'small',
+            'base' => 'stone', 'primary' => '#2c3a6e', 'secondary' => '#8b5a2b', 'primary_dark' => '#d4a066',
         ],
     ];
 

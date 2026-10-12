@@ -1,10 +1,10 @@
 ---
-id: 2f817cb6-5379-4633-b918-fe8214728842
+id: f12bad94-4484-4f81-b4f9-1eebdca74685
 blueprint: page
 title: About
 blocks:
   -
-    id: DymCViTi
+    id: w20u3ekG
     type: hero
     enabled: true
     tone: default
@@ -20,13 +20,13 @@ blocks:
     image: images/espresso-machine.jpg
     buttons:
       -
-        id: z2sRzKxe
+        id: LFJCPJ4W
         type: link
         label: 'Meet the team'
         link: '#team'
         style: outline
   -
-    id: pWHLY0IX
+    id: 4sfid1Bh
     type: text
     enabled: true
     tone: default
@@ -59,7 +59,7 @@ blocks:
             type: text
             text: 'The café on Lorong Kopi is where you can taste all of it, and where we test every new coffee before it goes in a bag.'
   -
-    id: wsZiiHLb
+    id: 475EJUYr
     type: image_text
     enabled: true
     tone: muted
@@ -77,7 +77,7 @@ blocks:
         content:
           -
             type: text
-            text: 'Nurul visits every farm before we buy, and again at harvest. We agree a price before the season starts, so the farmers know what they will earn.'
+            text: 'Sofia visits every farm before we buy, and again at harvest. We agree a price before the season starts, so the farmers know what they will earn.'
       -
         type: bulletList
         content:
@@ -109,7 +109,7 @@ blocks:
                     type: text
                     text: 'We buy again from the same farms every year'
   -
-    id: TkMSpyeH
+    id: 2zTvaRLa
     type: gallery
     enabled: true
     tone: muted
@@ -128,7 +128,7 @@ blocks:
       - images/copper-kettle.jpg
       - images/cafe-evening.jpg
   -
-    id: TepcWnXi
+    id: lu3tjhRB
     type: team
     enabled: true
     tone: default
@@ -142,7 +142,7 @@ blocks:
     layout: cards
     anchor: team
   -
-    id: 2kjUFyU0
+    id: Xqzle94f
     type: logo_strip
     enabled: true
     tone: muted
@@ -156,7 +156,7 @@ blocks:
       - logos/pulau-print.svg
       - logos/seri-hotel.svg
   -
-    id: 6Gr7GqeV
+    id: 1nzOUKU4
     type: cta
     enabled: true
     tone: default
@@ -169,9 +169,9 @@ blocks:
         text: 'The café is open six days a week. The first cup for anyone who mentions this page is on us.'
     buttons:
       -
-        id: WHtSa0mJ
+        id: P51XvxCP
         type: link
         label: 'Find the café'
-        link: 'entry::6226ac0a-09f6-4f56-b65e-87dfae10b80f'
+        link: 'entry::4b1ffb72-a6a0-4827-b826-57e4fa06ad13'
         style: primary
 ---

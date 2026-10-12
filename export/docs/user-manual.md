@@ -161,18 +161,14 @@ The website writes some words by itself: "All products", "Ask for a price", "Out
 
 Under **Globals → Theme** you change how the whole website looks, without touching any page:
 
-![The Theme settings: a preset, fonts, corners and colours](images/cp-theme.png)
+![The Theme settings: a preset, and light and dark](images/cp-theme.png)
 
-- **Preset**: a ready-made look to start from. Choose one and save: everything else follows.
-- **Fonts**: one for headings, one for text.
-- **Corners**: from square to fully rounded.
-- **Base colour**: the greys used for backgrounds, text and lines.
-- **Primary colour**: buttons and links. Your own brand colour (*Custom colour…*) is used exactly where it stays readable. **Secondary colour**: highlights and badges. Choose *Custom colour…* to use your own brand colour.
+- **Preset**: the look of the whole website: its fonts, corners and colours, chosen to go together. *Default*, *Kopitiam* (warm), *Pantai* (sea), *Hutan* (forest) and *Batik* (indigo and soga brown). Choose one and save.
 - **Light and dark**: whether the website shows light, dark, or follows each visitor's phone or computer, and whether visitors may switch.
 
-Settings left empty take the preset's. Text always stays readable: if a colour is too light to read on white, the website uses a deeper shade of it where needed.
+Text always stays readable in every preset, light and dark. For a look in your own brand's colours and fonts, ask your developer to add a preset for it; it then appears in the list.
 
-**To try a look before saving it**, visit the website while signed in: a **Theme** button at the bottom left lets you try presets, fonts and colours. Only you see them, and nothing changes until you save under Globals → Theme. The **Components** page (`/components`) shows every part of the website at once, which makes it the best page to try them on.
+**To try a preset before saving it**, visit the website while signed in: a **Theme** button at the bottom left lets you try each one. Only you see it, and nothing changes until you save under Globals → Theme. The **Components** page (`/components`) shows every part of the website at once, which makes it the best page to try them on.
 
 ## Search engines and sharing
 

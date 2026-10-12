@@ -1,5 +1,5 @@
 ---
-id: 1efcf5ec-a540-4114-9229-fd3d99ffe5ec
+id: ba226acd-5c3f-4797-9bfd-59d82e9a124f
 blueprint: page
 title: Components
 template: showcase
@@ -8,7 +8,7 @@ seo:
   sitemap: false
 blocks:
   -
-    id: wVQE7TKK
+    id: 7v7ceXH9
     type: hero
     enabled: true
     tone: default
@@ -41,23 +41,23 @@ blocks:
     image: images/cafe-evening.jpg
     buttons:
       -
-        id: JEOjQ5HC
+        id: DDWla4kK
         type: link
         label: Primary
         link: '#'
         style: primary
       -
-        id: 5F1PjdVW
+        id: mnvYEOqB
         type: phone
         label: 'Call us'
         style: outline
       -
-        id: xcAm2Ns1
+        id: NUZlNuRK
         type: email
         label: 'Email us'
         style: secondary
   -
-    id: PREgRHLj
+    id: tizoSrLF
     type: text
     enabled: true
     tone: muted
@@ -114,7 +114,7 @@ blocks:
                     type: text
                     text: 'And one more'
   -
-    id: WMS9gYg4
+    id: kVq2z11x
     type: image_text
     enabled: true
     tone: default
@@ -135,13 +135,13 @@ blocks:
             text: 'The picture can sit on either side, in landscape, square or portrait.'
     buttons:
       -
-        id: H2euAY7q
+        id: EEiHVtc3
         type: link
         label: 'A button'
         link: '#'
         style: primary
   -
-    id: 4pjxwNUQ
+    id: 4UR07Kh2
     type: image_text
     enabled: true
     tone: muted
@@ -165,7 +165,7 @@ blocks:
             type: text
             text: 'Up to four pictures, as a collage or a column, each with the caption from its details.'
   -
-    id: HRIbiSEd
+    id: fyvASgbr
     type: gallery
     enabled: true
     tone: default
@@ -190,7 +190,7 @@ blocks:
       - images/hand-grinder.jpg
       - images/cafe-evening.jpg
   -
-    id: Zo306Vpi
+    id: pcCF8bBn
     type: video
     enabled: true
     tone: muted
@@ -213,7 +213,7 @@ blocks:
             type: text
             text: 'YouTube, Vimeo or your own file. Nothing loads from YouTube or Vimeo until the visitor presses play.'
   -
-    id: 075aeLoE
+    id: L9bvvU2d
     type: steps
     enabled: true
     tone: default
@@ -223,26 +223,26 @@ blocks:
     layout: vertical
     steps:
       -
-        id: 9gQ3Z4PS
+        id: YkCVoRuK
         label: Jan
         title: Harvest
-        text: 'Nurul visits the farms as the cherries are picked.'
+        text: 'Sofia visits the farms as the cherries are picked.'
       -
-        id: XSTbX00N
+        id: uSaLZtdd
         label: Mar
         title: Shipping
         text: 'Green coffee arrives in George Town.'
       -
-        id: H1N5kiJ9
+        id: ADgvGaHG
         label: Tue
         title: Roasting
         text: 'Every Tuesday and Friday, in small batches.'
       -
-        id: JRJBnB4F
+        id: 4vWA8QjJ
         title: 'Your cup'
         text: 'Steps are numbered unless they have a label.'
   -
-    id: ExwgnY6n
+    id: 2RBRnLEU
     type: tabs
     enabled: true
     tone: muted
@@ -251,7 +251,7 @@ blocks:
     heading: 'One panel at a time'
     tabs:
       -
-        id: BUilNEnd
+        id: v68XFoMw
         title: Espresso
         content:
           -
@@ -264,7 +264,7 @@ blocks:
                 text: 'Fine grind, 18 g in, 36 g out, about 28 seconds. Tabs suit a few parallel answers: brew methods, services, locations.'
         image: images/blog-espresso-shot.jpg
       -
-        id: I9BtQGCs
+        id: wRRB1yM2
         title: Pour-over
         content:
           -
@@ -307,7 +307,7 @@ blocks:
                         text: 'Pour slowly in circles'
         image: images/blog-gooseneck.jpg
       -
-        id: 4YLy4Sii
+        id: bIGp7fZN
         title: Kopi
         content:
           -
@@ -319,7 +319,7 @@ blocks:
                 type: text
                 text: 'Dark roast, a cloth sock and condensed milk. The arrow keys move between tabs.'
   -
-    id: XSbQRHAc
+    id: WOSiiWVh
     type: table
     enabled: true
     tone: default
@@ -355,7 +355,7 @@ blocks:
           - 'Yes'
     caption: 'A Text section can hold a table too.'
   -
-    id: 6Ewup2Nu
+    id: T5A5Bwtz
     type: pricing
     enabled: true
     tone: muted
@@ -377,7 +377,7 @@ blocks:
         text: .
     plans:
       -
-        id: 3Is4pxJQ
+        id: 04b7zRSU
         name: 'Café starter'
         price: 'RM 420'
         period: 'per month'
@@ -388,13 +388,13 @@ blocks:
           - 'One training session'
         buttons:
           -
-            id: 04VUxnkg
+            id: AZMfgc5N
             type: link
             label: 'Ask about it'
             link: '#'
             style: outline
       -
-        id: Xa7NQ70a
+        id: 5HcU4Foi
         name: Café
         badge: 'Most popular'
         highlight: true
@@ -408,12 +408,12 @@ blocks:
           - 'Free delivery'
         buttons:
           -
-            id: EqCSm3ol
+            id: QUvGaWgX
             type: whatsapp
             label: 'Ask on WhatsApp'
             style: primary
       -
-        id: tKA4eUcB
+        id: MrHu4Aqx
         name: Office
         price: 'From RM 150'
         period: 'per month'
@@ -423,14 +423,14 @@ blocks:
           - 'Delivered monthly'
         buttons:
           -
-            id: 3oe3AKzO
+            id: FpnTOhjZ
             type: link
             label: 'Ask about it'
             link: '#'
             style: outline
     note: 'Prices before delivery. Cancel any month.'
   -
-    id: FySkeG64
+    id: AVeVse1e
     type: feature_grid
     enabled: true
     tone: muted
@@ -441,27 +441,27 @@ blocks:
     columns: '4'
     items:
       -
-        id: 9AIY6nbI
+        id: JTrOGgAv
         icon: coffee
         title: Icons
         text: 'Each point can have an icon.'
       -
-        id: n85QyLmf
+        id: FT8TcHIN
         icon: award
         title: Cards
         text: 'Points as cards, as plain icons, or listed beside the heading.'
       -
-        id: PWXlvOzt
+        id: zIpID0vL
         icon: users
         title: Columns
         text: 'Two, three or four columns.'
       -
-        id: WGaqN3i8
+        id: EySHfrqu
         icon: sparkles
         title: Tones
         text: 'Any section can sit on any background.'
   -
-    id: WmvnvURH
+    id: cLwkG4N8
     type: feature_grid
     enabled: true
     tone: default
@@ -472,22 +472,22 @@ blocks:
     columns: '3'
     items:
       -
-        id: PG5hay2M
+        id: 7weAbL7r
         image: images/cup-of-beans.jpg
         title: 'House Blend'
         text: 'Any point can show a picture instead of an icon.'
       -
-        id: JfDWMkrZ
+        id: btF2wgpm
         image: images/drip-set.jpg
         title: 'Drip bags'
         text: 'Handy for a product, a service or a place.'
       -
-        id: W5CudOUn
+        id: JGPwmlt1
         image: images/copper-kettle.jpg
         title: 'Brewing gear'
         text: 'Pictures and icons can mix in one section.'
   -
-    id: yK12gl0y
+    id: 1ud8fQCV
     type: feature_grid
     enabled: true
     tone: default
@@ -501,27 +501,27 @@ blocks:
     layout: offset
     items:
       -
-        id: eEOWbLC5
+        id: kArWVNKP
         icon: shield-check
         title: One
         text: 'A point with an icon.'
       -
-        id: c1OxHjMY
+        id: UNyh7uIG
         icon: heart
         title: Two
         text: 'Another point.'
       -
-        id: xRzHL6X0
+        id: 0AH8Tdfm
         icon: gift
         title: Three
         text: 'A third.'
       -
-        id: Yp7GRm1G
+        id: 7B72jz5x
         icon: package
         title: Four
         text: 'And a fourth.'
   -
-    id: Bo7a08kC
+    id: ITp7Wg1t
     type: product_cards
     enabled: true
     tone: muted
@@ -530,13 +530,13 @@ blocks:
     heading: 'Three products chosen by hand'
     source: picked
     products:
-      - 57e9d4f2-7da7-4c48-85f2-a99c1b695652
-      - 8303eb36-3745-4203-8123-30b38cbd434f
-      - 325d20d6-f377-4bc6-8636-7ce42a7cab18
+      - 59be4a92-5d23-4c5b-81ef-5ed01b554073
+      - 1240854c-bef1-439e-9679-fd42cfe8cdb0
+      - 178a33f2-3411-4f8e-9545-75c6f0c30bf7
     columns: '3'
     all_link: false
   -
-    id: ySHy2wko
+    id: DWSZVy9H
     type: team
     enabled: true
     tone: default
@@ -545,7 +545,7 @@ blocks:
     heading: 'Small photos'
     layout: compact
   -
-    id: lD42ISzD
+    id: USvfXEC2
     type: recent_posts
     enabled: true
     tone: muted
@@ -556,7 +556,7 @@ blocks:
     limit: 2
     all_link: false
   -
-    id: JKaYlBko
+    id: yIQfPWPx
     type: testimonial
     enabled: true
     tone: default
@@ -564,14 +564,14 @@ blocks:
     layout: single
     testimonials:
       -
-        id: zEvexP0P
+        id: nndctlrf
         quote: 'We switched our café to Kopi Lane’s Liberica last year. Customers ask for it by name now.'
         name: 'Tan Wei Ming'
         role: 'Owner, Roti Ah Seng'
         rating: '5'
         logo: logos/roti-ah-seng.svg
   -
-    id: zrOVfJzF
+    id: Lv4iX1U4
     type: testimonial
     enabled: true
     tone: muted
@@ -581,35 +581,35 @@ blocks:
     layout: carousel
     testimonials:
       -
-        id: BqapzKgV
+        id: 3L19EqR2
         quote: 'The House Blend is the only coffee my whole office agrees on. Orders arrive two days after roasting, every time.'
         name: 'Farah Aziz'
         role: 'Office manager, Lorong Studio'
         rating: '5'
         source: google
       -
-        id: zEvexP0P
+        id: nndctlrf
         quote: 'We switched our café to Kopi Lane’s Liberica last year. Customers ask for it by name now.'
         name: 'Tan Wei Ming'
         role: 'Owner, Roti Ah Seng'
         rating: '5'
         logo: logos/roti-ah-seng.svg
       -
-        id: xsj1SBga
+        id: eCFtysjG
         quote: 'Mei Ling spent an hour helping me set up my new grinder. That’s the kind of shop this is.'
         name: 'Priya Raman'
         role: 'Home brewer'
         rating: '5'
         source: facebook
       -
-        id: UzX0etYd
+        id: bpyWVwQi
         quote: 'Good coffee, fair prices and the drip bags are perfect for the office. Delivery to KL took two days.'
         name: 'Daniel Wong'
         role: 'Kuala Lumpur'
         rating: '4'
         source: google
   -
-    id: eHUecZJM
+    id: p5IB843f
     type: testimonial
     enabled: true
     tone: default
@@ -618,7 +618,7 @@ blocks:
     layout: single
     testimonials:
       -
-        id: e4yy2zsi
+        id: 90GY0PfC
         quote: |-
           Ten years ago we roasted our first batch on a borrowed machine, and burnt most of it.
 
@@ -626,26 +626,26 @@ blocks:
         name: ''
     signatories:
       -
-        id: ia0ZRYpx
+        id: qb5qSMk2
         name: 'Lim Mei Ling'
         role: Founder
         photo: images/team-mei-ling.jpg
       -
-        id: Knc08wHP
-        name: 'Arjun Nair'
+        id: 0zIwtsSk
+        name: 'Luca Moretti'
         role: 'Café manager'
-        photo: images/team-arjun.jpg
+        photo: images/team-luca.jpg
     sign_off: 'With thanks,'
     signature_names: true
     buttons:
       -
-        id: 39Pzy4TO
+        id: rdgiZQTE
         type: link
         label: 'Meet the team'
         link: '/about#team'
         style: outline
   -
-    id: D0USSaf3
+    id: 7OPT6n7q
     type: logo_strip
     enabled: true
     tone: default
@@ -659,7 +659,7 @@ blocks:
       - logos/pulau-print.svg
       - logos/seri-hotel.svg
   -
-    id: lD1gfkhZ
+    id: ncG3M7Wm
     type: logo_strip
     enabled: true
     tone: muted
@@ -672,7 +672,7 @@ blocks:
       - logos/tanjung-florist.svg
       - logos/pulau-print.svg
   -
-    id: xqQX5oR5
+    id: 5dMfWapj
     type: stats
     enabled: true
     tone: default
@@ -683,23 +683,23 @@ blocks:
     image: images/beans-light-wood.jpg
     stats:
       -
-        id: DLTdSCv1
+        id: xljataJL
         value: '12'
         label: 'A figure'
       -
-        id: cNnCdq42
+        id: alDszTyd
         value: 98%
         label: Another
       -
-        id: geUELOun
+        id: kDPgYMfX
         value: 'RM 2k'
         label: 'Any short text'
       -
-        id: jgVMctks
+        id: V7X1Wu1a
         value: 24/7
         label: 'Up to four'
   -
-    id: HiqivTi5
+    id: vvLT8TZX
     type: faq
     enabled: true
     tone: muted
@@ -709,19 +709,19 @@ blocks:
     layout: side
     items:
       -
-        id: UbkK5AKN
+        id: UzgyVQAi
         question: 'How do I order?'
         answer: 'Send us a WhatsApp message or the enquiry form with what you would like. We reply with the total and payment details (DuitNow QR or bank transfer), and post your order once it is paid.'
       -
-        id: xIjuZ0Tu
+        id: ozLcTw3K
         question: 'Do you deliver outside Penang?'
         answer: 'Yes, anywhere in Malaysia, usually in one to three working days. Delivery is free on orders over RM 150; below that it is RM 10 to the peninsula and RM 15 to Sabah and Sarawak.'
       -
-        id: kXiWqV5m
+        id: FGjeiQxS
         question: 'When are the beans roasted?'
         answer: 'Every Tuesday and Friday. We post within two days of roasting, so your coffee is never more than a week old when it arrives.'
   -
-    id: 7xYsIYfQ
+    id: fA9JT0wN
     type: cta
     enabled: true
     tone: default
@@ -735,18 +735,18 @@ blocks:
     image: images/latte-table.jpg
     buttons:
       -
-        id: xSYhBead
+        id: yPrEYa44
         type: link
         label: Primary
         link: '#'
         style: primary
       -
-        id: 9Zz08PKY
+        id: bBU1V8hD
         type: whatsapp
         label: WhatsApp
         style: secondary
   -
-    id: 7samTBj2
+    id: pMKGom52
     type: cta
     enabled: true
     tone: muted
@@ -759,19 +759,19 @@ blocks:
         text: 'The panel takes the primary colour; its buttons turn around to stay readable.'
     buttons:
       -
-        id: d5CYRn6B
+        id: 7Agkgxi2
         type: link
         label: Primary
         link: '#'
         style: primary
       -
-        id: JpmKtyLL
+        id: zHDcrWoC
         type: link
         label: Outline
         link: '#'
         style: outline
   -
-    id: jhMTNhXp
+    id: RxoWXuxF
     type: contact_form
     enabled: true
     tone: default
@@ -780,7 +780,7 @@ blocks:
     heading: 'The form on its own'
     show_details: false
   -
-    id: EGOz4wC1
+    id: VWAciyvl
     type: map_address
     enabled: true
     tone: muted
@@ -790,7 +790,7 @@ blocks:
     show_hours: true
     zoom: 15
   -
-    id: nPkoSvEL
+    id: XmOfa2rz
     type: hero
     enabled: true
     tone: default
@@ -806,13 +806,13 @@ blocks:
     video: videos/pour-over.mp4
     buttons:
       -
-        id: 4TF1MkGO
+        id: gNWMrYl7
         type: link
         label: Primary
         link: '#'
         style: primary
   -
-    id: RgnrOeOH
+    id: j4kHJzvA
     type: hero
     enabled: true
     tone: primary
@@ -828,13 +828,13 @@ blocks:
     image: images/espresso-machine.jpg
     buttons:
       -
-        id: RgKgUUsJ
+        id: ensDzxPz
         type: link
         label: Primary
         link: '#'
         style: primary
       -
-        id: uOxp8Qyx
+        id: LtZ6yNd9
         type: link
         label: Outline
         link: '#'

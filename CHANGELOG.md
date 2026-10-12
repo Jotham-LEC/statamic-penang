@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.5.0 (2026-10-12)
+
+### Changed
+
+- **The theme is a preset.** Globals → Theme and the theme switcher offer the presets (and light and dark) only; fonts, corners and colours are no longer set one by one beside a preset, so a preset is never mixed with settings from another. Settings saved by 1.4 beside the preset are ignored. A look for a brand is a preset added in `app/Theme/Options.php`, which takes hex colours (used exactly where they read) and, new, `primary_dark` for dark mode.
+- **Batik is in batik's own colours**: indigo and soga brown on the cream of undyed cotton, smaller corners, and in the dark a light soga on deep brown, as sogan batik is.
+
+### Changed (sample content)
+
+- **The sample team's names fit their photos**: Luca Moretti, Sofia Alvarez and Kwame Asante join Lim Mei Ling (their photos are renamed `team-luca.jpg`, `team-sofia.jpg` and `team-kwame.jpg`).
+
+### Upgrading from 1.4
+
+- **A site that set its fonts or colours in Globals → Theme**: put them in a preset of its own (README, "A preset for a client's brand") and choose it, or the site shows its preset as the preset is.
+
 ## 1.4.0 (2026-10-12)
 
 Penang for most marketing sites, whatever the business: twenty sections, products as a catalogue, a blog with categories, site search, and wording, buttons and colours that fit the business.

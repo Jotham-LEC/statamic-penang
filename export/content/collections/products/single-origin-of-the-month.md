@@ -1,5 +1,5 @@
 ---
-id: 43c3992c-a9be-4b13-ab86-173b8a9b9181
+id: 9b9e9465-a12f-4871-a400-d2e6a988afc0
 blueprint: product
 badge: new
 title: 'Single Origin of the Month'

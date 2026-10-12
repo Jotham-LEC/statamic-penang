@@ -1,15 +1,15 @@
 whatsapp_number: '60 12-555 0100'
 whatsapp_message: 'Hello Kopi Lane! I have a question.'
 contact_page:
-  - 6226ac0a-09f6-4f56-b65e-87dfae10b80f
+  - 4b1ffb72-a6a0-4827-b826-57e4fa06ad13
 header_button_label: 'Visit the café'
-header_button_link: 'entry::6226ac0a-09f6-4f56-b65e-87dfae10b80f'
+header_button_link: 'entry::4b1ffb72-a6a0-4827-b826-57e4fa06ad13'
 footer_text: 'Small-batch coffee roasted every week in George Town, Penang, and poured in our café on Lorong Kopi.'
 footer_note: 'We reply to messages within one working day.'
 featured_rows: 2
 products_per_page: 6
 search_page:
-  - f2b80668-f000-424b-bfe0-5eb0cb2ebea4
+  - 063b871a-1851-4b2c-b8ff-4e623d965d7c
 announcement:
   -
     type: text
@@ -21,12 +21,12 @@ announcement:
     type: text
     text: ' in Malaysia on orders over RM 150, all of October.'
 announcement_link_label: 'Shop now'
-announcement_link: 'entry::3e795523-56e7-40b6-a29c-d39e26947a63'
+announcement_link: 'entry::16955a7e-519d-4b0e-ae6f-473b9fcbee32'
 announcement_dismissible: true
 legal_line: 'Kopi Lane Roasters Sdn. Bhd. (202301055501)'
 extra_numbers:
   -
-    id: wKBduMl7
+    id: LJtDrZ5Q
     label: Wholesale
     number: '+60 12-555 0199'
     whatsapp: true

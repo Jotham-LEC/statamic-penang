@@ -11,7 +11,7 @@ Built on Blade, Laravel, Statamic and Tailwind CSS v4, with no Antlers. SEO, sha
 ## What's in it
 
 - **A page builder**: Home, About, Contact and any page you add are built from sections editors add, reorder and switch off in the control panel. Each section has a few layouts and takes any of four backgrounds.
-- **A theme builder**: fonts, corners, base and accent colours and light or dark, from one global, applied with no rebuild. Five presets to start from.
+- **A theme builder**: five presets (fonts, corners and colours chosen together) and light or dark, chosen in one global and applied with no rebuild; a preset for a brand is a few lines of code, its colours used exactly where they read.
 - **Content**: Products as a catalogue (categories, prices and sale prices, New/Sale badges, a details list, stock, buttons to your Shopee or Lazada shop, and "Ask on WhatsApp"), a Blog with categories, the Team, and sample content for a made-up Penang coffee roaster.
 - **Listings**: featured rows per category on the products page, pages of products and articles, and breadcrumbs in step with the structured data.
 - **Site search** of pages, products and articles (Statamic's own, on Core), and a **legal page** kind with a table of contents for privacy and terms.
@@ -62,7 +62,19 @@ Every section also takes a background (page, muted, primary colour, inverted), s
 
 ## The theme builder
 
-**Globals → Theme** holds five settings, after [shadcn/ui's themes](https://ui.shadcn.com/themes): heading and body **fonts** (fourteen self-hosted, open-licence fonts), **corners** (none to full), the **base** colour (the greys: stone, zinc, slate, neutral or gray), and the **primary** and **secondary** colours (Tailwind's palette, or any colour). A **preset** fills in what's left empty: Default, Kopitiam, Pantai, Hutan and Batik.
+**Globals → Theme** holds a **preset**: a whole look, with its fonts, corners, base colour (the greys of backgrounds, text and borders) and primary and secondary colours chosen to go together. Five come with Penang: Default, Kopitiam (warm), Pantai (sea), Hutan (forest) and Batik (indigo and soga brown). Editors choose a preset and light, dark or the visitor's choice; they don't mix a preset with settings of their own, so every combination on the site has been seen and checked.
+
+**A preset for a client's brand** is how a site gets its own look. Add it to `PRESETS` in `app/Theme/Options.php`: one of the fourteen fonts for headings and one for text, the corners, a base, and the primary and secondary colours, by Tailwind's names or as hex values (and optionally `primary_dark`, dark mode's primary, where the brand colour would only turn pale). A hex colour is used exactly as given wherever it passes the contrast rules, and stepped to a lighter or darker shade of itself only where it doesn't.
+
+```php
+'acme' => [
+    'label' => 'Acme',
+    'heading_font' => 'cormorant-garamond', 'body_font' => 'montserrat', 'radius' => 'small',
+    'base' => 'stone', 'primary' => '#5a2850', 'secondary' => '#cea05f',
+],
+```
+
+Then add it to the Preset field's options in `resources/blueprints/globals/theme.yaml` (`acme: Acme`), choose it under Globals → Theme, and check it on `/components` in light and dark. Keep the other presets or remove them, as suits the client.
 
 ![Four presets, light and dark: buttons, badges, alerts and the four section backgrounds](export/docs/images/site-presets.png)
 
@@ -75,9 +87,9 @@ How it works:
 5. Each section background (`data-tone`) sets the same tokens again for what's inside it, so buttons and cards in a primary-coloured band stay readable.
 6. Tailwind's own palette is switched off (`--color-*: initial`): views can only use the theme's colours.
 
-A brand colour picked by hand is used exactly as picked wherever it passes the contrast rules; only where it fails (a dark plum on the dark page, say) does the theme step to a lighter or darker shade of it. The fonts are fourteen: Inter, Manrope, Plus Jakarta Sans, Figtree, Outfit, Montserrat, Poppins and DM Sans; Lora, Fraunces and Source Serif; and, for headings, Cormorant Garamond, Playfair Display and DM Serif Display.
+The fourteen fonts: Inter, Manrope, Plus Jakarta Sans, Figtree, Outfit, Montserrat, Poppins and DM Sans; Lora, Fraunces and Source Serif; and, for headings, Cormorant Garamond, Playfair Display and DM Serif Display.
 
-Signed in to the control panel, you get a **Theme** button on the site to try presets and settings before saving them; only you see them.
+Signed in to the control panel, you get a **Theme** button on the site to try the presets before saving one; only you see it.
 
 ## Requirements
 
@@ -134,7 +146,7 @@ If you change views or styles: `npm install && npm run build`.
 
 **To add a section**: add a set to `page_builder.yaml` (in the control panel, Fieldsets → Page builder, or in the file) with `import: section_options` last, and a view `components/blocks/{set-handle}.blade.php` that wraps its content in `<x-section :block="$block">`. Use only the theme's colours (`bg-primary`, `text-muted-foreground`…).
 
-**To add a preset or a font**: add it to `app/Theme/Options.php` (a font also needs its `.woff2` in `resources/fonts/{key}/` and an `@font-face` in `resources/css/fonts.css`), then add it to the Theme blueprint's options.
+**To add a preset or a font**: add it to `app/Theme/Options.php` (a font also needs its `.woff2` in `resources/fonts/{key}/` and an `@font-face` in `resources/css/fonts.css`). The Theme global lists the presets from there (run `php DEV_FILES/build/model.php` in the working site, or add the option to `resources/blueprints/globals/theme.yaml`).
 
 **Wording**: what the templates write themselves ("All products", "Ask for a price", "Out of stock", the WhatsApp label, the 404 page…) is editable under **Globals → Site settings → Labels**, and the form's button and thank-you message on each Enquiry form section. The rest (screen-reader labels, dates, days) goes through `__()`: `lang/ms.json` (Malay) and `lang/zh_CN.json` (Simplified Chinese) are included, used when the site's language (Settings → Sites, `lang`) is `ms` or `zh_CN`; add `lang/{lang}.json` for another. Laravel's own form-validation messages need [laravel-lang](https://laravel-lang.com) for those languages.
 

@@ -1,6 +1,6 @@
 title: Products
 template: products/show
-mount: 3e795523-56e7-40b6-a29c-d39e26947a63
+mount: 16955a7e-519d-4b0e-ae6f-473b9fcbee32
 taxonomies:
   - product_categories
 revisions: false

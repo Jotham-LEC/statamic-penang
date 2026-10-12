@@ -28,10 +28,10 @@ The sample photos in `public/assets/images` are dedicated to the public domain u
 | `latte-pour.jpg` | Latte art 3 | Kim Sanso | [Wikimedia Commons](https://commons.wikimedia.org/w/index.php?curid=70214602) |
 | `latte-table.jpg` | Coffee Bean | Freddie Marriage | [StockSnap](https://stocksnap.io/photo/coffee-bean-6G002B3UIN) |
 | `tamping.jpg` | Cafe Coffee | Freestocks.org | [StockSnap](https://stocksnap.io/photo/cafe-coffee-ZM7EROU6P0) |
-| `team-arjun.jpg` | Business Man | Direct Media | [StockSnap](https://stocksnap.io/photo/business-man-7BQNRHB6EX) |
-| `team-daniel.jpg` | Male Professional | Kristin Hardwick | [StockSnap](https://stocksnap.io/photo/male-professional-6QXAIH13O6) |
+| `team-luca.jpg` | Business Man | Direct Media | [StockSnap](https://stocksnap.io/photo/business-man-7BQNRHB6EX) |
+| `team-kwame.jpg` | Male Professional | Kristin Hardwick | [StockSnap](https://stocksnap.io/photo/male-professional-6QXAIH13O6) |
 | `team-mei-ling.jpg` | Person Smiling | Matt Moloney | [StockSnap](https://stocksnap.io/photo/person-smiling-QH2V8JROLS) |
-| `team-nurul.jpg` | Business Woman | Direct Media | [StockSnap](https://stocksnap.io/photo/business-woman-FPQIEQBMPA) |
+| `team-sofia.jpg` | Business Woman | Direct Media | [StockSnap](https://stocksnap.io/photo/business-woman-FPQIEQBMPA) |
 
 `public/assets/videos/pour-over.mp4` is made from two of these photos (`hero-pour-over.jpg` and `latte-pour.jpg`), and is CC0 like them.
 

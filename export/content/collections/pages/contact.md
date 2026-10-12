@@ -1,10 +1,10 @@
 ---
-id: 6226ac0a-09f6-4f56-b65e-87dfae10b80f
+id: 4b1ffb72-a6a0-4827-b826-57e4fa06ad13
 blueprint: page
 title: Contact
 blocks:
   -
-    id: GnfUNZYm
+    id: KSLn2OdF
     type: hero
     enabled: true
     tone: default
@@ -17,7 +17,7 @@ blocks:
         type: text
         text: 'Questions about an order, wholesale, or which beans to try? Message us on WhatsApp, send the form, or drop by the café.'
   -
-    id: NZ5GmXqE
+    id: tj8pQ9cl
     type: steps
     enabled: true
     tone: default
@@ -27,22 +27,22 @@ blocks:
     layout: horizontal
     steps:
       -
-        id: eZnkz1VM
+        id: 3cCpQ39M
         icon: messages-square
         title: 'Tell us what you’d like'
         text: 'On WhatsApp or with the form below: the coffee, how much, and how you brew.'
       -
-        id: 7FjBG741
+        id: L9qzX2P7
         icon: receipt
         title: 'We send the total'
         text: 'With delivery, and how to pay: DuitNow QR or bank transfer.'
       -
-        id: nHgOYitf
+        id: w9TX3MjN
         icon: truck
         title: 'We roast and post'
         text: 'Within two days of roasting, anywhere in Malaysia.'
   -
-    id: JYjSYfi3
+    id: tjZW3NVe
     type: contact_form
     enabled: true
     tone: default
@@ -55,7 +55,7 @@ blocks:
     show_details: true
     anchor: enquiry
   -
-    id: KdVJQl5c
+    id: bsje3fJd
     type: map_address
     enabled: true
     tone: muted
@@ -70,7 +70,7 @@ blocks:
     zoom: 16
     anchor: visit
   -
-    id: x6wTjSZq
+    id: NCorUx4t
     type: table
     enabled: true
     tone: default
@@ -102,7 +102,7 @@ blocks:
           - '2–4 working days'
     caption: 'Cafés and offices on a wholesale plan get free delivery on every order.'
   -
-    id: eG3qlqGq
+    id: 8g6Ds3wx
     type: faq
     enabled: true
     tone: default
@@ -127,23 +127,23 @@ blocks:
     layout: accordion
     items:
       -
-        id: UbkK5AKN
+        id: UzgyVQAi
         question: 'How do I order?'
         answer: 'Send us a WhatsApp message or the enquiry form with what you would like. We reply with the total and payment details (DuitNow QR or bank transfer), and post your order once it is paid.'
       -
-        id: xIjuZ0Tu
+        id: ozLcTw3K
         question: 'Do you deliver outside Penang?'
         answer: 'Yes, anywhere in Malaysia, usually in one to three working days. Delivery is free on orders over RM 150; below that it is RM 10 to the peninsula and RM 15 to Sabah and Sarawak.'
       -
-        id: kXiWqV5m
+        id: FGjeiQxS
         question: 'When are the beans roasted?'
         answer: 'Every Tuesday and Friday. We post within two days of roasting, so your coffee is never more than a week old when it arrives.'
       -
-        id: CNeAbPXz
+        id: bZZ6HMka
         question: 'Whole beans or ground?'
         answer: 'Either. Tell us how you brew (espresso, pour-over, French press, kopi sock) and we grind for it.'
       -
-        id: SySKJx31
+        id: lwBxSFpX
         question: 'Do you supply cafés and offices?'
-        answer: 'Yes. Wholesale prices start from 5 kg a month, and we lend cafés a grinder and train their staff. Ask Daniel through the enquiry form.'
+        answer: 'Yes. Wholesale prices start from 5 kg a month, and we lend cafés a grinder and train their staff. Ask Kwame through the enquiry form.'
 ---

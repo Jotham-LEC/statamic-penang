@@ -18,31 +18,22 @@ document.querySelectorAll('[data-mode-toggle]').forEach((button) => {
     });
 });
 
-// The theme switcher (components/site/theme-switcher): its choices go in a
-// cookie the server reads, and the page reloads in the new theme. Choosing a
-// preset starts again from that preset.
+// The theme switcher (components/site/theme-switcher): the chosen preset goes
+// in a cookie the server reads, and the page reloads in it.
 const themeForm = document.querySelector('[data-theme-form]');
 
 if (themeForm) {
     const cookie = 'penang_theme';
-    const save = (choices) => {
-        document.cookie = `${cookie}=${encodeURIComponent(JSON.stringify(choices))}; path=/; max-age=2592000; SameSite=Lax`;
+    const reload = (value, maxAge) => {
+        document.cookie = `${cookie}=${value}; path=/; max-age=${maxAge}; SameSite=Lax`;
         window.location.reload();
     };
 
     themeForm.querySelector('[name="preset"]').addEventListener('change', (event) => {
-        save({ preset: event.target.value });
+        reload(encodeURIComponent(JSON.stringify({ preset: event.target.value })), 2592000);
     });
-
-    themeForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        save(Object.fromEntries(new FormData(themeForm)));
-    });
-
-    themeForm.querySelector('[data-theme-reset]').addEventListener('click', () => {
-        document.cookie = `${cookie}=; path=/; max-age=0; SameSite=Lax`;
-        window.location.reload();
-    });
+    themeForm.addEventListener('submit', (event) => event.preventDefault());
+    themeForm.querySelector('[data-theme-reset]').addEventListener('click', () => reload('', 0));
 }
 
 // Dropdowns (the main menu's second level): the button shows and hides its

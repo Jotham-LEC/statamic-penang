@@ -138,7 +138,7 @@
                     </div>
                 </div>
                 <div class="flex -space-x-2">
-                    @foreach (['Tan Wei Ming', 'Arjun Nair', 'Siti Rahman', 'Lim Mei Ling'] as $name)
+                    @foreach (['Tan Wei Ming', 'Luca Moretti', 'Siti Rahman', 'Lim Mei Ling'] as $name)
                         <x-ui.avatar :name="$name" size="sm" class="ring-card ring-2" />
                     @endforeach
                 </div>

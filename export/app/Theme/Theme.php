@@ -55,6 +55,9 @@ final class Theme
             $resolved[$key] = self::valid($key, $value) ? strtolower(trim($value)) : Options::PRESETS[$preset][$key];
         }
 
+        // A preset may give dark mode a primary colour of its own.
+        $resolved['primary_dark'] = Options::PRESETS[$preset]['primary_dark'] ?? null;
+
         $mode = $settings['mode'] ?? null;
         $resolved['mode'] = isset(Options::MODES[$mode]) ? $mode : 'system';
 
@@ -111,7 +114,7 @@ final class Theme
 
         $default = [
             'light' => $this->surface($base, $primary, $secondary, 'light'),
-            'dark' => $this->surface($base, $primary, $secondary, 'dark'),
+            'dark' => $this->surface($base, $this->settings['primary_dark'] ? self::scale($this->settings['primary_dark']) : $primary, $secondary, 'dark'),
         ];
 
         $palette = ['default' => $default];
@@ -240,7 +243,7 @@ final class Theme
             fn (Colour $c) => $c->contrast($background) >= self::AA
                 && $c->contrast($muted) >= self::AA
                 && self::readableOn($c, $foregrounds)->contrast($c) >= self::AA,
-            $this->picked('primary'),
+            $this->picked($light || ! $this->settings['primary_dark'] ? 'primary' : 'primary_dark'),
         );
         // The secondary is a fill only (badges, highlights): near its 500 shade,
         // with whichever text reads on it.
@@ -391,7 +394,7 @@ final class Theme
      */
     private function picked(string $which): ?Colour
     {
-        $value = $this->settings[$which];
+        $value = $this->settings[$which] ?? null;
         $colour = Colour::isHex($value) ? Colour::fromHex($value) : null;
 
         return $colour && $colour->l > 0.001 && $colour->l < 0.999 ? $colour : null;

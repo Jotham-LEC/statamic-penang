@@ -1,22 +1,12 @@
-{{-- Try the theme without saving it: the presets and each setting, kept in
-     this browser only (the penang_theme cookie, read by App\Theme\SiteTheme).
+{{-- Try a preset without saving it, kept in this browser only (the
+     penang_theme cookie, read by App\Theme\SiteTheme).
      Shown to someone signed in to the control panel, and to everyone on a demo
      site (PENANG_THEME_PREVIEW). Saving is done in the Theme global. --}}
 @props(['theme'])
 @php
     use App\Theme\Options;
 
-    $settings = $theme->settings;
-    $colours = collect(Options::COLOURS)->mapWithKeys(fn ($c) => [$c => ucfirst($c)])->all();
-    $selects = [
-        'preset' => [__('Preset'), collect(Options::PRESETS)->map->label->all()],
-        'heading_font' => [__('Headings'), collect(Options::FONTS)->map->label->all()],
-        'body_font' => [__('Text'), collect(Options::FONTS)->map->label->all()],
-        'radius' => [__('Corners'), collect(Options::RADII)->map->label->all()],
-        'base' => [__('Base colour'), Options::BASES],
-        'primary' => [__('Primary'), $colours],
-        'secondary' => [__('Secondary'), $colours],
-    ];
+    $presets = collect(Options::PRESETS)->map->label->all();
 @endphp
 <div class="fixed bottom-4 left-4 z-30 sm:bottom-6 sm:left-6" data-theme-switcher>
     <button
@@ -46,22 +36,20 @@
             </button>
         </div>
         <p class="text-muted-foreground text-xs">
-            {{ __('Only you see these choices. To keep them, set them in the control panel: Globals → Theme.') }}
+            {{ __('Only you see this. To keep a preset, choose it in the control panel: Globals → Theme.') }}
         </p>
-        @foreach ($selects as $key => [$label, $options])
-            <x-ui.field
-                :name="$key"
-                :label="$label"
-                type="select"
-                :options="$options"
-                :value="$settings[$key]"
-                required
-                class="text-sm"
-            />
-        @endforeach
+        <x-ui.field
+            name="preset"
+            :label="__('Preset')"
+            type="select"
+            :options="$presets"
+            :value="$theme->settings['preset']"
+            required
+            class="text-sm"
+        />
         <div class="flex gap-2 pt-2">
-            <x-ui.button type="submit" size="sm" class="flex-1">{{ __('Apply') }}</x-ui.button>
-            <x-ui.button type="button" size="sm" variant="outline" data-theme-reset>{{ __('Reset') }}</x-ui.button>
+            <x-ui.button type="button" size="sm" variant="outline" class="flex-1" data-theme-reset>
+                {{ __('Back to the saved theme') }}</x-ui.button>
         </div>
     </form>
 </div>

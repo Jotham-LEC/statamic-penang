@@ -1,5 +1,5 @@
 ---
-id: 4d9897ba-faee-4fdf-ac4d-d1190ff26287
+id: 57575b8b-fe67-4313-9336-a895be6eff29
 blueprint: product
 badge: sale
 compare_at_price: 32
