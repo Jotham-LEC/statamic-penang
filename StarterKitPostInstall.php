@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Process;
 
 /**
@@ -21,6 +22,7 @@ class StarterKitPostInstall
 
         $this->artisan($console, ['migrate', '--force'], 'Marketing Toolkit tables (php artisan migrate)');
         $this->restoreAssetMeta($console);
+        $agents = $this->installAgentFiles($console);
         $this->artisan($console, ['statamic:assets:meta', 'assets'], 'Asset library (php please assets:meta)');
         $this->artisan($console, ['statamic:stache:clear'], 'Content index (php please stache:clear)');
         $this->artisan($console, ['statamic:search:update', '--all'], 'Site search (php please search:update)');
@@ -40,10 +42,52 @@ class StarterKitPostInstall
         $console->line('  2. Set APP_URL in .env to the site’s address.');
         $console->line('  3. Open /cp: replace Kopi Lane Roasters under Marketing → Brand, Globals → Site settings and Globals → Theme.');
         $console->line('  4. See every section in your theme at /components.');
+        if ($agents) {
+            $console->line('  5. For AI coding agents: php artisan boost:install (choose your agents, and Penang\'s and the Marketing Toolkit\'s guidelines and skills).');
+        }
         $console->line('');
         $console->line('  The guide for the people who will edit the site is docs/user-manual.md.');
         $console->line('  After changing templates or styles: npm install && npm run build');
         $console->line('');
+    }
+
+    /**
+     * Penang's guidelines and skills for AI coding agents (the optional `ai`
+     * module): into .ai/, where Laravel Boost's boost:install finds a project's
+     * own. The installer skips hidden folders, so the kit ships them in
+     * resources/ai. A file already in .ai/ is kept. Its boost.json goes to the
+     * project's root (unless there is one): it ticks the Marketing Toolkit's
+     * and Statamic's own guidelines and skills in boost:install.
+     */
+    private function installAgentFiles($console): bool
+    {
+        $staged = resource_path('ai');
+        if (! is_dir($staged)) {
+            return false;
+        }
+
+        if (is_file("{$staged}/boost.json")) {
+            if (! is_file(base_path('boost.json'))) {
+                copy("{$staged}/boost.json", base_path('boost.json'));
+            }
+            unlink("{$staged}/boost.json");
+        }
+
+        $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($staged, FilesystemIterator::SKIP_DOTS));
+        foreach ($files as $file) {
+            $target = base_path('.ai/'.substr($file->getPathname(), strlen($staged) + 1));
+            if (! is_dir(dirname($target))) {
+                mkdir(dirname($target), 0755, true);
+            }
+            if (! is_file($target)) {
+                copy($file->getPathname(), $target);
+            }
+        }
+        (new Filesystem)->deleteDirectory($staged);
+
+        $console->line('  ✓ Guidelines and skills for AI coding agents, in .ai/ (Laravel Boost)');
+
+        return true;
     }
 
     /**

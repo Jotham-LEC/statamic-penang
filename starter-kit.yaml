@@ -28,4 +28,12 @@ export_paths:
   - docs
   - NOTICE.md
 dependencies:
-  jotham-lec/statamic-marketing-toolkit: 0.26.0
+  jotham-lec/statamic-marketing-toolkit: 0.27.0
+modules:
+  ai:
+    prompt: "Add Laravel Boost, with Penang's and the Marketing Toolkit's guidelines, skills and tools for AI coding agents?"
+    export_paths:
+      - app/Boost
+      - resources/ai
+    dependencies_dev:
+      laravel/boost: ^2.10

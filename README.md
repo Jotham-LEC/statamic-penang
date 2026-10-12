@@ -124,6 +124,23 @@ Blade, Tailwind CSS v4 and Statamic's own content model: no Antlers and no extra
 - **Search:** `config/statamic/search.php`. Run `php please search:update` to rebuild the index.
 - **Demo mode:** `PENANG_THEME_PREVIEW=true` in `.env` shows the theme switcher to every visitor.
 
+## For AI coding agents: a Laravel Boost extension
+
+Penang and the Marketing Toolkit extend [Laravel Boost](https://github.com/laravel/boost), Laravel's official AI toolkit, with what an agent needs to know about this site. They add to Boost and to Statamic's own Boost guideline, and don't replace either. The installer offers it as an option ("Add Laravel Boost…"), which adds Boost as a dev dependency. Then run `php artisan boost:install` and choose your agents (Claude Code, Cursor, Codex, OpenCode…).
+
+- **Guidelines:** how Penang is built and its rules (theme colours only, presets, sections, Statamic Core's limits, Blade traps), and how the Marketing Toolkit fits (what not to hand-write).
+- **Skills:**
+  - `penang-add-section`: a new section or layout;
+  - `penang-client-preset`: a client's brand as a theme preset;
+  - `penang-launch`: from the sample site to the client's;
+  - from the toolkit, `marketing-toolkit-seo-rules` and `marketing-toolkit-extend`.
+- **MCP tools**, added to Boost's own MCP server and read-only:
+  - `penang-theme-check`: a preset's contrast in every background, light and dark, and the colours it really uses;
+  - `penang-sections`: the page builder's sections, layouts and fields;
+  - from the toolkit, `marketing-toolkit-page-seo`, `marketing-toolkit-report` and `marketing-toolkit-redirect`.
+
+Every name starts with `penang-` or `marketing-toolkit-`, so nothing clashes with Boost's or Statamic's own. Turn the tools off with `'boost_tools' => false` in `config/penang.php` (and `marketing-toolkit.boost.tools`).
+
 ## Privacy
 
 Nothing is sent anywhere unless the visitor acts. The map loads from OpenStreetMap when the visitor scrolls to it. Videos load from YouTube or Vimeo only when played. WhatsApp, Google Maps and Waze are links the visitor follows. The Marketing Toolkit's tracking runs only with the IDs you set, under Consent Mode.

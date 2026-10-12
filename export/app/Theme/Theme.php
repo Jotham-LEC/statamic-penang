@@ -55,13 +55,53 @@ final class Theme
             $resolved[$key] = self::valid($key, $value) ? strtolower(trim($value)) : Options::PRESETS[$preset][$key];
         }
 
-        // A preset may give dark mode a primary colour of its own.
-        $resolved['primary_dark'] = Options::PRESETS[$preset]['primary_dark'] ?? null;
+        // A preset may give dark mode a primary colour of its own (a hex value);
+        // one is also accepted here, to try a preset before adding it.
+        $dark = $settings['primary_dark'] ?? null;
+        $resolved['primary_dark'] = Colour::isHex($dark) ? strtolower(trim($dark)) : (Options::PRESETS[$preset]['primary_dark'] ?? null);
 
         $mode = $settings['mode'] ?? null;
         $resolved['mode'] = isset(Options::MODES[$mode]) ? $mode : 'system';
 
         $this->settings = $resolved;
+    }
+
+    /**
+     * The text colours and what they're read on, in every tone and mode, that
+     * fall short of WCAG AA, and the field edges short of 3:1: an empty list
+     * for a readable theme. tests/Feature/Theme/ContrastTest.php checks the
+     * presets the same way.
+     *
+     * @return list<string>
+     */
+    public function contrastFailures(): array
+    {
+        $pairs = [
+            ['foreground', 'background'], ['muted-foreground', 'background'], ['muted-foreground', 'muted'],
+            ['card-foreground', 'card'], ['muted-foreground', 'card'], ['primary', 'background'],
+            ['primary-foreground', 'primary'], ['primary-foreground', 'primary-hover'], ['secondary-foreground', 'secondary'],
+            ['secondary-foreground', 'secondary-hover'], ['accent-foreground', 'accent'], ['destructive', 'background'],
+            ['destructive', 'card'], ['destructive-foreground', 'destructive'],
+        ];
+        $colour = fn (Colour|Mix $c) => $c instanceof Mix ? $c->colour() : $c;
+        $failures = [];
+
+        foreach ($this->palette() as $tone => $modes) {
+            foreach ($modes as $mode => $tokens) {
+                foreach ($pairs as [$text, $on]) {
+                    $ratio = $colour($tokens[$text])->contrast($colour($tokens[$on]));
+                    if ($ratio < self::AA) {
+                        $failures[] = sprintf('%s on %s (%s, %s): %.2f', $text, $on, $tone, $mode, $ratio);
+                    }
+                }
+                $edge = $colour($tokens['input'])->contrast($colour($tokens['background']));
+                if ($edge < self::NON_TEXT) {
+                    $failures[] = sprintf('input on background (%s, %s): %.2f', $tone, $mode, $edge);
+                }
+            }
+        }
+
+        return $failures;
     }
 
     /** Whether a value is one the setting offers: anything else is ignored. */

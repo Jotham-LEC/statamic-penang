@@ -10,4 +10,12 @@ return [
      */
     'theme_preview' => (bool) env('PENANG_THEME_PREVIEW', false),
 
+    /*
+     * With Laravel Boost installed, Penang's read-only tools join Boost's MCP
+     * server for AI coding agents: penang-theme-check (a preset's contrast and
+     * colours) and penang-sections (the page builder's sections). Set to false
+     * to leave them out.
+     */
+    'boost_tools' => true,
+
 ];

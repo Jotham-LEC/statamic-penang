@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.6.0 (2026-10-12)
+
+### Added
+
+- **A Laravel Boost extension for AI coding agents**, offered by the installer (default no), which adds Laravel Boost as a dev dependency.
+  - **Guidelines:** Penang's guideline goes into `.ai/guidelines/penang.md`.
+  - **Skills:** `penang-add-section`, `penang-client-preset` and `penang-launch` go into `.ai/skills/`.
+  - **MCP tools:** two read-only tools join Boost's MCP server: `penang-theme-check` (a preset's contrast and real colours, and the preset entry to paste) and `penang-sections` (the page builder's sections).
+  - **Marketing Toolkit:** its own Boost guidelines, skills and tools come with it (0.27.0).
+  - **Setup:** run `php artisan boost:install` to choose agents. A `boost.json` ticks the Marketing Toolkit's and Statamic's own guidelines and skills. Every name is prefixed, so nothing clashes with Boost's or Statamic's own.
+- A theme can be checked in code: `Theme::contrastFailures()`; and a `primary_dark` can be tried before it's in a preset.
+
 ## 1.5.2 (2026-10-12)
 
 ### Fixed

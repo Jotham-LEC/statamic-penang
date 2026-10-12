@@ -1,0 +1,6 @@
+{
+    "packages": [
+        "jotham-lec/statamic-marketing-toolkit",
+        "statamic/cms"
+    ]
+}
