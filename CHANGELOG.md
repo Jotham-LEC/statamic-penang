@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.1 (2026-10-12)
+
+- The README introduces the Laravel Boost extension at the top. No code changed.
+
 ## 1.6.0 (2026-10-12)
 
 ### Added

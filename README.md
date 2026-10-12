@@ -1,6 +1,6 @@
 # Penang
 
-A complete website for a small business, ready to fill in. Editors build pages from twenty sections in the control panel, choose a look from five themes, and manage products, a blog, a team and enquiries, all without code. Penang runs on **Statamic Core**, the free edition, so a client site needs no Pro licence.
+A complete website for a small business, ready to fill in. Editors build pages from twenty sections in the control panel, choose a look from five themes, and manage products, a blog, a team and enquiries, all without code. Penang runs on **Statamic Core**, the free edition, so a client site needs no Pro licence. For developers who work with AI coding agents, it's also a Laravel Boost extension.
 
 **Live demo:** <https://penang.cothink.ing> (try the themes with the **Theme** button at the bottom left).
 
@@ -16,6 +16,7 @@ A complete website for a small business, ready to fill in. Editors build pages f
 - **WhatsApp** on every page, and buttons that open a chat, a call, an email or a file.
 - **Your wording.** Labels such as "All products" or "Ask for a price" are editable, and the templates come in English, Malay and Chinese.
 - **SEO, redirects and analytics, set up for you** with the free [Marketing Toolkit](https://statamic.com/addons/jothamlec/marketing-toolkit) (more below).
+- **Ready for AI coding agents.** An optional Laravel Boost extension (offered at install) gives Claude Code, Cursor, Codex and other agents Penang's and the Marketing Toolkit's guidelines, skills and read-only MCP tools (more below).
 - **A user manual** for whoever edits the site: [docs/user-manual.md](https://github.com/Jotham-LEC/statamic-penang/blob/main/export/docs/user-manual.md).
 
 Sample content for a made-up coffee roaster in Penang shows every part working, and the `/components` page shows every section at once.
