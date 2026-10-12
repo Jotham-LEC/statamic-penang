@@ -33,6 +33,8 @@ The sample photos in `public/assets/images` are dedicated to the public domain u
 | `team-mei-ling.jpg` | Person Smiling | Matt Moloney | [StockSnap](https://stocksnap.io/photo/person-smiling-QH2V8JROLS) |
 | `team-sofia.jpg` | Business Woman | Direct Media | [StockSnap](https://stocksnap.io/photo/business-woman-FPQIEQBMPA) |
 
+`public/assets/images/share-kopi-lane.jpg`, the sample's default share image, is made from `hero-baristas.jpg` (DEV_FILES/build/share-image.html).
+
 `public/assets/videos/pour-over.mp4` is made from two of these photos (`hero-pour-over.jpg` and `latte-pour.jpg`), and is CC0 like them.
 
 The partner logos in `public/assets/logos` and the set previews in `public/assets/set-previews` were made for Penang (the previews are screenshots of its own sections). Kopi Lane Roasters and every business, person, address and number in the sample content are made up.

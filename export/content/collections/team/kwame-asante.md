@@ -1,5 +1,5 @@
 ---
-id: d9c67fd5-4c71-42e0-8126-6de58e6619ec
+id: c23ce7b2-f787-4a9c-b527-02369bd16586
 blueprint: person
 title: 'Kwame Asante'
 role: 'Wholesale and operations'

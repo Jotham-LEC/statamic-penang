@@ -28,4 +28,4 @@ export_paths:
   - docs
   - NOTICE.md
 dependencies:
-  jotham-lec/statamic-marketing-toolkit: 0.25.1
+  jotham-lec/statamic-marketing-toolkit: 0.26.0

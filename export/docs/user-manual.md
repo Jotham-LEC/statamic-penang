@@ -146,6 +146,7 @@ The website has one form, as the edition of Statamic it runs on (Statamic Core) 
 
 Your phone, email, address, opening hours and social media links appear in several places: the footer, the contact page and the map. You fill them in once:
 
+- **Marketing → Brand**: the **default share image**, the picture shown when a page is shared and has no picture of its own (a share card is otherwise drawn for each page by itself). Use a 1200 × 630 picture of your business with its name.
 - **Marketing → Brand → Publisher**: the business name, phone, email, address, the map position (latitude and longitude: in Google Maps, right-click your shop and click the numbers to copy them), opening hours and social media links (under *Profiles elsewhere*, one full address each, like `https://www.instagram.com/yourbusiness`).
 - **Globals → Site settings**: your **WhatsApp number** (with the country code, for example `60 12-345 6789`; the green WhatsApp button appears on every page once it is filled in), the first message visitors see, the button at the top right of every page, more phone numbers (each with a label, and whether it takes WhatsApp), and, for the footer, a short text about your business, a note (like "We reply within one working day") and a legal line (your company name and registration number).
 

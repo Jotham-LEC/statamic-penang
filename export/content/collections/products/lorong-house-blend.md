@@ -1,27 +1,27 @@
 ---
-id: 72266235-4a03-462e-912a-8b458b6e2ea6
+id: 15ea2843-7d8b-43e2-a40d-0a8fdabe90cf
 blueprint: product
 specs_heading: 'About this coffee'
 specs:
   -
-    id: YGAqOhim
+    id: q20dNOYr
     label: Origin
     value: 'Sumatra and Johor'
   -
-    id: bTfTlp0M
+    id: naNjIDrY
     label: Roast
     value: Medium-dark
   -
-    id: LR5kOgHA
+    id: kwt605sC
     label: Weight
     value: '250 g, whole beans or ground'
 buy_links:
   -
-    id: oJQNN1wx
+    id: izdJ4kAl
     label: 'Buy on Shopee'
     url: 'https://shopee.com.my/kopilane.example'
   -
-    id: ssvB1Qos
+    id: VQ2G15fc
     label: 'Buy on Lazada'
     url: 'https://www.lazada.com.my/shop/kopilane-example'
 title: 'Lorong House Blend'

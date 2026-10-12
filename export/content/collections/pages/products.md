@@ -1,11 +1,11 @@
 ---
-id: 16955a7e-519d-4b0e-ae6f-473b9fcbee32
+id: 7ebbe4d3-7376-4f23-9a3a-1c2f281d5e1d
 blueprint: page
 title: Products
 template: products/index
 blocks:
   -
-    id: DtH9MWuv
+    id: Jyv8Pvfs
     type: hero
     enabled: true
     tone: default

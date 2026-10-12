@@ -22,7 +22,7 @@ latitude: '5.4206'
 longitude: '100.3436'
 opening_hours:
   -
-    id: pQM7i1ox
+    id: Fqx45z4p
     days:
       - Monday
       - Wednesday
@@ -31,10 +31,11 @@ opening_hours:
     opens: '08:00'
     closes: '18:00'
   -
-    id: QUtDsThz
+    id: eZ2LY9RR
     days:
       - Saturday
       - Sunday
     opens: '09:00'
     closes: '17:00'
 currency: MYR
+default_image: images/share-kopi-lane.jpg

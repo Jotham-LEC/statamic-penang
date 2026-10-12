@@ -1,24 +1,24 @@
 ---
-id: 1240854c-bef1-439e-9679-fd42cfe8cdb0
+id: c803e06c-e460-4161-af3d-28ad54d39d73
 blueprint: product
 badge: custom
 badge_text: 'For festivals'
 specs_heading: 'What’s inside'
 specs:
   -
-    id: Iy97CkcO
+    id: KIsSfCs1
     label: Coffee
     value: 'Two 250 g bags of your choice'
   -
-    id: oU3q5kFH
+    id: qfsSbz5c
     label: 'Drip bags'
     value: 'A pack of 10 House Blend'
   -
-    id: AnTsDO2D
+    id: gsLeM2Xl
     label: Card
     value: 'Printed with your message'
   -
-    id: 43do4IyC
+    id: 9faCqxVx
     label: Box
     value: 'Recycled kraft, with a ribbon'
 title: 'Corporate Gift Box'

@@ -108,7 +108,7 @@ Then:
 
 1. Create your user: `php please make:user --super`.
 2. Set `APP_URL` in `.env` to the site's address.
-3. In the control panel, replace the sample business under **Marketing → Brand** (name, contact details, address, opening hours), **Globals → Site settings** (WhatsApp number, header button, footer) and **Globals → Theme**.
+3. In the control panel, replace the sample business under **Marketing → Brand** (name, contact details, address, opening hours, and the default share image), **Globals → Site settings** (WhatsApp number, header button, footer) and **Globals → Theme**.
 4. Replace or delete the sample pages, products, articles, team and pictures.
 5. Give the [user manual](https://github.com/Jotham-LEC/statamic-penang/blob/main/export/docs/user-manual.md) to whoever edits the site.
 

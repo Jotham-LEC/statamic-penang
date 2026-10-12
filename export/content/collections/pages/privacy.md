@@ -1,11 +1,11 @@
 ---
-id: 855be36b-4f50-483a-bad4-9624ae9e75c3
+id: 8ad87ae2-30c9-46d3-80ad-161dfe2565c5
 blueprint: page
 title: 'Privacy notice'
 template: legal
 blocks:
   -
-    id: DlePJcon
+    id: hUqZrDQa
     type: text
     enabled: true
     tone: default
@@ -21,7 +21,7 @@ blocks:
             type: text
             text: 'Kopi Lane Roasters Sdn. Bhd. runs this website and the café at 28 Lorong Kopi, George Town. This notice explains what personal data we collect, why, and your rights under Malaysia’s Personal Data Protection Act 2010.'
   -
-    id: 6x9V7oGW
+    id: UTYlf28B
     type: text
     enabled: true
     tone: default
@@ -59,7 +59,7 @@ blocks:
                     type: text
                     text: 'If you agree to analytics cookies, how you use this website, without your name'
   -
-    id: hxyJO7eW
+    id: xBIdo92U
     type: text
     enabled: true
     tone: default
@@ -75,7 +75,7 @@ blocks:
             type: text
             text: 'To answer your enquiry, deliver your order, and, if you ask us to, tell you about new coffee. We never sell your data.'
   -
-    id: TE0tfC1Y
+    id: baMfVcCB
     type: text
     enabled: true
     tone: default
@@ -91,7 +91,7 @@ blocks:
             type: text
             text: 'Enquiries for two years, orders for seven years (for our tax records), then we delete them.'
   -
-    id: Du9JixEh
+    id: C3dAmyp7
     type: text
     enabled: true
     tone: default
@@ -107,7 +107,7 @@ blocks:
             type: text
             text: 'You can ask to see, correct or delete the data we hold about you. Email us at hello@kopilane.example and we will reply within 21 days.'
   -
-    id: UHxmVz7g
+    id: LKAJTipS
     type: text
     enabled: true
     tone: default

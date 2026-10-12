@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.5.2 (2026-10-12)
+
+### Fixed
+
+- **Category pages have a share image.** Product and blog category pages had no `og:image`: the Marketing Toolkit drew share cards for entries only. Penang now requires the Marketing Toolkit 0.26.0, which draws them for category (term) pages too.
+
+### Changed
+
+- **The sample business has a default share image** (Marketing → Brand), shown when a page has no picture of its own and no card can be drawn; the user manual says where to set yours.
+- **A shorter README**, with what Penang includes, its sections and themes, and the Marketing Toolkit that comes with it.
+
+### Upgrading from 1.5.1
+
+- `composer require jotham-lec/statamic-marketing-toolkit:0.26.0`.
+
 ## 1.5.1 (2026-10-12)
 
 ### Fixed

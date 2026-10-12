@@ -1,5 +1,5 @@
 ---
-id: a926afd0-b482-4803-b8f7-c6af83d93e6b
+id: 28a556e1-ca13-48a2-84b0-07603f6afd4c
 blueprint: person
 title: 'Sofia Alvarez'
 role: 'Green coffee buyer'
