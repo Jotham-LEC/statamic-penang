@@ -1,6 +1,6 @@
 # Penang
 
-A finished website for a small business, as a Statamic 6 starter kit: pages built from fourteen sections in the control panel, a theme builder that changes the whole look from one screen, products, a blog, a team, an enquiry form and a WhatsApp button. It runs on **Statamic Core**, the free edition: one user and one form are all it needs, so a client site needs no Pro licence.
+A finished website for a small business, as a Statamic 6 starter kit: pages built from twenty sections in the control panel, a theme builder that changes the whole look from one screen, products, a blog, a team, an enquiry form and a WhatsApp button. It runs on **Statamic Core**, the free edition: one user and one form are all it needs, so a client site needs no Pro licence.
 
 Built on Blade, Laravel, Statamic and Tailwind CSS v4, with no Antlers. SEO, share cards, sitemaps and analytics come from the free [Marketing Toolkit](https://statamic.com/addons/jothamlec/marketing-toolkit).
 
@@ -12,8 +12,10 @@ Built on Blade, Laravel, Statamic and Tailwind CSS v4, with no Antlers. SEO, sha
 
 - **A page builder**: Home, About, Contact and any page you add are built from sections editors add, reorder and switch off in the control panel. Each section has a few layouts and takes any of four backgrounds.
 - **A theme builder**: fonts, corners, base and accent colours and light or dark, from one global, applied with no rebuild. Five presets to start from.
-- **Content**: Products (with categories, prices, stock and an "Ask on WhatsApp" button), a Blog, the Team, and sample content for a made-up Penang coffee roaster.
-- **One enquiry form**, stored in the control panel and sent as a lead to your analytics.
+- **Content**: Products as a catalogue (categories, prices and sale prices, New/Sale badges, a details list, stock, buttons to your Shopee or Lazada shop, and "Ask on WhatsApp"), a Blog with categories, the Team, and sample content for a made-up Penang coffee roaster.
+- **Listings**: featured rows per category on the products page, pages of products and articles, and breadcrumbs in step with the structured data.
+- **Site search** of pages, products and articles (Statamic's own, on Core), and a **legal page** kind with a table of contents for privacy and terms.
+- **One enquiry form**, stored in the control panel and sent as a lead to your analytics, with an optional confirmation email to the visitor in the theme's colours (`resources/views/emails/enquiry-confirmation.blade.php`).
 - **A WhatsApp button** on every page, from one number.
 - **SEO and analytics**: titles, descriptions, Open Graph cards, structured data (local business, products, articles, FAQs), the sitemap, redirects and tracking, through the Marketing Toolkit.
 - **A user manual** for the person who edits the site: [docs/user-manual.md](export/docs/user-manual.md), installed with the site.
@@ -21,26 +23,36 @@ Built on Blade, Laravel, Statamic and Tailwind CSS v4, with no Antlers. SEO, sha
 
 ## The page builder
 
-Pages are one `blocks` [Replicator](https://statamic.dev/fieldtypes/replicator) field with fourteen sets, each a Blade view in `resources/views/components/blocks/`:
+Pages are one `blocks` [Replicator](https://statamic.dev/fieldtypes/replicator) field with twenty sets, each a Blade view in `resources/views/components/blocks/`:
 
 | Section | Layouts |
 |---|---|
-| Hero | Centred · beside a picture (left or right) · text on a photo |
-| Text | Left · centred |
-| Picture and text | Picture left or right · landscape, square or portrait |
-| Features | Icon grid of 2, 3 or 4 columns · cards · beside the heading |
+| Hero | Centred · beside a picture (left or right) · text on a photo or a silent video loop; optionally the lowest product price |
+| Text | Left · centred; headings, lists, quotes and tables |
+| Picture and text | Picture left or right · landscape, square or portrait · up to four pictures as a collage or a column, with captions |
+| Gallery | Even grid or masonry, 2–4 columns, captions, a larger view (`<dialog>`, arrow keys, Escape) |
+| Video | YouTube, Vimeo or an uploaded file behind a cover, loaded only on play · wide or beside text |
+| Features | Icon grid of 2, 3 or 4 columns · cards · beside the heading; any of Lucide's icons (searchable) or a picture per point |
+| Steps | Numbered (or labelled, or with icons) steps across the page · down it as a timeline |
+| Tabs | Titled panels of text and a picture (ARIA tabs, arrow keys) |
 | Products | Featured · in list order · chosen by hand; 3 or 4 columns |
 | Team | Portraits · small photos |
 | Latest articles | Cards · list |
-| Testimonials | One large quote · grid |
-| Logos | Row · boxed grid |
+| Testimonials | One large quote (or a note signed by several people, with signatures or names by hand) · grid · carousel; stars, where it was left, a logo; buttons |
+| Logos | Row · boxed grid · scrolling (paused for reduced motion); a link per logo |
 | Figures | Row · beside a picture |
+| Table | Rows and columns with a heading row and row names, scrolling sideways on phones |
+| Prices | One to four packages with a price, what's included and a button; one can stand out |
 | Questions | Accordion · beside the heading |
-| Call to action | Centred · panel · beside a picture; optional WhatsApp button |
+| Call to action | Centred · panel · beside a picture |
 | Enquiry form | With or without the contact details |
 | Map and address | Map, address, opening hours, Google Maps and Waze directions |
 
-Every section also takes a background (page, muted, primary colour, inverted), spacing and an anchor. Editors pick sections from pictures of them:
+**Globals → Site settings** also has an **announcement bar** above the header (a sale, holiday hours), with a link, which visitors can close until it changes.
+
+Not included, on purpose: a newsletter signup (Statamic Core allows one form, which is the enquiry form; use your mailing tool's own form or link), exit-intent popups (intrusive) and decorative shape dividers (easy to add to a site's own sections). Each is a small addition for a site that wants it.
+
+Every section also takes a background (page, muted, primary colour, inverted), spacing and an anchor. Introductions, a hero's text and a call to action's text take bold, italics and links. Up to three **buttons** per section each go to a page or address, WhatsApp (with its own first message), a phone call, an email or a file, and can open in a new tab. Editors pick sections from pictures of them:
 
 ![The page builder in the control panel](export/docs/images/cp-page-builder.png)
 
@@ -50,7 +62,7 @@ Every section also takes a background (page, muted, primary colour, inverted), s
 
 ## The theme builder
 
-**Globals → Theme** holds five settings, after [shadcn/ui's themes](https://ui.shadcn.com/themes): heading and body **fonts** (eight self-hosted, open-licence fonts), **corners** (none to full), the **base** colour (the greys: stone, zinc, slate, neutral or gray), and the **primary** and **secondary** colours (Tailwind's palette, or any colour). A **preset** fills in what's left empty: Default, Kopitiam, Pantai, Hutan and Batik.
+**Globals → Theme** holds five settings, after [shadcn/ui's themes](https://ui.shadcn.com/themes): heading and body **fonts** (fourteen self-hosted, open-licence fonts), **corners** (none to full), the **base** colour (the greys: stone, zinc, slate, neutral or gray), and the **primary** and **secondary** colours (Tailwind's palette, or any colour). A **preset** fills in what's left empty: Default, Kopitiam, Pantai, Hutan and Batik.
 
 ![Four presets, light and dark: buttons, badges, alerts and the four section backgrounds](export/docs/images/site-presets.png)
 
@@ -62,6 +74,8 @@ How it works:
 4. The layout prints the tokens as CSS custom properties in `<head>`; `resources/css/site.css` maps them to Tailwind with `@theme inline`, so `bg-primary`, `text-muted-foreground` and `rounded-lg` follow the theme. Saving the theme changes the site at once, with no build.
 5. Each section background (`data-tone`) sets the same tokens again for what's inside it, so buttons and cards in a primary-coloured band stay readable.
 6. Tailwind's own palette is switched off (`--color-*: initial`): views can only use the theme's colours.
+
+A brand colour picked by hand is used exactly as picked wherever it passes the contrast rules; only where it fails (a dark plum on the dark page, say) does the theme step to a lighter or darker shade of it. The fonts are fourteen: Inter, Manrope, Plus Jakarta Sans, Figtree, Outfit, Montserrat, Poppins and DM Sans; Lora, Fraunces and Source Serif; and, for headings, Cormorant Garamond, Playfair Display and DM Serif Display.
 
 Signed in to the control panel, you get a **Theme** button on the site to try presets and settings before saving them; only you see them.
 
@@ -91,7 +105,7 @@ The installer runs the Marketing Toolkit's migrations and offers to remove the e
 
 1. Create your user: `php please make:user --super` (Statamic Core has one).
 2. Set `APP_URL` in `.env` to the site's address.
-3. In the control panel, replace the sample business: **Marketing → Brand** (name, phone, email, address, map position, opening hours, social profiles), **Globals → Site settings** (WhatsApp number, header button, footer text) and **Globals → Theme**.
+3. In the control panel, replace the sample business: **Marketing → Brand** (name, phone, email, address, map position, opening hours, social profiles), **Globals → Site settings** (WhatsApp number, more phone numbers, header button, footer text, note and legal line, labels) and **Globals → Theme**.
 4. Replace or delete the sample pages, products, articles, team and pictures.
 5. Hand `docs/user-manual.md` ([read it here](export/docs/user-manual.md)) to whoever edits the site.
 
@@ -104,18 +118,25 @@ If you change views or styles: `npm install && npm run build`.
 | `resources/fieldsets/page_builder.yaml` | The sections and their fields |
 | `resources/fieldsets/section_options.yaml`, `buttons.yaml` | Fields every section shares |
 | `resources/views/components/blocks/` | One view per section |
+| `resources/views/components/site/` | Header, footer, announcement bar, WhatsApp button, theme switcher |
 | `resources/views/components/ui/` | Button, card, badge, field, alert, avatar |
 | `resources/views/components/layout.blade.php` | The shell: head, header, footer |
 | `resources/views/showcase.blade.php` | The components page |
 | `app/Theme/` | The theme builder: options and presets (`Options.php`), tokens (`Theme.php`), colour sums (`Colour.php`) |
 | `app/Support/Business.php` | Contact details, hours and the WhatsApp link, read from Marketing → Brand and Site settings |
+| `app/Support/Button.php`, `Labels.php` | Where each type of button goes; the editable wording |
+| `app/Providers/PenangServiceProvider.php` | The words of a page's sections, for site search |
 | `resources/css/site.css` | Tailwind and the token mapping |
 | `config/penang.php` | The theme switcher for a demo site |
 | `config/marketing-toolkit.php` | SEO rules for the collections |
+| `config/statamic/search.php` | What site search covers (`php please search:update` rebuilds it) |
+| `resources/views/search.blade.php`, `legal.blade.php` | The search results and legal page kinds (a page's *Kind of page*) |
 
 **To add a section**: add a set to `page_builder.yaml` (in the control panel, Fieldsets → Page builder, or in the file) with `import: section_options` last, and a view `components/blocks/{set-handle}.blade.php` that wraps its content in `<x-section :block="$block">`. Use only the theme's colours (`bg-primary`, `text-muted-foreground`…).
 
 **To add a preset or a font**: add it to `app/Theme/Options.php` (a font also needs its `.woff2` in `resources/fonts/{key}/` and an `@font-face` in `resources/css/fonts.css`), then add it to the Theme blueprint's options.
+
+**Wording**: what the templates write themselves ("All products", "Ask for a price", "Out of stock", the WhatsApp label, the 404 page…) is editable under **Globals → Site settings → Labels**, and the form's button and thank-you message on each Enquiry form section. The rest (screen-reader labels, dates, days) goes through `__()`: `lang/ms.json` (Malay) and `lang/zh_CN.json` (Simplified Chinese) are included, used when the site's language (Settings → Sites, `lang`) is `ms` or `zh_CN`; add `lang/{lang}.json` for another. Laravel's own form-validation messages need [laravel-lang](https://laravel-lang.com) for those languages.
 
 **A demo site**: `PENANG_THEME_PREVIEW=true` in `.env` shows the theme switcher to every visitor, each in their own browser.
 

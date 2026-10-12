@@ -9,7 +9,11 @@
             @endif
         </div>
         <x-ui.card :class="\Illuminate\Support\Arr::toCssClasses(['lg:col-span-3' => $details, 'mt-10' => ! $details, 'sm:p-8'])">
-            <x-enquiry-form />
+            <x-enquiry-form
+                :submit="(string) $block->submit_label"
+                :success-title="(string) $block->success_title"
+                :success-text="(string) $block->success_text"
+            />
         </x-ui.card>
     </div>
 </x-section>

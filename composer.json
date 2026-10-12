@@ -17,7 +17,7 @@
     "extra": {
         "statamic": {
             "name": "Penang",
-            "description": "A finished small-business site for Statamic Core: a page builder of fourteen sections and a theme builder"
+            "description": "A finished small-business site for Statamic Core: a page builder of twenty sections, a theme builder, products, a blog and site search"
         }
     }
 }

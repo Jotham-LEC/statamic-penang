@@ -1,9 +1,19 @@
 tree:
   -
-    entry: a37f048c-770c-4468-96f7-b2e188bbf7e3
+    entry: 2f817cb6-5379-4633-b918-fe8214728842
   -
-    entry: 8f710247-2ebe-4934-b303-931a750b570c
+    entry: 3e795523-56e7-40b6-a29c-d39e26947a63
+    children:
+      -
+        url: /product-categories/coffee
+        title: Coffee
+      -
+        url: /product-categories/brewing-gear
+        title: 'Brewing gear'
+      -
+        url: /product-categories/gifts
+        title: Gifts
   -
-    entry: 889e5c40-efe2-4cb0-ba5e-022f74d85062
+    entry: e1acf55a-7d7e-4bb1-99f1-a0e3a55dc806
   -
-    entry: 5729ae1e-120a-4769-9935-a32a4ef59ecb
+    entry: 6226ac0a-09f6-4f56-b65e-87dfae10b80f

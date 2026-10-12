@@ -76,6 +76,7 @@ return [
     'collections' => [
         // Pages are built from sections: their description, share image and
         // questions come from the first hero, and every Questions section.
+        // Both are Bard (inline), read as plain text.
         'pages' => [
             'description_fields' => ['blocks.hero.text', 'blocks.text.intro'],
             'image_fields' => ['blocks.hero.image', 'blocks.image_text.image'],
@@ -116,6 +117,10 @@ return [
             'page_schema' => 'CollectionPage',
             'description_fields' => ['description'],
         ],
+        'topics' => [
+            'page_schema' => 'CollectionPage',
+            'description_fields' => ['description'],
+        ],
     ],
 
     /*
@@ -153,7 +158,7 @@ return [
         'exclude_collections' => [],
 
         // These are the taxonomies whose terms are listed (only terms with published entries).
-        'taxonomies' => ['product_categories'],
+        'taxonomies' => ['product_categories', 'topics'],
 
         // When there are more URLs than this, /sitemap.xml becomes an index of /sitemap_{n}.xml.
         'per_page' => 1000,

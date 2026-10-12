@@ -77,6 +77,15 @@ tabs:
                 - team
               max_items: 1
               mode: select
+          -
+            handle: topics
+            field:
+              type: terms
+              display: Categories
+              taxonomies:
+                - topics
+              mode: select
+              create: true
   seo:
     display: SEO
     sections:

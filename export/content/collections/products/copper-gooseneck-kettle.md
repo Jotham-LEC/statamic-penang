@@ -1,5 +1,5 @@
 ---
-id: b20f91ac-fcff-41f6-bbc7-6c4ca159efef
+id: 5b27e364-61f4-47e4-9668-8af208653f70
 blueprint: product
 title: 'Copper Gooseneck Kettle'
 summary: 'A 600 ml gooseneck kettle for slow, even pour-over. The one on our café counter.'

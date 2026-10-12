@@ -232,13 +232,15 @@ final class Theme
         $foregrounds = $light ? [$this->paper, $this->ink] : [$this->ink, $this->paper];
 
         // The primary is a button's fill and the colour of links, so it must
-        // read on the page and on a muted band, and carry its own text.
+        // read on the page and on a muted band, and carry its own text. A
+        // brand colour picked by hand is used as it is wherever it passes.
         $primaryFill = self::firstShade(
             $primary,
             $light ? [600, 700, 800, 900, 950] : [400, 300, 500, 200, 100],
             fn (Colour $c) => $c->contrast($background) >= self::AA
                 && $c->contrast($muted) >= self::AA
                 && self::readableOn($c, $foregrounds)->contrast($c) >= self::AA,
+            $this->picked('primary'),
         );
         // The secondary is a fill only (badges, highlights): near its 500 shade,
         // with whichever text reads on it.
@@ -246,6 +248,7 @@ final class Theme
             $secondary,
             [500, 400, 600, 300, 700, 200, 800],
             fn (Colour $c) => self::readableOn($c, [$this->paper, $this->ink])->contrast($c) >= self::AA,
+            $this->picked('secondary'),
         );
         // Errors, as text on the page and as a fill.
         $red = self::scale('red');
@@ -382,9 +385,28 @@ final class Theme
         return $candidates[0];
     }
 
-    /** The first shade, in order, that passes; failing all, the best of them. */
-    private static function firstShade(array $scale, array $order, callable $passes): Colour
+    /**
+     * A custom colour exactly as picked (a hex value), or null for a named
+     * one, and for pure white or black, which the theme never uses.
+     */
+    private function picked(string $which): ?Colour
     {
+        $value = $this->settings[$which];
+        $colour = Colour::isHex($value) ? Colour::fromHex($value) : null;
+
+        return $colour && $colour->l > 0.001 && $colour->l < 0.999 ? $colour : null;
+    }
+
+    /**
+     * The first shade, in order, that passes; failing all, the best of them.
+     * A colour given first (a picked brand colour) is tried before the scale.
+     */
+    private static function firstShade(array $scale, array $order, callable $passes, ?Colour $first = null): Colour
+    {
+        if ($first && $passes($first)) {
+            return $first;
+        }
+
         foreach ($order as $shade) {
             if ($passes($scale[$shade])) {
                 return $scale[$shade];

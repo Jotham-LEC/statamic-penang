@@ -5,17 +5,27 @@
     $author = value($page->author);
     $author = $author instanceof \Illuminate\Support\Collection ? $author->first() : $author;
     $image = value($page->image);
-    $blog = \Statamic\Facades\Collection::findByHandle('articles')->mount();
+    // The categories from their slugs: augmenting the field would tie each
+    // term to the blog (giving it a /blog/topics/… address Statamic doesn't
+    // serve, and changing it for the rest of the request).
+    $categories = collect((array) $page->get('topics'))
+        ->map(fn ($slug) => \Statamic\Facades\Term::find('topics::'.$slug))
+        ->filter()
+        ->map(fn ($term) => ['title' => $term->title(), 'url' => rtrim($term->taxonomy()->url(), '/').'/'.$term->slug()]);
     $more = collect(\Statamic\Statamic::tag('collection:articles')->params(['id:not' => $page->id, 'limit' => 3])->fetch());
 @endphp
 <x-layout>
     <article>
         <x-section spacing="compact" width="max-w-3xl">
-            @if ($blog)
-                <a href="{{ $blog->url() }}" class="text-muted-foreground hover:text-foreground text-sm font-medium"
-                    >← {{ $blog->title }}</a>
+            <x-breadcrumbs :content="$page" />
+            @if ($categories->isNotEmpty())
+                <div class="mt-6 flex flex-wrap gap-2">
+                    @foreach ($categories as $category)
+                        <a href="{{ $category['url'] }}"><x-ui.badge variant="outline">{{ $category['title'] }}</x-ui.badge></a>
+                    @endforeach
+                </div>
             @endif
-            <h1 class="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl">{{ $page->title }}</h1>
+            <h1 class="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">{{ $page->title }}</h1>
             <div class="text-muted-foreground mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
                 @if ($author)
                     <span class="flex items-center gap-2">
@@ -49,7 +59,7 @@
 
     @if ($more->isNotEmpty())
         <x-section tone="muted">
-            <h2 class="text-2xl font-semibold tracking-tight">{{ __('More articles') }}</h2>
+            <h2 class="text-2xl font-semibold tracking-tight">{{ \App\Support\Labels::get('more_articles') }}</h2>
             <div class="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
                 @foreach ($more as $entry)
                     <x-article-card :entry="$entry" />

@@ -1,6 +1,6 @@
 title: Products
 template: products/show
-mount: 8f710247-2ebe-4934-b303-931a750b570c
+mount: 3e795523-56e7-40b6-a29c-d39e26947a63
 taxonomies:
   - product_categories
 revisions: false

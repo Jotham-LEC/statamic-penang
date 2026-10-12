@@ -1,7 +1,10 @@
-{{-- The heading of a listing or a single item, with an optional trail back. --}}
-@props(['title', 'intro' => null, 'back' => null, 'backLabel' => null])
+{{-- The heading of a listing or a single item, with its breadcrumbs or a
+     link back. --}}
+@props(['title', 'intro' => null, 'back' => null, 'backLabel' => null, 'crumbs' => null])
 <x-section spacing="compact" class="border-border border-b">
-    @if ($back)
+    @if ($crumbs)
+        <x-breadcrumbs :content="$crumbs" class="mb-6" />
+    @elseif ($back)
         <a href="{{ $back }}" class="text-muted-foreground hover:text-foreground text-sm font-medium"
             >← {{ $backLabel }}</a>
     @endif

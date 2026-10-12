@@ -1,6 +1,7 @@
 ---
-id: 998de41b-68f2-47e0-9c21-e838f1d253a1
+id: 43c3992c-a9be-4b13-ab86-173b8a9b9181
 blueprint: product
+badge: new
 title: 'Single Origin of the Month'
 summary: 'A small lot we are excited about, different every month. Ask us what’s in the bag.'
 images:

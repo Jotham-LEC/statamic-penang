@@ -81,6 +81,17 @@ final readonly class Colour
         ];
     }
 
+    /** As #rrggbb (sRGB), for places that take no oklch(), such as email. */
+    public function hex(): string
+    {
+        return '#'.implode('', array_map(function (float $channel) {
+            $channel = max(0.0, min(1.0, $channel));
+            $srgb = $channel <= 0.0031308 ? 12.92 * $channel : 1.055 * $channel ** (1 / 2.4) - 0.055;
+
+            return str_pad(dechex((int) round($srgb * 255)), 2, '0', STR_PAD_LEFT);
+        }, $this->toGamut()->linearRgb()));
+    }
+
     public function inGamut(): bool
     {
         foreach ($this->linearRgb() as $channel) {

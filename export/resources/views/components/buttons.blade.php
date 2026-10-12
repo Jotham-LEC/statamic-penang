@@ -1,25 +1,34 @@
-{{-- A section's buttons (the `buttons` fieldset), and optionally WhatsApp. --}}
+{{-- A section's buttons (the `buttons` fieldset): each goes to a page or
+     address, WhatsApp, a phone call, an email or a file (App\Support\Button).
+     `whatsapp` adds a WhatsApp button: the Call to action's switch of
+     Penang 1.1, still read for content saved before it became a button type. --}}
 @props(['buttons' => [], 'whatsapp' => false, 'size' => 'lg'])
 @php
-    $buttons = collect(\Statamic\View\Blade\value($buttons) ?? [])->filter(fn ($b) => filled((string) $b->label) && \App\Support\Link::url($b->link));
-    $whatsappUrl = $whatsapp ? \App\Support\Business::whatsappUrl() : null;
+    use App\Support\Button;
+
+    $buttons = collect(\Statamic\View\Blade\value($buttons) ?? [])
+        ->filter(fn ($b) => filled((string) $b->label))
+        ->map(fn ($b) => ['label' => (string) $b->label, 'style' => (string) $b->style ?: 'primary', ...(Button::target($b) ?? ['href' => null])])
+        ->filter(fn ($b) => $b['href']);
+    if ($whatsapp && ($legacy = Button::target(['type' => 'whatsapp']))) {
+        $buttons->push(['label' => __('WhatsApp us'), 'style' => 'outline', ...$legacy]);
+    }
 @endphp
-@if ($buttons->isNotEmpty() || $whatsappUrl)
+@if ($buttons->isNotEmpty())
     <div {{ $attributes->class('flex flex-wrap gap-3') }}>
         @foreach ($buttons as $button)
             <x-ui.button
-                :href="\App\Support\Link::url($button->link)"
-                :variant="(string) $button->style ?: 'primary'"
+                :href="$button['href']"
+                :variant="$button['style']"
                 :size="$size"
+                :target="$button['new_tab'] ? '_blank' : null"
+                :rel="$button['new_tab'] ? 'noopener' : null"
             >
-                {{ $button->label }}
+                @if ($button['icon'])
+                    <x-icon :name="$button['icon']" class="size-5" />
+                @endif
+                {{ $button['label'] }}
             </x-ui.button>
         @endforeach
-        @if ($whatsappUrl)
-            <x-ui.button :href="$whatsappUrl" variant="outline" :size="$size" target="_blank" rel="noopener">
-                <x-icon name="brands/whatsapp" class="size-5" />
-                {{ __('WhatsApp us') }}
-            </x-ui.button>
-        @endif
     </div>
 @endif

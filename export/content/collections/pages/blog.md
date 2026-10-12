@@ -1,11 +1,11 @@
 ---
-id: 889e5c40-efe2-4cb0-ba5e-022f74d85062
+id: e1acf55a-7d7e-4bb1-99f1-a0e3a55dc806
 blueprint: page
 title: Blog
 template: articles/index
 blocks:
   -
-    id: jMvb1YSt
+    id: GqnZAwrT
     type: hero
     enabled: true
     tone: default
@@ -13,5 +13,8 @@ blocks:
     layout: centred
     eyebrow: Blog
     heading: 'Notes from the roastery'
-    text: 'How to brew, what we are roasting, and the farms behind the beans.'
+    text:
+      -
+        type: text
+        text: 'How to brew, what we are roasting, and the farms behind the beans.'
 ---

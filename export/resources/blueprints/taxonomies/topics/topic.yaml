@@ -1,0 +1,37 @@
+title: 'Blog category'
+tabs:
+  main:
+    display: Category
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Name
+              validate:
+                - required
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description
+              character_limit: 200
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              display: Slug
+  seo:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            import: 'marketing-toolkit::seo'

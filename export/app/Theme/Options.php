@@ -10,9 +10,10 @@ namespace App\Theme;
 final class Options
 {
     /**
-     * Self-hosted variable fonts (SIL Open Font Licence, from Fontsource), in
+     * Self-hosted fonts (SIL Open Font Licence, from Fontsource), in
      * resources/fonts/{key}: the Latin subset, upright and, where the family
-     * has one, italic.
+     * has one, italic. Variable where the family is; `preload` names the file
+     * the layout preloads when it isn't {key}-latin-wght-normal.woff2.
      */
     public const FONTS = [
         'inter' => ['label' => 'Inter', 'family' => 'Inter Variable', 'kind' => 'sans', 'italic' => true],
@@ -20,9 +21,15 @@ final class Options
         'plus-jakarta-sans' => ['label' => 'Plus Jakarta Sans', 'family' => 'Plus Jakarta Sans Variable', 'kind' => 'sans', 'italic' => true],
         'figtree' => ['label' => 'Figtree', 'family' => 'Figtree Variable', 'kind' => 'sans', 'italic' => true],
         'outfit' => ['label' => 'Outfit', 'family' => 'Outfit Variable', 'kind' => 'sans', 'italic' => false],
+        'montserrat' => ['label' => 'Montserrat', 'family' => 'Montserrat Variable', 'kind' => 'sans', 'italic' => true],
+        'poppins' => ['label' => 'Poppins', 'family' => 'Poppins', 'kind' => 'sans', 'italic' => true, 'preload' => 'poppins-latin-400-normal.woff2'],
+        'dm-sans' => ['label' => 'DM Sans', 'family' => 'DM Sans Variable', 'kind' => 'sans', 'italic' => true],
         'lora' => ['label' => 'Lora (serif)', 'family' => 'Lora Variable', 'kind' => 'serif', 'italic' => true],
         'fraunces' => ['label' => 'Fraunces (serif)', 'family' => 'Fraunces Variable', 'kind' => 'serif', 'italic' => true],
         'source-serif-4' => ['label' => 'Source Serif (serif)', 'family' => 'Source Serif 4 Variable', 'kind' => 'serif', 'italic' => true],
+        'cormorant-garamond' => ['label' => 'Cormorant Garamond (serif, for headings)', 'family' => 'Cormorant Garamond Variable', 'kind' => 'serif', 'italic' => true],
+        'playfair-display' => ['label' => 'Playfair Display (serif, for headings)', 'family' => 'Playfair Display Variable', 'kind' => 'serif', 'italic' => true],
+        'dm-serif-display' => ['label' => 'DM Serif Display (serif, for headings)', 'family' => 'DM Serif Display', 'kind' => 'serif', 'italic' => true, 'preload' => 'dm-serif-display-latin-400-normal.woff2'],
     ];
 
     public const FALLBACKS = [

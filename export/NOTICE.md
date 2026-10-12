@@ -33,11 +33,13 @@ The sample photos in `public/assets/images` are dedicated to the public domain u
 | `team-mei-ling.jpg` | Person Smiling | Matt Moloney | [StockSnap](https://stocksnap.io/photo/person-smiling-QH2V8JROLS) |
 | `team-nurul.jpg` | Business Woman | Direct Media | [StockSnap](https://stocksnap.io/photo/business-woman-FPQIEQBMPA) |
 
+`public/assets/videos/pour-over.mp4` is made from two of these photos (`hero-pour-over.jpg` and `latte-pour.jpg`), and is CC0 like them.
+
 The partner logos in `public/assets/logos` and the set previews in `public/assets/set-previews` were made for Penang (the previews are screenshots of its own sections). Kopi Lane Roasters and every business, person, address and number in the sample content are made up.
 
 ## Fonts
 
-The fonts in `resources/fonts` are licensed under the [SIL Open Font License 1.1](https://openfontlicense.org); each folder holds its `OFL.txt`. They were taken from [Fontsource](https://fontsource.org) (Latin subset, variable weight).
+The fonts in `resources/fonts` are licensed under the [SIL Open Font License 1.1](https://openfontlicense.org); each folder holds its `OFL.txt`. They were taken from [Fontsource](https://fontsource.org) (Latin subset; variable weight, except Poppins and DM Serif Display, which have none).
 
 | Font | Copyright |
 |---|---|
@@ -49,6 +51,13 @@ The fonts in `resources/fonts` are licensed under the [SIL Open Font License 1.1
 | Lora | The Lora Project Authors |
 | Fraunces | The Fraunces Project Authors |
 | Source Serif 4 | Adobe |
+| Cormorant Garamond | The Cormorant Project Authors |
+| Playfair Display | The Playfair Display Project Authors |
+| DM Serif Display | Adobe Systems Incorporated; Google LLC |
+| Montserrat | The Montserrat Project Authors |
+| Poppins | The Poppins Project Authors |
+| DM Sans | The DM Sans Project Authors |
+| Allura (names written as signatures) | The Allura Project Authors |
 
 ## Icons
 

@@ -10,7 +10,7 @@
             <x-section-heading :eyebrow="$block->eyebrow" :heading="$block->heading" :intro="$block->intro" />
             @if ($block->all_link && $index)
                 <x-ui.button :href="$index" variant="outline">
-                    {{ __('All articles') }} <x-icon name="arrow-right" class="size-4"
+                    {{ \App\Support\Labels::get('all_articles') }} <x-icon name="arrow-right" class="size-4"
                 /></x-ui.button>
             @endif
         </div>

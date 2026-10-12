@@ -3,4 +3,4 @@ collections:
   - pages
   - articles
   - products
-max_depth: 1
+max_depth: 2

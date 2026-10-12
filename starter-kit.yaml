@@ -1,15 +1,19 @@
 export_paths:
   - app/Support
   - app/Theme
+  - app/Providers/PenangServiceProvider.php
   - bootstrap/app.php
   - config/penang.php
   - config/marketing-toolkit.php
   - config/statamic/cp.php
+  - config/statamic/search.php
   - content
   - resources/blueprints
   - resources/fieldsets
   - resources/forms
   - resources/sites.yaml
+  - lang/ms.json
+  - lang/zh_CN.json
   - resources/views
   - resources/css
   - resources/js
@@ -24,4 +28,4 @@ export_paths:
   - docs
   - NOTICE.md
 dependencies:
-  jotham-lec/statamic-marketing-toolkit: 0.25.0
+  jotham-lec/statamic-marketing-toolkit: 0.25.1

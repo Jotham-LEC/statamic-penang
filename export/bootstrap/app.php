@@ -1,5 +1,6 @@
 <?php
 
+use App\Providers\PenangServiceProvider;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -11,6 +12,8 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
+    // Penang's additions to Statamic (the words of a page's sections, for search).
+    ->withProviders([PenangServiceProvider::class])
     ->withMiddleware(function (Middleware $middleware): void {
         // The theme switcher's choices, written by its script in the browser
         // (resources/js/site.js) and checked before use (App\Theme\SiteTheme).

@@ -184,13 +184,13 @@
         <x-section-heading
             eyebrow="Components"
             :heading="__('Icons')"
-            :intro="__('Lucide icons, for the Features section.')"
+            :intro="__('A few of the :count Lucide icons the Features section offers (all at lucide.dev).', ['count' => number_format(count(glob(resource_path('icons/ui/*.svg'))))])"
         />
         <ul role="list" class="mt-10 grid grid-cols-4 gap-4 sm:grid-cols-6 lg:grid-cols-10">
-            @foreach (glob(resource_path('icons/ui/*.svg')) as $path)
+            @foreach (['coffee', 'leaf', 'clock', 'truck', 'gift', 'heart', 'star', 'award', 'shield-check', 'users', 'package', 'sparkles', 'phone', 'mail', 'map-pin', 'calendar', 'banknote', 'pencil', 'cake', 'flower-2', 'hand-heart', 'store', 'wrench', 'zap', 'smile', 'thumbs-up', 'badge-percent', 'message-circle', 'camera', 'scissors'] as $icon)
                 <li class="border-border flex flex-col items-center gap-2 rounded-lg border p-3">
-                    <x-icon :name="basename($path, '.svg')" class="size-6" />
-                    <span class="text-muted-foreground text-center font-mono text-[10px]">{{ basename($path, '.svg') }}</span>
+                    <x-icon :name="$icon" class="size-6" />
+                    <span class="text-muted-foreground text-center font-mono text-[10px]">{{ $icon }}</span>
                 </li>
             @endforeach
         </ul>

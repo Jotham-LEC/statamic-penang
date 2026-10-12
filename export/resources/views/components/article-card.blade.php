@@ -3,6 +3,7 @@
 @php
     $image = $entry->augmentedValue('image')->value();
     $date = $entry->date();
+    $excerpt = \App\Support\Excerpt::of($entry, 'excerpt');
 @endphp
 <article {{
     $attributes->class([
@@ -32,8 +33,8 @@
         <h3 class="mt-2 text-xl font-semibold group-hover:underline group-hover:underline-offset-4">
             <a href="{{ $entry->url() }}" class="after:absolute after:inset-0">{{ $entry->get('title') }}</a>
         </h3>
-        @if (filled($entry->get('excerpt')))
-            <p class="text-muted-foreground mt-3 line-clamp-3">{{ $entry->get('excerpt') }}</p>
+        @if ($excerpt)
+            <p class="text-muted-foreground mt-3 line-clamp-3">{{ $excerpt }}</p>
         @endif
     </div>
 </article>

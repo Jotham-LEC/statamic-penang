@@ -46,6 +46,71 @@ tabs:
               toolbar_mode: fixed
               reading_time: false
               remove_empty_nodes: trailing
+      -
+        display: Details
+        instructions: 'A list under the description: what’s inside, sizes, materials. Optional.'
+        fields:
+          -
+            handle: specs_heading
+            field:
+              type: text
+              display: Heading
+              placeholder: Details
+              character_limit: 40
+          -
+            handle: specs
+            field:
+              type: grid
+              display: Details
+              mode: table
+              add_row: 'Add a line'
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Label
+                    placeholder: Weight
+                    validate:
+                      - required
+                -
+                  handle: value
+                  field:
+                    type: text
+                    display: Value
+                    placeholder: '250 g'
+                    instructions: 'Leave every value empty for a simple list.'
+      -
+        display: 'Buy elsewhere'
+        instructions: 'Buttons to this product in your Shopee, Lazada or other shop. Optional.'
+        fields:
+          -
+            handle: buy_links
+            field:
+              type: grid
+              display: Shops
+              mode: table
+              max_rows: 4
+              add_row: 'Add a shop'
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Label
+                    placeholder: 'Buy on Shopee'
+                    character_limit: 30
+                    validate:
+                      - required
+                -
+                  handle: url
+                  field:
+                    type: text
+                    display: Address
+                    input_type: url
+                    validate:
+                      - required
+                      - url
   sidebar:
     display: Sidebar
     sections:
@@ -66,6 +131,13 @@ tabs:
               instructions: 'Leave empty for "Ask for a price".'
               prepend: RM
           -
+            handle: compare_at_price
+            field:
+              type: float
+              display: 'Price before'
+              instructions: 'For a sale: the old price, shown crossed out.'
+              prepend: RM
+          -
             handle: price_note
             field:
               type: text
@@ -83,8 +155,26 @@ tabs:
             field:
               type: toggle
               display: Featured
-              instructions: 'Shown first in Products sections set to Featured.'
+              instructions: 'Shown first in Products sections set to Featured, and in the featured rows of the Products page.'
               default: false
+          -
+            handle: badge
+            field:
+              type: button_group
+              display: Badge
+              options:
+                new: New
+                sale: Sale
+                custom: Other
+              clearable: true
+          -
+            handle: badge_text
+            field:
+              type: text
+              display: 'Badge text'
+              character_limit: 20
+              if:
+                badge: 'equals custom'
           -
             handle: sku
             field:

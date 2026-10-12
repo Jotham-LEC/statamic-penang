@@ -9,6 +9,6 @@
         data-whatsapp
     >
         <x-icon name="brands/whatsapp" class="size-6" />
-        <span class="sr-only sm:not-sr-only sm:text-sm sm:font-semibold">{{ __('Chat on WhatsApp') }}</span>
+        <span class="sr-only sm:not-sr-only sm:text-sm sm:font-semibold">{{ \App\Support\Labels::get('whatsapp') }}</span>
     </a>
 @endif

@@ -11,6 +11,7 @@
     @endif
 
     <x-section>
+        <x-topics class="mb-10" />
         @if ($list['no_results'])
             <p class="text-muted-foreground">{{ __('No articles yet.') }}</p>
         @else

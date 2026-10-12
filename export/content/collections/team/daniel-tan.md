@@ -1,5 +1,5 @@
 ---
-id: 469207b3-399e-4932-a436-c31ac803ecd2
+id: 268d04df-3e0c-4c19-94b2-af3f6ab48f4f
 blueprint: person
 title: 'Daniel Tan'
 role: 'Wholesale and operations'

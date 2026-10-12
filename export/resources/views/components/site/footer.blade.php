@@ -10,6 +10,9 @@
     $columns = $menu->filter(fn ($item) => ! empty($item['children']));
     $loose = $menu->filter(fn ($item) => empty($item['children']));
     $about = \Statamic\View\Blade\value($settings?->footer_text);
+    $note = \Statamic\View\Blade\value($settings?->footer_note);
+    $legal = \Statamic\View\Blade\value($settings?->legal_line);
+    $numbers = Business::extraNumbers();
     $social = Business::socialLinks();
     $address = Business::addressLines();
 @endphp
@@ -59,7 +62,7 @@
 
                 @if ($loose->isNotEmpty())
                     <nav aria-label="{{ __('Footer') }}">
-                        <p class="text-sm font-semibold">{{ __('Explore') }}</p>
+                        <p class="text-sm font-semibold">{{ \App\Support\Labels::get('footer_links') }}</p>
                         <ul class="mt-4 space-y-3 text-sm">
                             @foreach ($loose as $item)
                                 <li>
@@ -73,9 +76,9 @@
                     </nav>
                 @endif
 
-                @if (Business::phone() || Business::email() || $address)
+                @if (Business::phone() || $numbers || Business::email() || $address || $note)
                     <div>
-                        <p class="text-sm font-semibold">{{ __('Contact') }}</p>
+                        <p class="text-sm font-semibold">{{ \App\Support\Labels::get('footer_contact') }}</p>
                         <ul class="text-muted-foreground mt-4 space-y-3 text-sm">
                             @if (Business::phone())
                                 <li>
@@ -85,6 +88,26 @@
                                     >{{ Business::phone() }}</a>
                                 </li>
                             @endif
+                            @foreach ($numbers as $number)
+                                <li>
+                                    @if ($number['label'])
+                                        <span class="block">{{ $number['label'] }}</span>
+                                    @endif
+                                    <a
+                                        href="{{ $number['href'] }}"
+                                        class="hover:text-foreground"
+                                    >{{ $number['number'] }}</a>
+                                    @if ($number['whatsapp'])
+                                        ·
+                                        <a
+                                            href="{{ $number['whatsapp'] }}"
+                                            target="_blank"
+                                            rel="noopener"
+                                            class="hover:text-foreground"
+                                        >WhatsApp</a>
+                                    @endif
+                                </li>
+                            @endforeach
                             @if (Business::email())
                                 <li>
                                     <a
@@ -105,6 +128,9 @@
                                     </address>
                                 </li>
                             @endif
+                            @if ($note)
+                                <li>{{ $note }}</li>
+                            @endif
                         </ul>
                     </div>
                 @endif
@@ -113,6 +139,10 @@
 
         <p class="border-border text-muted-foreground mt-12 border-t pt-8 text-sm">
             © {{ now()->year }} {{ Business::name() }}
+            @if ($legal)
+                <span class="mx-1" aria-hidden="true">·</span>
+                {{ $legal }}
+            @endif
         </p>
     </div>
 </footer>

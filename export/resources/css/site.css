@@ -61,6 +61,7 @@
     --font-sans: var(--body-font);
     --font-heading: var(--heading-font);
     --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+    --font-signature: "Allura", cursive;
 
     /* Cards and panels scale with --radius; buttons and fields use their own. */
     --radius-sm: calc(var(--radius) * 0.5);
@@ -198,5 +199,65 @@
 
     & > :first-child {
         margin-top: 0;
+    }
+}
+
+/* A short text with bold, italics and links (an inline Bard field): links
+   keep the text's own colour, so they read on any background. */
+@utility rich-inline {
+    & a {
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+    }
+
+    & a:hover {
+        text-decoration-thickness: 2px;
+    }
+
+    & strong {
+        font-weight: 600;
+        color: var(--foreground);
+    }
+}
+
+/* The Logos section's scrolling row: two copies of the list, moving left by
+   one copy's width, so it loops without a jump. Paused on hover; for
+   visitors who turn off motion, one copy wraps like the plain row. */
+@utility logo-marquee {
+    display: flex;
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+
+    &:hover .logo-marquee-track {
+        animation-play-state: paused;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        justify-content: center;
+        mask-image: none;
+
+        & [data-copy] {
+            display: none;
+        }
+
+        & .logo-marquee-track {
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 2rem;
+            padding-right: 0;
+        }
+    }
+}
+
+@utility logo-marquee-track {
+    animation: logo-marquee 40s linear infinite;
+
+    @media (prefers-reduced-motion: reduce) {
+        animation: none;
+    }
+}
+
+@keyframes logo-marquee {
+    to {
+        transform: translateX(-100%);
     }
 }

@@ -7,6 +7,7 @@
     $whatsapp = Business::whatsappUrl();
     $address = Business::addressLines();
     $openingHours = $hours ? Business::hours() : [];
+    $numbers = Business::extraNumbers();
 @endphp
 <dl {{ $attributes->class('space-y-6') }}>
     @if (Business::phone())
@@ -17,6 +18,29 @@
             <dd><a href="{{ Business::phoneHref() }}" class="hover:underline">{{ Business::phone() }}</a></dd>
         </div>
     @endif
+    @foreach ($numbers as $number)
+        <div class="flex gap-4">
+            <dt>
+                <x-icon name="phone" class="text-primary mt-0.5 size-5" /><span
+                    class="sr-only"
+                    >{{ $number['label'] ?: __('Phone') }}</span>
+            </dt>
+            <dd>
+                @if ($number['label'])
+                    <span class="text-muted-foreground block text-sm">{{ $number['label'] }}</span>
+                @endif
+                <a href="{{ $number['href'] }}" class="hover:underline">{{ $number['number'] }}</a>
+                @if ($number['whatsapp'])
+                    <a
+                        href="{{ $number['whatsapp'] }}"
+                        target="_blank"
+                        rel="noopener"
+                        class="text-muted-foreground ml-2 inline-flex items-center gap-1 text-sm hover:underline"
+                    ><x-icon name="brands/whatsapp" class="size-4" />WhatsApp</a>
+                @endif
+            </dd>
+        </div>
+    @endforeach
     @if ($whatsapp)
         <div class="flex gap-4">
             <dt>
@@ -29,7 +53,7 @@
                     target="_blank"
                     rel="noopener"
                     class="hover:underline"
-                >{{ __('Chat on WhatsApp') }}</a>
+                >{{ \App\Support\Labels::get('whatsapp') }}</a>
             </dd>
         </div>
     @endif

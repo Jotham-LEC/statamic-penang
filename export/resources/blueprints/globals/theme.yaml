@@ -35,9 +35,15 @@ tabs:
                 plus-jakarta-sans: 'Plus Jakarta Sans'
                 figtree: Figtree
                 outfit: Outfit
+                montserrat: Montserrat
+                poppins: Poppins
+                dm-sans: 'DM Sans'
                 lora: 'Lora (serif)'
                 fraunces: 'Fraunces (serif)'
                 source-serif-4: 'Source Serif (serif)'
+                cormorant-garamond: 'Cormorant Garamond (serif, for headings)'
+                playfair-display: 'Playfair Display (serif, for headings)'
+                dm-serif-display: 'DM Serif Display (serif, for headings)'
               clearable: true
               placeholder: 'From the preset'
               width: 50
@@ -52,9 +58,15 @@ tabs:
                 plus-jakarta-sans: 'Plus Jakarta Sans'
                 figtree: Figtree
                 outfit: Outfit
+                montserrat: Montserrat
+                poppins: Poppins
+                dm-sans: 'DM Sans'
                 lora: 'Lora (serif)'
                 fraunces: 'Fraunces (serif)'
                 source-serif-4: 'Source Serif (serif)'
+                cormorant-garamond: 'Cormorant Garamond (serif, for headings)'
+                playfair-display: 'Playfair Display (serif, for headings)'
+                dm-serif-display: 'DM Serif Display (serif, for headings)'
               clearable: true
               placeholder: 'From the preset'
               width: 50

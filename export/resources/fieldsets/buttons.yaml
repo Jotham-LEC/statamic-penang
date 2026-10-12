@@ -6,28 +6,28 @@ fields:
       type: grid
       display: Buttons
       mode: stacked
-      max_rows: 2
+      max_rows: 3
       add_row: 'Add a button'
       fields:
+        -
+          handle: type
+          field:
+            type: button_group
+            display: 'Goes to'
+            options:
+              link: 'A page or address'
+              whatsapp: WhatsApp
+              phone: 'A phone call'
+              email: 'An email'
+              file: 'A file'
+            default: link
         -
           handle: label
           field:
             type: text
             display: Label
             character_limit: 30
-            width: 33
-            validate:
-              - required
-        -
-          handle: link
-          field:
-            type: link
-            display: Link
-            collections:
-              - pages
-              - articles
-              - products
-            width: 33
+            width: 50
             validate:
               - required
         -
@@ -40,4 +40,63 @@ fields:
               secondary: Secondary
               outline: Outline
             default: primary
-            width: 33
+            width: 50
+        -
+          handle: link
+          field:
+            type: link
+            display: Link
+            collections:
+              - pages
+              - articles
+              - products
+            if:
+              type: 'equals link'
+        -
+          handle: whatsapp_message
+          field:
+            type: text
+            display: 'First message'
+            instructions: 'Filled in for the visitor. Leave empty for the one in Globals → Site settings. The number is always the one there.'
+            if:
+              type: 'equals whatsapp'
+        -
+          handle: phone
+          field:
+            type: text
+            display: 'Phone number'
+            instructions: 'Leave empty for the phone number in Marketing → Brand → Publisher.'
+            input_type: tel
+            if:
+              type: 'equals phone'
+        -
+          handle: email
+          field:
+            type: text
+            display: 'Email address'
+            instructions: 'Leave empty for the email in Marketing → Brand → Publisher.'
+            input_type: email
+            validate:
+              - nullable
+              - email
+            if:
+              type: 'equals email'
+        -
+          handle: file
+          field:
+            type: assets
+            display: File
+            instructions: 'A brochure, menu or price list (PDF).'
+            container: assets
+            folder: files
+            max_files: 1
+            if:
+              type: 'equals file'
+        -
+          handle: new_tab
+          field:
+            type: toggle
+            display: 'Open in a new tab'
+            default: false
+            if:
+              type: 'contains_any link, file'

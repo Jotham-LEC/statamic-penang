@@ -1,10 +1,10 @@
 ---
-id: a37f048c-770c-4468-96f7-b2e188bbf7e3
+id: 2f817cb6-5379-4633-b918-fe8214728842
 blueprint: page
 title: About
 blocks:
   -
-    id: PbnxvvFo
+    id: DymCViTi
     type: hero
     enabled: true
     tone: default
@@ -13,16 +13,20 @@ blocks:
     image_position: left
     eyebrow: 'About us'
     heading: 'It started with one roaster in a shophouse'
-    text: 'Kopi Lane began in 2016 with a 5 kg roaster, a borrowed shophouse kitchen and a lot of burnt beans. Ten years on, we roast for cafés, offices and kitchens across Malaysia.'
+    text:
+      -
+        type: text
+        text: 'Kopi Lane began in 2016 with a 5 kg roaster, a borrowed shophouse kitchen and a lot of burnt beans. Ten years on, we roast for cafés, offices and kitchens across Malaysia.'
     image: images/espresso-machine.jpg
     buttons:
       -
-        id: mtoXKLKU
+        id: z2sRzKxe
+        type: link
         label: 'Meet the team'
         link: '#team'
         style: outline
   -
-    id: JUA1lKaE
+    id: pWHLY0IX
     type: text
     enabled: true
     tone: default
@@ -55,7 +59,7 @@ blocks:
             type: text
             text: 'The café on Lorong Kopi is where you can taste all of it, and where we test every new coffee before it goes in a bag.'
   -
-    id: CCFlsuL9
+    id: wsZiiHLb
     type: image_text
     enabled: true
     tone: muted
@@ -105,18 +109,40 @@ blocks:
                     type: text
                     text: 'We buy again from the same farms every year'
   -
-    id: 9AWYSaXo
+    id: TkMSpyeH
+    type: gallery
+    enabled: true
+    tone: muted
+    spacing: normal
+    eyebrow: Inside
+    heading: 'The roastery and the café'
+    layout: grid
+    columns: '3'
+    captions: true
+    lightbox: true
+    images:
+      - images/green-beans.jpg
+      - images/tamping.jpg
+      - images/espresso-machine.jpg
+      - images/latte-pour.jpg
+      - images/copper-kettle.jpg
+      - images/cafe-evening.jpg
+  -
+    id: TepcWnXi
     type: team
     enabled: true
     tone: default
     spacing: normal
     eyebrow: 'Our team'
     heading: 'The people behind the roaster'
-    intro: 'Four of us, a roaster named Ah Kow, and a café full of regulars.'
+    intro:
+      -
+        type: text
+        text: 'Four of us, a roaster named Ah Kow, and a café full of regulars.'
     layout: cards
     anchor: team
   -
-    id: FcbEzd4a
+    id: 2kjUFyU0
     type: logo_strip
     enabled: true
     tone: muted
@@ -130,18 +156,22 @@ blocks:
       - logos/pulau-print.svg
       - logos/seri-hotel.svg
   -
-    id: BbLOZzcK
+    id: 6Gr7GqeV
     type: cta
     enabled: true
     tone: default
     spacing: normal
     layout: centred
     heading: 'Come and taste it'
-    text: 'The café is open six days a week. The first cup for anyone who mentions this page is on us.'
+    text:
+      -
+        type: text
+        text: 'The café is open six days a week. The first cup for anyone who mentions this page is on us.'
     buttons:
       -
-        id: 2jTGiPfG
+        id: WHtSa0mJ
+        type: link
         label: 'Find the café'
-        link: 'entry::5729ae1e-120a-4769-9935-a32a4ef59ecb'
+        link: 'entry::6226ac0a-09f6-4f56-b65e-87dfae10b80f'
         style: primary
 ---

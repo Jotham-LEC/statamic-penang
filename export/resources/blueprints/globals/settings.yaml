@@ -4,6 +4,52 @@ tabs:
     display: 'Site settings'
     sections:
       -
+        display: Announcement
+        instructions: 'A bar above the header on every page: a sale, new opening hours, a holiday. Empty for none.'
+        fields:
+          -
+            handle: announcement
+            field:
+              type: bard
+              display: Announcement
+              buttons:
+                - bold
+                - italic
+                - anchor
+              inline: true
+              inline_hard_breaks: true
+              save_html: false
+              toolbar_mode: floating
+              reading_time: false
+              remove_empty_nodes: trailing
+              character_limit: 140
+          -
+            handle: announcement_link_label
+            field:
+              type: text
+              display: 'Link label'
+              placeholder: 'Find out more'
+              character_limit: 30
+              width: 33
+          -
+            handle: announcement_link
+            field:
+              type: link
+              display: Link
+              collections:
+                - pages
+                - articles
+                - products
+              width: 33
+          -
+            handle: announcement_dismissible
+            field:
+              type: toggle
+              display: 'Visitors can close it'
+              instructions: 'Closed, it stays closed until the announcement changes.'
+              default: true
+              width: 33
+      -
         display: WhatsApp
         instructions: 'A WhatsApp button shows on every page when there is a number.'
         fields:
@@ -25,6 +71,41 @@ tabs:
               instructions: 'Filled in for the visitor, who can change it.'
               width: 50
               placeholder: 'Hello! I have a question.'
+      -
+        display: 'Products page'
+        fields:
+          -
+            handle: featured_rows
+            field:
+              type: integer
+              display: 'Featured rows'
+              instructions: 'Above the full list: a row of featured products for each of this many categories (in the categories’ order). 0 for none.'
+              default: 0
+              min: 0
+              max: 6
+              width: 50
+          -
+            handle: products_per_page
+            field:
+              type: integer
+              display: 'Products per page'
+              default: 12
+              min: 3
+              max: 60
+              width: 50
+      -
+        display: Search
+        fields:
+          -
+            handle: search_page
+            field:
+              type: entries
+              display: 'Search page'
+              instructions: 'A page whose kind is "Search results". A search button in the header goes there.'
+              collections:
+                - pages
+              max_items: 1
+              mode: select
       -
         display: 'Contact page'
         fields:
@@ -57,6 +138,42 @@ tabs:
                 - pages
               width: 50
       -
+        display: 'More phone numbers'
+        instructions: 'Shown with the contact details, after the main phone number (Marketing → Brand → Publisher).'
+        fields:
+          -
+            handle: extra_numbers
+            field:
+              type: grid
+              display: 'Phone numbers'
+              mode: table
+              add_row: 'Add a number'
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Label
+                    placeholder: Orders
+                    character_limit: 30
+                    validate:
+                      - required
+                -
+                  handle: number
+                  field:
+                    type: text
+                    display: Number
+                    input_type: tel
+                    validate:
+                      - required
+                      - 'regex:/^[+\d\s\-()]{6,20}$/'
+                -
+                  handle: whatsapp
+                  field:
+                    type: toggle
+                    display: 'On WhatsApp'
+                    default: false
+      -
         display: Footer
         instructions: 'Phone, email, address and social links come from Marketing → Brand → Publisher.'
         fields:
@@ -66,3 +183,252 @@ tabs:
               type: textarea
               display: 'About the business'
               character_limit: 240
+          -
+            handle: footer_note
+            field:
+              type: text
+              display: Note
+              instructions: 'A line under the contact details, such as "We reply within one working day".'
+              character_limit: 120
+          -
+            handle: legal_line
+            field:
+              type: text
+              display: 'Legal line'
+              instructions: 'At the very bottom, after the year and name: the company name and registration number, for example.'
+              placeholder: 'Kopi Lane Sdn. Bhd. (202301012345)'
+              character_limit: 160
+  labels:
+    display: Labels
+    sections:
+      -
+        display: Products
+        instructions: 'Words the website writes itself. Leave a label empty to keep the wording shown in grey.'
+        fields:
+          -
+            handle: label_all_products
+            field:
+              type: text
+              display: 'All products'
+              placeholder: 'All products'
+              width: 50
+          -
+            handle: label_all_categories
+            field:
+              type: text
+              display: All
+              placeholder: All
+              width: 50
+          -
+            handle: label_ask_for_price
+            field:
+              type: text
+              display: 'Ask for a price'
+              placeholder: 'Ask for a price'
+              width: 50
+          -
+            handle: label_out_of_stock
+            field:
+              type: text
+              display: 'Out of stock'
+              placeholder: 'Out of stock'
+              width: 50
+          -
+            handle: label_ask_on_whatsapp
+            field:
+              type: text
+              display: 'Ask on WhatsApp'
+              placeholder: 'Ask on WhatsApp'
+              width: 50
+          -
+            handle: label_send_enquiry
+            field:
+              type: text
+              display: 'Send an enquiry'
+              placeholder: 'Send an enquiry'
+              width: 50
+          -
+            handle: label_related_products
+            field:
+              type: text
+              display: 'You may also like'
+              placeholder: 'You may also like'
+              width: 50
+          -
+            handle: label_from_price
+            field:
+              type: text
+              display: 'From :price'
+              placeholder: 'From :price'
+              width: 50
+          -
+            handle: label_new
+            field:
+              type: text
+              display: New
+              placeholder: New
+              width: 50
+          -
+            handle: label_sale
+            field:
+              type: text
+              display: Sale
+              placeholder: Sale
+              width: 50
+          -
+            handle: label_details
+            field:
+              type: text
+              display: Details
+              placeholder: Details
+              width: 50
+          -
+            handle: label_featured_in
+            field:
+              type: text
+              display: 'Featured: :category'
+              placeholder: 'Featured: :category'
+              width: 50
+          -
+            handle: label_see_all
+            field:
+              type: text
+              display: 'See all'
+              placeholder: 'See all'
+              width: 50
+      -
+        display: Blog
+        instructions: null
+        fields:
+          -
+            handle: label_all_articles
+            field:
+              type: text
+              display: 'All articles'
+              placeholder: 'All articles'
+              width: 50
+          -
+            handle: label_more_articles
+            field:
+              type: text
+              display: 'More articles'
+              placeholder: 'More articles'
+              width: 50
+      -
+        display: Search
+        instructions: null
+        fields:
+          -
+            handle: label_search
+            field:
+              type: text
+              display: Search
+              placeholder: Search
+              width: 50
+          -
+            handle: label_search_placeholder
+            field:
+              type: text
+              display: 'What are you looking for?'
+              placeholder: 'What are you looking for?'
+              width: 50
+          -
+            handle: label_no_results
+            field:
+              type: text
+              display: 'Nothing found for “:query”.'
+              placeholder: 'Nothing found for “:query”.'
+              width: 50
+      -
+        display: 'Breadcrumbs and legal pages'
+        instructions: null
+        fields:
+          -
+            handle: label_home
+            field:
+              type: text
+              display: Home
+              placeholder: Home
+              width: 50
+          -
+            handle: label_contents
+            field:
+              type: text
+              display: Contents
+              placeholder: Contents
+              width: 50
+      -
+        display: WhatsApp
+        instructions: null
+        fields:
+          -
+            handle: label_whatsapp
+            field:
+              type: text
+              display: 'Chat on WhatsApp'
+              placeholder: 'Chat on WhatsApp'
+              width: 50
+      -
+        display: Menus
+        instructions: null
+        fields:
+          -
+            handle: label_menu
+            field:
+              type: text
+              display: Menu
+              placeholder: Menu
+              width: 50
+          -
+            handle: label_close_menu
+            field:
+              type: text
+              display: 'Close menu'
+              placeholder: 'Close menu'
+              width: 50
+          -
+            handle: label_footer_links
+            field:
+              type: text
+              display: Explore
+              placeholder: Explore
+              width: 50
+          -
+            handle: label_footer_contact
+            field:
+              type: text
+              display: Contact
+              placeholder: Contact
+              width: 50
+      -
+        display: 'Page not found'
+        instructions: null
+        fields:
+          -
+            handle: label_not_found_title
+            field:
+              type: text
+              display: 'Page not found'
+              placeholder: 'Page not found'
+              width: 50
+          -
+            handle: label_not_found_text
+            field:
+              type: text
+              display: 'The page you’re looking for has moved or no longer exists.'
+              placeholder: 'The page you’re looking for has moved or no longer exists.'
+              width: 50
+          -
+            handle: label_not_found_home
+            field:
+              type: text
+              display: 'Go to the home page'
+              placeholder: 'Go to the home page'
+              width: 50
+          -
+            handle: label_not_found_contact
+            field:
+              type: text
+              display: 'Contact us'
+              placeholder: 'Contact us'
+              width: 50

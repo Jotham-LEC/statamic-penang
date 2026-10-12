@@ -45,13 +45,13 @@
         </script>
     @endif
     @vite(['resources/css/site.css', 'resources/js/site.js'])
-    @foreach (array_unique([$theme->font('heading')['key'], $theme->font('body')['key']]) as $font)
+    @foreach (collect([$theme->font('heading'), $theme->font('body')])->unique('key') as $font)
         <link
             rel="preload"
             as="font"
             type="font/woff2"
             crossorigin
-            href="{{ Vite::asset("resources/fonts/{$font}/{$font}-latin-wght-normal.woff2") }}"
+            href="{{ Vite::asset("resources/fonts/{$font['key']}/".($font['preload'] ?? "{$font['key']}-latin-wght-normal.woff2")) }}"
         />
     @endforeach
     @stack('head')
@@ -63,6 +63,7 @@
         class="bg-primary text-primary-foreground rounded-control fixed top-3 left-3 z-50 -translate-y-24 px-4 py-2 text-sm font-semibold focus-visible:translate-y-0"
     >{{ __('Skip to content') }}</a>
 
+    <x-site.announcement />
     <x-site.header :mode-toggle="$toggle" />
 
     <main id="main" tabindex="-1" class="flex-1 focus:outline-none">{{ $slot }}</main>

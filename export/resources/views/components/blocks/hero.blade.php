@@ -1,11 +1,15 @@
 {{-- Hero: centred (a picture below, if any), split (text beside a picture),
-     or text on a full-width photo under a dark scrim. The first section of a
-     page carries its <h1>. --}}
+     or text on a full-width photo (or a silent video loop) under a dark
+     scrim. The first section of a page carries its <h1>. --}}
 @php
     $layout = (string) $block->layout ?: 'split';
     $image = $block->image;
     $heading = $first ? 'h1' : 'h2';
-    if ($layout === 'background' && ! $image) {
+    $video = \Statamic\View\Blade\value($block->video);
+    $video = $video instanceof \Illuminate\Support\Collection ? $video->first() : $video;
+    $from = $block->from_price ? \App\Support\Business::lowestPrice() : null;
+    $from = $from ? str_replace(':price', $from, \App\Support\Labels::get('from_price')) : null;
+    if ($layout === 'background' && ! $image && ! $video) {
         $layout = 'centred';
     }
 @endphp
@@ -13,6 +17,21 @@
 @if ($layout === 'background')
     <section @if ($block->anchor) id="{{ $block->anchor }}" @endif class="relative isolate overflow-hidden">
         <x-picture :image="$image" alt="" :eager="$first" class="absolute inset-0 -z-10 size-full object-cover" />
+        @if ($video)
+            {{-- Played by resources/js/site.js, unless the visitor turns off
+                 motion: the picture stays instead. --}}
+            <video
+                class="absolute inset-0 -z-10 size-full object-cover"
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+                data-hero-video
+            >
+                <source src="{{ $video->url() }}" type="{{ $video->mimeType() }}" />
+            </video>
+        @endif
         {{-- Dark enough behind the text for AA (4.5:1) even on a white photo:
              all over on phones, where the text spans the width; from lg, on
              the left where the text is, fading out to show the picture. --}}
@@ -30,9 +49,12 @@
                     >{{ $block->heading }}</{{ $heading }}
                 >
                 @if (filled((string) $block->text))
-                    <p class="mt-6 text-lg leading-relaxed sm:text-xl">{{ $block->text }}</p>
+                    <p class="rich-inline mt-6 text-lg leading-relaxed sm:text-xl">{!! $block->text !!}</p>
                 @endif
                 <x-buttons :buttons="$block->buttons" class="mt-10" />
+                @if ($from)
+                    <p class="mt-6 text-sm font-semibold">{{ $from }}</p>
+                @endif
             </div>
         </div>
     </section>
@@ -52,12 +74,17 @@
                     >{{ $block->heading }}</{{ $heading }}
                 >
                 @if (filled((string) $block->text))
-                    <p class="text-muted-foreground mt-6 text-lg leading-relaxed sm:text-xl">{{ $block->text }}</p>
+                    <p class="rich-inline text-muted-foreground mt-6 text-lg leading-relaxed sm:text-xl">
+                        {!! $block->text !!}
+                    </p>
                 @endif
                 <x-buttons
                     :buttons="$block->buttons"
                     :class="\Illuminate\Support\Arr::toCssClasses(['mt-10', 'justify-center' => $layout === 'centred'])"
                 />
+                @if ($from)
+                    <p class="text-muted-foreground mt-6 text-sm font-semibold">{{ $from }}</p>
+                @endif
             </div>
 
             @if ($image && $layout === 'split')

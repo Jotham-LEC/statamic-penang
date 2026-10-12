@@ -4,7 +4,7 @@ blueprint: page
 title: Home
 blocks:
   -
-    id: w6IREhdF
+    id: JL5r1Fub
     type: hero
     enabled: true
     tone: default
@@ -12,48 +12,66 @@ blocks:
     layout: background
     eyebrow: 'Roasted in George Town'
     heading: 'Coffee worth slowing down for'
-    text: 'We roast small batches of beans from Malaysian and Southeast Asian farms every week, and brew them in our café on Lorong Kopi.'
+    text:
+      -
+        type: text
+        text: 'We roast small batches of beans from '
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Malaysian and Southeast Asian farms'
+      -
+        type: text
+        text: ' every week, and brew them in our café on Lorong Kopi.'
     image: images/hero-baristas.jpg
     buttons:
       -
-        id: 7MPcNPEQ
+        id: 9DmRdv0d
+        type: link
         label: 'Shop our coffee'
-        link: 'entry::8f710247-2ebe-4934-b303-931a750b570c'
+        link: 'entry::3e795523-56e7-40b6-a29c-d39e26947a63'
         style: primary
       -
-        id: yZcml6hs
+        id: oi0BVtOF
+        type: link
         label: 'Visit the café'
-        link: 'entry::5729ae1e-120a-4769-9935-a32a4ef59ecb'
+        link: 'entry::6226ac0a-09f6-4f56-b65e-87dfae10b80f'
         style: outline
+    from_price: true
   -
-    id: J2xuVF0y
+    id: JwIHU6s5
     type: feature_grid
     enabled: true
     tone: default
     spacing: normal
     eyebrow: 'Why Kopi Lane'
     heading: 'From the farm to your cup, done properly'
-    intro: 'Everything we sell is roasted by us, in Penang, within the week.'
+    intro:
+      -
+        type: text
+        text: 'Everything we sell is roasted by us, in Penang, within the week.'
     layout: grid
     columns: '3'
     items:
       -
-        id: Acuv42S6
+        id: 3D2LeAwd
         icon: leaf
         title: 'Bought from people we know'
         text: 'We buy straight from farms in Sabah, Johor and Sumatra, and pay well above the market price.'
       -
-        id: g7ydj8Wp
+        id: SZHlieOW
         icon: clock
         title: 'Roasted twice a week'
         text: 'Every Tuesday and Friday, in small batches, so your coffee is never more than a week old.'
       -
-        id: MrlwmOJk
+        id: ec8aHoZU
         icon: truck
         title: 'Delivered across Malaysia'
         text: 'Order by noon and we post the same day. Free delivery on orders over RM 150.'
   -
-    id: MfpaWNSM
+    id: 2fEPlb7k
     type: product_cards
     enabled: true
     tone: muted
@@ -65,7 +83,7 @@ blocks:
     columns: '4'
     all_link: true
   -
-    id: sZ4m4ZdI
+    id: yGZvzeA6
     type: image_text
     enabled: true
     tone: default
@@ -94,12 +112,13 @@ blocks:
             text: 'Come for a kopi, stay for a pour-over, and leave with a bag of whatever you liked best.'
     buttons:
       -
-        id: 3G9LzleB
+        id: QQUD3JER
+        type: link
         label: 'Opening hours'
-        link: 'entry::5729ae1e-120a-4769-9935-a32a4ef59ecb'
+        link: 'entry::6226ac0a-09f6-4f56-b65e-87dfae10b80f'
         style: outline
   -
-    id: qQxxVmly
+    id: XEPV7Xlh
     type: stats
     enabled: true
     tone: primary
@@ -108,23 +127,23 @@ blocks:
     layout: row
     stats:
       -
-        id: lfYJAxUg
+        id: rjZ3ePGM
         value: '2016'
         label: 'Roasting since'
       -
-        id: ZXJBOjnF
+        id: PVFY7yuB
         value: '14'
         label: 'Farms we buy from'
       -
-        id: tA0Kit7S
+        id: HB5RSUGB
         value: '6,000+'
         label: 'Bags roasted last year'
       -
-        id: Af1fMixF
+        id: MRfx2wBh
         value: '4.9'
         label: 'Average Google rating'
   -
-    id: 6QAco1AL
+    id: qy2djcAJ
     type: testimonial
     enabled: true
     tone: default
@@ -134,22 +153,28 @@ blocks:
     layout: grid
     testimonials:
       -
-        id: dsbA3PjW
+        id: BqapzKgV
         quote: 'The House Blend is the only coffee my whole office agrees on. Orders arrive two days after roasting, every time.'
         name: 'Farah Aziz'
         role: 'Office manager, Lorong Studio'
+        rating: '5'
+        source: google
       -
-        id: AT6LQFEw
+        id: zEvexP0P
         quote: 'We switched our café to Kopi Lane’s Liberica last year. Customers ask for it by name now.'
         name: 'Tan Wei Ming'
         role: 'Owner, Roti Ah Seng'
+        rating: '5'
+        logo: logos/roti-ah-seng.svg
       -
-        id: QfWt1v0t
+        id: xsj1SBga
         quote: 'Mei Ling spent an hour helping me set up my new grinder. That’s the kind of shop this is.'
         name: 'Priya Raman'
         role: 'Home brewer'
+        rating: '5'
+        source: facebook
   -
-    id: goy6aauG
+    id: bNzsK4DS
     type: recent_posts
     enabled: true
     tone: muted
@@ -160,21 +185,30 @@ blocks:
     limit: 3
     all_link: true
   -
-    id: n38I6ILd
+    id: ECX6Dkcv
     type: cta
     enabled: true
     tone: default
     spacing: normal
     layout: panel
     heading: 'Coffee for your café or office'
-    text: 'Wholesale prices from 5 kg a month, a grinder on loan, and training for your staff.'
+    text:
+      -
+        type: text
+        text: 'Wholesale prices from 5 kg a month, a grinder on loan, and training for your staff.'
     buttons:
       -
-        id: 6CmRdNI8
+        id: 08AESJFo
+        type: link
         label: 'Ask about wholesale'
-        link: 'entry::5729ae1e-120a-4769-9935-a32a4ef59ecb'
+        link: 'entry::6226ac0a-09f6-4f56-b65e-87dfae10b80f'
         style: primary
-    whatsapp: true
+      -
+        id: 17RoUXyp
+        type: whatsapp
+        label: 'WhatsApp us'
+        style: outline
+        whatsapp_message: 'Hello Kopi Lane! I’d like to ask about wholesale.'
 seo:
   title: 'Kopi Lane Roasters: small-batch coffee from George Town, Penang'
 ---

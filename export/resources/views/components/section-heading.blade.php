@@ -1,4 +1,5 @@
-{{-- A section's eyebrow, heading and introduction; nothing when all are empty. --}}
+{{-- A section's eyebrow, heading and introduction (an inline Bard field: its
+     bold, italics and links are HTML); nothing when all are empty. --}}
 @props(['eyebrow' => null, 'heading' => null, 'intro' => null, 'align' => 'left', 'level' => 'h2'])
 @if (filled((string) $eyebrow) || filled((string) $heading) || filled((string) $intro))
     <div {{ $attributes->class(['max-w-2xl', 'mx-auto text-center' => $align === 'center']) }}>
@@ -15,7 +16,7 @@
             >
         @endif
         @if (filled((string) $intro))
-            <p class="text-muted-foreground mt-4 text-lg leading-relaxed">{{ $intro }}</p>
+            <p class="rich-inline text-muted-foreground mt-4 text-lg leading-relaxed">{!! $intro !!}</p>
         @endif
     </div>
 @endif

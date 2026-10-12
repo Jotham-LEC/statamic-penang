@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Process;
 
 /**
  * Runs once Penang is installed (Statamic's starter kit post-install hook).
- * It only adds: the Marketing Toolkit's tables, the asset library's index,
+ * It only adds: the Marketing Toolkit's tables, the asset library's and
+ * the site search's indexes,
  * and, if you agree, the removal of the two placeholder files a new Statamic
  * site has in public/, which would hide the toolkit's robots.txt and icons.
  *
@@ -22,6 +23,7 @@ class StarterKitPostInstall
         $this->restoreAssetMeta($console);
         $this->artisan($console, ['statamic:assets:meta', 'assets'], 'Asset library (php please assets:meta)');
         $this->artisan($console, ['statamic:stache:clear'], 'Content index (php please stache:clear)');
+        $this->artisan($console, ['statamic:search:update', '--all'], 'Site search (php please search:update)');
 
         $placeholders = array_filter(
             [public_path('robots.txt'), public_path('favicon.ico')],

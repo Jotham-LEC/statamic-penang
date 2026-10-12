@@ -1,5 +1,51 @@
 # Changelog
 
+## 1.4.0 (2026-10-12)
+
+Penang for most marketing sites, whatever the business: twenty sections, products as a catalogue, a blog with categories, site search, and wording, buttons and colours that fit the business.
+
+### Content and listings
+
+- Products as a catalogue: a New, Sale or own badge, a price before (crossed out), a details list ("What's inside", sizes) and buttons to the product in other shops (Shopee, Lazada…). The product's structured data is unchanged.
+- The products page: rows of featured products for the first few categories (Site settings → Products page), and pages of products. Category pages list the other categories and have pages too.
+- Breadcrumbs on products, articles, categories and pages under another page, in step with the toolkit's BreadcrumbList.
+- Blog categories (the `topics` taxonomy, at `/topics/…`), with a page each and links on the blog and on each article.
+- Site search (Statamic Core's local index) over pages, products and articles: a Search results kind of page, and a search button in the header (Site settings → Search). The installer builds the index.
+- An optional confirmation email to the visitor after the enquiry form, in the theme's colours (Forms → Enquiry → Email; see the user manual).
+- A legal page kind: its Text sections with a table of contents, and the date it was last updated.
+
+### Sections
+
+- Six new sections: **Gallery** (grid or masonry, captions, a larger view in a `<dialog>` with arrow keys), **Video** (YouTube, Vimeo or a file, behind a cover; nothing loads from YouTube or Vimeo until played), **Steps** (across, or a timeline), **Tabs** (ARIA tabs), **Table** and **Prices** (up to four packages, one standing out). Each has a picture in the set picker and a sample on `/components`.
+- An announcement bar (Globals → Site settings), above the header, which visitors can close until it changes.
+- Features: a picture per point in place of the icon, and every Lucide icon (over 2,000), searchable.
+- Testimonials: stars, where it was left (Google, Facebook…), a company logo, a carousel layout, and a note signed by several people with their signatures and a sign-off.
+- Logos: a scrolling layout (paused on hover and for reduced motion), and a link per logo (in the logo's details).
+- Picture and text: up to four pictures, as a collage or a column, with captions.
+- Hero: a silent background video, with the picture for reduced motion.
+- Text sections can hold tables. Pictures have a caption and a link in their details.
+- Steps can show an icon in place of the number. A quote can be followed by buttons, and a note's signers can have their names written by hand (Allura, when there is no signature picture). A hero can show the lowest product price ("From RM 268").
+
+### Wording, buttons, colours and fonts
+
+- A custom brand colour is used exactly as picked wherever it passes the contrast rules, and stepped to another shade only where it fails.
+- Product and article cards without a summary show the start of the description.
+- Editable wording: Globals → Site settings → Labels (all products and articles links, ask for a price, out of stock, WhatsApp, menu, footer headings, the 404 page), and the button and thank-you message on the Enquiry form section. Malay (`lang/ms.json`) and Simplified Chinese (`lang/zh_CN.json`) for the rest.
+- Introductions, a hero's text and a call to action's text take bold, italics and links (inline Bard). Search descriptions read them as plain text (Marketing Toolkit 0.25.1).
+- Buttons go to a page or address, WhatsApp (with their own first message), a phone call, an email or a file, can open in a new tab, and take up to three per section. The Call to action's WhatsApp switch is now a button type (a switch saved before still works).
+- Site settings: more phone numbers (each optionally on WhatsApp), a footer note and a legal line (company name and registration number).
+- Six more fonts: Cormorant Garamond, Playfair Display and DM Serif Display for headings; Montserrat, Poppins and DM Sans. Eleven more icons.
+- The main menu takes a second level, opening as a dropdown (and listed under its item on phones).
+
+### Fixed
+
+- A product's category links went to an address that didn't exist (`/products/product-categories/…`).
+
+### Upgrading from 1.1
+
+- Requires the Marketing Toolkit 0.25.1, which reads Bard description fields (`composer require jotham-lec/statamic-marketing-toolkit:0.25.1`).
+- Penang is a starter kit: an existing site doesn't update by itself. To take these features into a 1.1 site, copy the changed files (blueprints, fieldsets, views, `app/`, `config/`, `lang/`, `resources/css`, `resources/js`, `resources/fonts`, `resources/icons`) and run `npm run build` and `php please search:update --all`. Content saved in 1.1 keeps working: plain-text introductions show as before, and the Call to action's WhatsApp switch still adds its button.
+
 ## 1.1.0 (2026-10-12)
 
 - Softer themes: no pure white or black anywhere. The light page is an off-white in the base colour's tone, cards a lighter off-white, text a deep toned grey; the dark page is a deep toned grey rather than near-black. Text on buttons, hovers, the photo scrim and shadows use the same toned ends. A test checks no theme produces pure white or black.

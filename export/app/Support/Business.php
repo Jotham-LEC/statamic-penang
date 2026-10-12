@@ -3,6 +3,7 @@
 namespace App\Support;
 
 use Illuminate\Support\Collection;
+use Statamic\Facades\Entry;
 use Statamic\Facades\GlobalSet;
 use Statamic\Facades\Site;
 
@@ -161,6 +162,34 @@ final class Business
         return 'https://wa.me/'.$number.($message !== '' ? '?text='.rawurlencode($message) : '');
     }
 
+    /**
+     * The other phone numbers from Site settings, each with its call link and,
+     * when it takes WhatsApp, its chat link.
+     *
+     * @return list<array{label: string, number: string, href: string, whatsapp: string|null}>
+     */
+    public static function extraNumbers(): array
+    {
+        $rows = GlobalSet::findByHandle('settings')?->inCurrentSite()?->get('extra_numbers') ?? [];
+
+        $numbers = [];
+        foreach ((array) $rows as $row) {
+            $number = trim((string) ($row['number'] ?? ''));
+            $digits = preg_replace('/\D/', '', $number);
+            if (strlen($digits) < 6) {
+                continue;
+            }
+            $numbers[] = [
+                'label' => trim((string) ($row['label'] ?? '')),
+                'number' => $number,
+                'href' => 'tel:'.preg_replace('/[^\d+]/', '', $number),
+                'whatsapp' => ! empty($row['whatsapp']) && strlen($digits) >= 8 ? 'https://wa.me/'.$digits : null,
+            ];
+        }
+
+        return $numbers;
+    }
+
     /** The page with the enquiry form (Site settings → Contact page), wherever it moves. */
     public static function contactUrl(): ?string
     {
@@ -168,6 +197,17 @@ final class Business
         $page = $page instanceof Collection ? $page->first() : $page;
 
         return $page?->published() ? $page->url() : null;
+    }
+
+    /** The lowest price among the published products, as written; null without any. */
+    public static function lowestPrice(): ?string
+    {
+        $lowest = Entry::query()->where('collection', 'products')->whereStatus('published')->get()
+            ->map(fn ($entry) => $entry->get('price'))
+            ->filter(fn ($price) => is_numeric($price) && (float) $price > 0)
+            ->min();
+
+        return $lowest === null ? null : self::price($lowest);
     }
 
     /** A price as the shop's currency writes it: "RM 45.00", from Marketing → Brand → Shop. */

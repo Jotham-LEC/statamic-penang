@@ -1,8 +1,25 @@
 title: Asset
-fields:
-  -
-    handle: alt
-    field:
-      display: 'Alt Text'
-      type: text
-      instructions: 'Description of the image'
+tabs:
+  main:
+    sections:
+      -
+        fields:
+          -
+            handle: alt
+            field:
+              type: text
+              display: 'Alt text'
+              instructions: 'What the picture shows, for people who can’t see it. Leave empty for a decorative picture.'
+          -
+            handle: caption
+            field:
+              type: text
+              display: Caption
+              instructions: 'Shown under the picture in a gallery or beside other pictures.'
+              character_limit: 160
+          -
+            handle: link
+            field:
+              type: link
+              display: Link
+              instructions: 'For a logo: the website it links to.'

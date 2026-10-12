@@ -1,6 +1,6 @@
 {
   "resources/css/site.css": {
-    "file": "assets/site-C1vsOVyU.css",
+    "file": "assets/site--dfDjLIz.css",
     "name": "site",
     "names": [
       "site.css"
@@ -21,8 +21,52 @@
       "assets/fraunces-latin-wght-normal-ukD16Tqj.woff2",
       "assets/fraunces-latin-wght-italic-Py8at3oI.woff2",
       "assets/source-serif-4-latin-wght-normal-D9elroTD.woff2",
-      "assets/source-serif-4-latin-wght-italic-D2yaqPoE.woff2"
+      "assets/source-serif-4-latin-wght-italic-D2yaqPoE.woff2",
+      "assets/cormorant-garamond-latin-wght-normal-CUoBjw-S.woff2",
+      "assets/cormorant-garamond-latin-wght-italic-C-nL33vl.woff2",
+      "assets/playfair-display-latin-wght-normal-BOwq7MWX.woff2",
+      "assets/playfair-display-latin-wght-italic-DmbndNpe.woff2",
+      "assets/montserrat-latin-wght-normal-l_AIctKy.woff2",
+      "assets/montserrat-latin-wght-italic-jzfX-GOl.woff2",
+      "assets/dm-sans-latin-wght-normal-Xz1IZZA0.woff2",
+      "assets/dm-sans-latin-wght-italic-Cz4n9dED.woff2",
+      "assets/poppins-latin-400-normal-cpxAROuN.woff2",
+      "assets/poppins-latin-500-normal-C8OXljZJ.woff2",
+      "assets/poppins-latin-600-normal-zEkxB9Mr.woff2",
+      "assets/poppins-latin-700-normal-Qrb0O0WB.woff2",
+      "assets/poppins-latin-400-italic-B4GYq972.woff2",
+      "assets/dm-serif-display-latin-400-normal-C5_t9oOD.woff2",
+      "assets/dm-serif-display-latin-400-italic-DpcbibHm.woff2",
+      "assets/allura-latin-400-normal-4sUZKTf1.woff2"
     ]
+  },
+  "resources/fonts/allura/allura-latin-400-normal.woff2": {
+    "file": "assets/allura-latin-400-normal-4sUZKTf1.woff2",
+    "src": "resources/fonts/allura/allura-latin-400-normal.woff2"
+  },
+  "resources/fonts/cormorant-garamond/cormorant-garamond-latin-wght-italic.woff2": {
+    "file": "assets/cormorant-garamond-latin-wght-italic-C-nL33vl.woff2",
+    "src": "resources/fonts/cormorant-garamond/cormorant-garamond-latin-wght-italic.woff2"
+  },
+  "resources/fonts/cormorant-garamond/cormorant-garamond-latin-wght-normal.woff2": {
+    "file": "assets/cormorant-garamond-latin-wght-normal-CUoBjw-S.woff2",
+    "src": "resources/fonts/cormorant-garamond/cormorant-garamond-latin-wght-normal.woff2"
+  },
+  "resources/fonts/dm-sans/dm-sans-latin-wght-italic.woff2": {
+    "file": "assets/dm-sans-latin-wght-italic-Cz4n9dED.woff2",
+    "src": "resources/fonts/dm-sans/dm-sans-latin-wght-italic.woff2"
+  },
+  "resources/fonts/dm-sans/dm-sans-latin-wght-normal.woff2": {
+    "file": "assets/dm-sans-latin-wght-normal-Xz1IZZA0.woff2",
+    "src": "resources/fonts/dm-sans/dm-sans-latin-wght-normal.woff2"
+  },
+  "resources/fonts/dm-serif-display/dm-serif-display-latin-400-italic.woff2": {
+    "file": "assets/dm-serif-display-latin-400-italic-DpcbibHm.woff2",
+    "src": "resources/fonts/dm-serif-display/dm-serif-display-latin-400-italic.woff2"
+  },
+  "resources/fonts/dm-serif-display/dm-serif-display-latin-400-normal.woff2": {
+    "file": "assets/dm-serif-display-latin-400-normal-C5_t9oOD.woff2",
+    "src": "resources/fonts/dm-serif-display/dm-serif-display-latin-400-normal.woff2"
   },
   "resources/fonts/figtree/figtree-latin-wght-italic.woff2": {
     "file": "assets/figtree-latin-wght-italic-BEAWuiTz.woff2",
@@ -60,9 +104,25 @@
     "file": "assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
     "src": "resources/fonts/manrope/manrope-latin-wght-normal.woff2"
   },
+  "resources/fonts/montserrat/montserrat-latin-wght-italic.woff2": {
+    "file": "assets/montserrat-latin-wght-italic-jzfX-GOl.woff2",
+    "src": "resources/fonts/montserrat/montserrat-latin-wght-italic.woff2"
+  },
+  "resources/fonts/montserrat/montserrat-latin-wght-normal.woff2": {
+    "file": "assets/montserrat-latin-wght-normal-l_AIctKy.woff2",
+    "src": "resources/fonts/montserrat/montserrat-latin-wght-normal.woff2"
+  },
   "resources/fonts/outfit/outfit-latin-wght-normal.woff2": {
     "file": "assets/outfit-latin-wght-normal-Bc-8i84L.woff2",
     "src": "resources/fonts/outfit/outfit-latin-wght-normal.woff2"
+  },
+  "resources/fonts/playfair-display/playfair-display-latin-wght-italic.woff2": {
+    "file": "assets/playfair-display-latin-wght-italic-DmbndNpe.woff2",
+    "src": "resources/fonts/playfair-display/playfair-display-latin-wght-italic.woff2"
+  },
+  "resources/fonts/playfair-display/playfair-display-latin-wght-normal.woff2": {
+    "file": "assets/playfair-display-latin-wght-normal-BOwq7MWX.woff2",
+    "src": "resources/fonts/playfair-display/playfair-display-latin-wght-normal.woff2"
   },
   "resources/fonts/plus-jakarta-sans/plus-jakarta-sans-latin-wght-italic.woff2": {
     "file": "assets/plus-jakarta-sans-latin-wght-italic-DnD1KgkH.woff2",
@@ -71,6 +131,26 @@
   "resources/fonts/plus-jakarta-sans/plus-jakarta-sans-latin-wght-normal.woff2": {
     "file": "assets/plus-jakarta-sans-latin-wght-normal-eXO_dkmS.woff2",
     "src": "resources/fonts/plus-jakarta-sans/plus-jakarta-sans-latin-wght-normal.woff2"
+  },
+  "resources/fonts/poppins/poppins-latin-400-italic.woff2": {
+    "file": "assets/poppins-latin-400-italic-B4GYq972.woff2",
+    "src": "resources/fonts/poppins/poppins-latin-400-italic.woff2"
+  },
+  "resources/fonts/poppins/poppins-latin-400-normal.woff2": {
+    "file": "assets/poppins-latin-400-normal-cpxAROuN.woff2",
+    "src": "resources/fonts/poppins/poppins-latin-400-normal.woff2"
+  },
+  "resources/fonts/poppins/poppins-latin-500-normal.woff2": {
+    "file": "assets/poppins-latin-500-normal-C8OXljZJ.woff2",
+    "src": "resources/fonts/poppins/poppins-latin-500-normal.woff2"
+  },
+  "resources/fonts/poppins/poppins-latin-600-normal.woff2": {
+    "file": "assets/poppins-latin-600-normal-zEkxB9Mr.woff2",
+    "src": "resources/fonts/poppins/poppins-latin-600-normal.woff2"
+  },
+  "resources/fonts/poppins/poppins-latin-700-normal.woff2": {
+    "file": "assets/poppins-latin-700-normal-Qrb0O0WB.woff2",
+    "src": "resources/fonts/poppins/poppins-latin-700-normal.woff2"
   },
   "resources/fonts/source-serif-4/source-serif-4-latin-wght-italic.woff2": {
     "file": "assets/source-serif-4-latin-wght-italic-D2yaqPoE.woff2",
@@ -81,7 +161,7 @@
     "src": "resources/fonts/source-serif-4/source-serif-4-latin-wght-normal.woff2"
   },
   "resources/js/site.js": {
-    "file": "assets/site-CCA8MYVF.js",
+    "file": "assets/site-CUm0V7Cw.js",
     "name": "site",
     "src": "resources/js/site.js",
     "isEntry": true

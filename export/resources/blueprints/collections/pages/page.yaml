@@ -37,6 +37,20 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+          -
+            handle: template
+            field:
+              type: select
+              display: 'Kind of page'
+              instructions: 'What the page shows after its sections.'
+              options:
+                legal: 'Legal page: its Text sections with a table of contents'
+                products/index: 'Every product'
+                articles/index: 'Every blog article'
+                search: 'Search results'
+                showcase: 'The components page'
+              clearable: true
+              placeholder: 'A page of sections'
   seo:
     display: SEO
     sections:

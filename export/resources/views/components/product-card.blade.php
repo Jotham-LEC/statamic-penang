@@ -1,14 +1,13 @@
 {{-- A product in a grid: picture, name, summary and price, the whole card a link. --}}
 @props(['entry'])
 @php
-    use App\Support\Business;
-
     $image = $entry->augmentedValue('images')->value()?->first();
-    $price = Business::price($entry->get('price'));
     $inStock = $entry->get('in_stock') !== false;
+    $summary = \App\Support\Excerpt::of($entry, 'summary');
 @endphp
 <article {{ $attributes->class('group bg-card text-card-foreground border-border relative flex flex-col overflow-hidden rounded-lg border shadow-sm') }}>
-    <div class="bg-muted aspect-square overflow-hidden">
+    <div class="bg-muted relative aspect-square overflow-hidden">
+        <x-product-badge :entry="$entry" class="absolute top-3 left-3 z-10" />
         @if ($image)
             <x-picture
                 :image="$image"
@@ -23,18 +22,13 @@
         <h3 class="text-lg font-semibold">
             <a href="{{ $entry->url() }}" class="after:absolute after:inset-0">{{ $entry->get('title') }}</a>
         </h3>
-        @if (filled($entry->get('summary')))
-            <p class="text-muted-foreground mt-2 line-clamp-2 text-sm">{{ $entry->get('summary') }}</p>
+        @if ($summary)
+            <p class="text-muted-foreground mt-2 line-clamp-2 text-sm">{{ $summary }}</p>
         @endif
         <div class="mt-auto flex items-center justify-between gap-3 pt-4">
-            <p class="font-semibold">
-                {{ $price ?? __('Ask for a price') }}
-                @if ($price && filled($entry->get('price_note')))
-                    <span class="text-muted-foreground text-sm font-normal">{{ $entry->get('price_note') }}</span>
-                @endif
-            </p>
+            <x-product-price :entry="$entry" />
             @unless ($inStock)
-                <x-ui.badge variant="muted">{{ __('Out of stock') }}</x-ui.badge>
+                <x-ui.badge variant="muted">{{ \App\Support\Labels::get('out_of_stock') }}</x-ui.badge>
             @endunless
         </div>
     </div>

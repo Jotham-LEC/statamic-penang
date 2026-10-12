@@ -1,5 +1,5 @@
-{{-- Features: points with an icon, as a grid, as cards, or listed beside the
-     heading. --}}
+{{-- Features: points with an icon or a picture, as a grid, as cards, or
+     listed beside the heading. --}}
 @php
     $layout = (string) $block->layout ?: 'grid';
     $items = collect($block->items ?? [])->filter(fn ($item) => filled((string) $item->title));
@@ -28,7 +28,15 @@
                 @foreach ($items as $item)
                     <div @class(['bg-card text-card-foreground border-border rounded-lg border p-6 shadow-sm' => $layout === 'cards'])>
                         <dt class="font-semibold">
-                            @if (filled((string) $item->icon))
+                            @if ($item->image)
+                                <x-picture
+                                    :image="$item->image"
+                                    :widths="[400, 600, 800]"
+                                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                                    class="bg-muted mb-5 aspect-4/3 w-full rounded-lg object-cover"
+                                    alt=""
+                                />
+                            @elseif (filled((string) $item->icon))
                                 <span class="bg-primary text-primary-foreground rounded-control mb-4 flex size-11 items-center justify-center">
                                     <x-icon :name="(string) $item->icon" class="size-5" />
                                 </span>

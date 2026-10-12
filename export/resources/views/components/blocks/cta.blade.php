@@ -10,7 +10,7 @@
         <div data-tone="primary" class="relative overflow-hidden rounded-xl px-6 py-16 text-center shadow-lg sm:px-16">
             <h2 class="mx-auto max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">{{ $block->heading }}</h2>
             @if (filled((string) $block->text))
-                <p class="text-muted-foreground mx-auto mt-6 max-w-xl text-lg">{{ $block->text }}</p>
+                <p class="rich-inline text-muted-foreground mx-auto mt-6 max-w-xl text-lg">{!! $block->text !!}</p>
             @endif
             <x-buttons :buttons="$block->buttons" :whatsapp="$block->whatsapp" class="mt-10 justify-center" />
         </div>
@@ -24,7 +24,7 @@
             <div class="p-8 sm:p-12">
                 <h2 class="text-3xl font-semibold tracking-tight">{{ $block->heading }}</h2>
                 @if (filled((string) $block->text))
-                    <p class="text-muted-foreground mt-4 text-lg">{{ $block->text }}</p>
+                    <p class="rich-inline text-muted-foreground mt-4 text-lg">{!! $block->text !!}</p>
                 @endif
                 <x-buttons :buttons="$block->buttons" :whatsapp="$block->whatsapp" class="mt-8" size="md" />
             </div>
@@ -33,7 +33,7 @@
         <div class="mx-auto max-w-2xl text-center">
             <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">{{ $block->heading }}</h2>
             @if (filled((string) $block->text))
-                <p class="text-muted-foreground mt-6 text-lg">{{ $block->text }}</p>
+                <p class="rich-inline text-muted-foreground mt-6 text-lg">{!! $block->text !!}</p>
             @endif
             <x-buttons :buttons="$block->buttons" :whatsapp="$block->whatsapp" class="mt-10 justify-center" />
         </div>
