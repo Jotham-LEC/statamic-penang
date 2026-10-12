@@ -15,7 +15,7 @@ A complete website for a small business, ready to fill in. Editors build pages f
 - **One enquiry form**, with an optional thank-you email to the visitor.
 - **WhatsApp** on every page, and buttons that open a chat, a call, an email or a file.
 - **Your wording.** Labels such as "All products" or "Ask for a price" are editable, and the templates come in English, Malay and Chinese.
-- **SEO and analytics** through the free [Marketing Toolkit](https://statamic.com/addons/jothamlec/marketing-toolkit): titles, share cards, structured data, sitemaps, redirects and tracking.
+- **SEO, redirects and analytics, set up for you** with the free [Marketing Toolkit](https://statamic.com/addons/jothamlec/marketing-toolkit) (more below).
 - **A user manual** for whoever edits the site: [docs/user-manual.md](https://github.com/Jotham-LEC/statamic-penang/blob/main/export/docs/user-manual.md).
 
 Sample content for a made-up coffee roaster in Penang shows every part working, and the `/components` page shows every section at once.
@@ -66,6 +66,21 @@ Default, Kopitiam (warm), Pantai (sea), Hutan (forest) and Batik (indigo and sog
 ```
 
 Add it to the Preset options in `resources/blueprints/globals/theme.yaml`, choose it under Globals → Theme, and check it on `/components`. Fourteen self-hosted fonts are included.
+
+## SEO and marketing: the Marketing Toolkit
+
+Penang comes with the [Marketing Toolkit](https://statamic.com/addons/jothamlec/marketing-toolkit), a free addon by the same author, installed and configured. It hands SEO and analytics to whoever does the marketing, with no code:
+
+- **Every page ready for search and sharing:** its title, description, share card (drawn for you when there's no picture), canonical address and structured data. Penang tells it about the local business, products, articles, FAQs and breadcrumbs. Editors see a Google and social preview as they type.
+- **Sitemap, robots.txt and llms.txt** without filling in a field.
+- **Redirects and 404s:** moving a page adds its redirect, missing pages are logged, and anyone can add redirects (wildcards and CSV import included).
+- **An SEO score for every page,** with each problem linking to the entry that fixes it, and a toolbar on the live site for signed-in editors.
+- **Tracking:** paste a GTM, GA4, PostHog, Meta Pixel or LinkedIn ID. It supports Consent Mode v2, and enquiries are sent on as leads with their source.
+- **Google Search Console** clicks and impressions per page.
+
+![The Marketing Toolkit's overview: the SEO score, failing checks, recent 404s, redirects and the brand](https://raw.githubusercontent.com/Jotham-LEC/statamic-marketing-toolkit/main/docs/images/overview.png)
+
+It works on any Statamic site too: [get it on the Marketplace](https://statamic.com/addons/jothamlec/marketing-toolkit).
 
 ## Requirements
 
@@ -119,4 +134,4 @@ Nothing is sent anywhere unless the visitor acts. The map loads from OpenStreetM
 - **Changes:** [CHANGELOG.md](https://github.com/Jotham-LEC/statamic-penang/blob/main/CHANGELOG.md).
 - **Licence:** one licence per site; see [LICENSE.md](https://github.com/Jotham-LEC/statamic-penang/blob/main/LICENSE.md).
 - **Credits:** the fonts, icons and sample photos are open-licence or public domain, listed in [NOTICE.md](https://github.com/Jotham-LEC/statamic-penang/blob/main/export/NOTICE.md).
-- **Marketing Toolkit:** free, MIT-licensed.
+- **[Marketing Toolkit](https://statamic.com/addons/jothamlec/marketing-toolkit):** free, MIT-licensed, installed with Penang.
