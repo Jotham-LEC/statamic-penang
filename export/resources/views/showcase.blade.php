@@ -205,7 +205,7 @@
                     :intro="__('One of each section, as editors add them in the control panel.')"
                 />
             </x-section>
-            <x-blocks :blocks="$page->blocks" />
+            <x-blocks :blocks="$page->blocks" :opens="false" />
         </div>
     @endif
 </x-layout>

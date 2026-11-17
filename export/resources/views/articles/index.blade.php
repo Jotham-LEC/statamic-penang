@@ -5,7 +5,7 @@
 @endphp
 <x-layout>
     @if (count($sections))
-        <x-blocks :blocks="$sections" />
+        <x-blocks :blocks="$sections" :title="$page->title" />
     @else
         <x-page-header :title="$page->title" />
     @endif

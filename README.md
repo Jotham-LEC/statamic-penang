@@ -8,7 +8,7 @@ A complete website for a small business, ready to fill in. Editors build pages f
 
 ## What you get
 
-- **A page builder.** Twenty sections that editors add, reorder and switch off, each with a few layouts and four backgrounds.
+- **A page builder.** Twenty sections that editors add, reorder and switch off, each with a few layouts and four backgrounds. The section picker sorts them into eight groups named the way block libraries name them (Hero sections, Content sections, CTA and contact…), and finds them by search too (*FAQ*, *stats*, *reviews*).
 - **Five themes.** Each one is a whole look (fonts, corners and colours chosen together) in light and dark mode. Every text colour is checked for readable contrast (WCAG AA).
 - **Products.** Categories, prices and sale prices, badges, a details list, links to your Shopee or Lazada shop, and an "Ask on WhatsApp" button. There is no checkout: visitors enquire.
 - **A blog** with categories, a **team**, **site search**, and **legal pages** with a table of contents.
@@ -23,32 +23,34 @@ Sample content for a made-up coffee roaster in Penang shows every part working, 
 
 ## The sections
 
-| | |
-|---|---|
-| **Hero** | Centred, beside a picture, or on a photo or a silent video |
-| **Text** | Paragraphs, headings, lists, quotes and tables |
-| **Picture and text** | One picture or up to four, as a collage with captions |
-| **Gallery** | A grid or masonry; pictures open larger |
-| **Video** | YouTube, Vimeo or your own file, loaded only when played |
-| **Features** | Points with icons (any of Lucide's 2,000) or pictures |
-| **Steps** | Numbered steps or a timeline |
-| **Tabs** | A few panels, one shown at a time |
-| **Products** | Featured, in order, or chosen by hand |
-| **Team** | Portraits or small photos |
-| **Latest articles** | Cards or a list |
-| **Testimonials** | One quote, a grid or a carousel, with stars; or a note signed by your team |
-| **Logos** | A row, a grid or scrolling |
-| **Figures** | A few numbers that tell your story |
-| **Table** | Price lists, comparisons, delivery areas |
-| **Prices** | Up to four packages side by side |
-| **Questions** | Frequently asked questions, which Google reads too |
-| **Call to action** | Ask the visitor to take the next step |
-| **Enquiry form** | The form, with your contact details |
-| **Map and address** | A map, opening hours, and directions in Google Maps and Waze |
+| Group | Section | |
+|---|---|---|
+| Hero sections | **Hero** | Centred, beside a picture, or on a photo or a silent video |
+| Feature sections | **Features** | Points with icons (any of Lucide's 2,000) or pictures |
+|  | **Steps** | Numbered steps or a timeline |
+|  | **Tabs** | A few panels, one shown at a time |
+| Content sections | **Text** | Paragraphs, headings, lists, quotes and tables |
+|  | **Picture and text** | One picture or up to four, on either side, with any number of buttons |
+|  | **Gallery** | A grid or masonry; pictures open larger |
+|  | **Video** | YouTube, Vimeo or your own file, loaded only when played |
+|  | **Table** | Price lists, comparisons, delivery areas |
+| Stats and social proof | **Figures** | A few numbers that tell your story |
+|  | **Testimonials** | One quote, a grid or a carousel, with stars; or a note signed by your team |
+|  | **Logos** | A row, a grid or scrolling |
+| Products and pricing | **Products** | Featured, in order, or chosen by hand |
+|  | **Prices** | Up to four packages side by side |
+| Blog and listings | **Latest articles** | Cards or a list |
+|  | **Team** | Portraits or small photos |
+| FAQ sections | **Questions** | Frequently asked questions, which Google reads too |
+| CTA and contact | **Call to action** | Ask the visitor to take the next step |
+|  | **Enquiry form** | The form, with your contact details |
+|  | **Map and address** | A map, opening hours, and directions in Google Maps and Waze |
 
-Editors pick each section from a picture of it:
+Editors pick each section from its group's tab, or by searching, with a picture of each:
 
-![Adding a section in the control panel](https://raw.githubusercontent.com/Jotham-LEC/statamic-penang/main/export/docs/images/cp-add-section.png)
+![Adding a section in the control panel: the groups as tabs, a picture of each section](https://raw.githubusercontent.com/Jotham-LEC/statamic-penang/main/export/docs/images/cp-add-section.png)
+
+A page opens with one Hero, whose heading is the page's only h1. A Hero further down gets an h2, and a page that opens with another section gets its title as a hidden h1.
 
 ## The themes
 
@@ -119,7 +121,7 @@ If you change templates or styles, run `npm install && npm run build`.
 
 Blade, Tailwind CSS v4 and Statamic's own content model: no Antlers and no extra packages beyond the Marketing Toolkit.
 
-- **Sections:** `resources/fieldsets/page_builder.yaml` and one view each in `resources/views/components/blocks/`. To add one, add a set (ending with `import: section_options`) and a view that wraps its content in `<x-section :block="$block">`.
+- **Sections:** `resources/fieldsets/page_builder.yaml` and one view each in `resources/views/components/blocks/`. To add one, add a set to one of the set picker's groups (with a one-line hint the picker searches, a preview picture, and ending with `import: section_options`) and a view that wraps its content in `<x-section :block="$block">`.
 - **Colours:** views use only the theme's colour classes (`bg-primary`, `text-muted-foreground`…), so every section follows every theme. The theme lives in `app/Theme/`.
 - **Wording:** editors change most of it under **Globals → Site settings → Labels**. The rest is in `lang/ms.json` and `lang/zh_CN.json`, used when the site's language is `ms` or `zh_CN`.
 - **Search:** `config/statamic/search.php`. Run `php please search:update` to rebuild the index.
@@ -137,7 +139,7 @@ Penang and the Marketing Toolkit extend [Laravel Boost](https://github.com/larav
   - from the toolkit, `marketing-toolkit-seo-rules` and `marketing-toolkit-extend`.
 - **MCP tools**, added to Boost's own MCP server and read-only:
   - `penang-theme-check`: a preset's contrast in every background, light and dark, and the colours it really uses;
-  - `penang-sections`: the page builder's sections, layouts and fields;
+  - `penang-sections`: the page builder's sections by group, with their layouts and fields;
   - from the toolkit, `marketing-toolkit-page-seo`, `marketing-toolkit-report` and `marketing-toolkit-redirect`.
 
 Every name starts with `penang-` or `marketing-toolkit-`, so nothing clashes with Boost's or Statamic's own. Turn the tools off with `'boost_tools' => false` in `config/penang.php` (and `marketing-toolkit.boost.tools`).

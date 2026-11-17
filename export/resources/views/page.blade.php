@@ -6,5 +6,5 @@
             <x-breadcrumbs :content="$page" />
         </div>
     @endif
-    <x-blocks :blocks="$page->blocks" />
+    <x-blocks :blocks="$page->blocks" :title="$page->title" />
 </x-layout>

@@ -10,12 +10,14 @@ fields:
       previews: true
       button_label: 'Add a section'
       sets:
-        sections:
-          display: Sections
+        hero_sections:
+          display: 'Hero sections'
+          icon: hero-image-above-text
+          instructions: 'The page’s opening banner. Use one, as the first section.'
           sets:
             hero:
               display: Hero
-              instructions: 'A big opening: heading, text, buttons and a picture.'
+              instructions: 'The page’s opening banner and main heading. Use it once, as the first section.'
               image: hero.jpg
               fields:
                 -
@@ -106,387 +108,14 @@ fields:
                       layout: 'equals background'
                 -
                   import: section_options
-            text:
-              display: Text
-              instructions: 'Paragraphs, headings, lists and tables.'
-              image: text.jpg
-              fields:
-                -
-                  handle: eyebrow
-                  field:
-                    type: text
-                    display: Eyebrow
-                    instructions: 'A few words above the heading. Optional.'
-                    character_limit: 40
-                    width: 33
-                -
-                  handle: heading
-                  field:
-                    type: text
-                    display: Heading
-                    character_limit: 90
-                    width: 66
-                -
-                  handle: intro
-                  field:
-                    type: bard
-                    display: Introduction
-                    buttons:
-                      - bold
-                      - italic
-                      - anchor
-                    inline: true
-                    inline_hard_breaks: true
-                    save_html: false
-                    toolbar_mode: floating
-                    reading_time: false
-                    remove_empty_nodes: trailing
-                    character_limit: 280
-                -
-                  handle: content
-                  field:
-                    type: bard
-                    display: Text
-                    buttons:
-                      - h2
-                      - h3
-                      - bold
-                      - italic
-                      - unorderedlist
-                      - orderedlist
-                      - quote
-                      - anchor
-                      - table
-                    save_html: false
-                    toolbar_mode: fixed
-                    reading_time: false
-                    remove_empty_nodes: trailing
-                -
-                  handle: alignment
-                  field:
-                    type: button_group
-                    display: Alignment
-                    options:
-                      left: Left
-                      centre: Centred
-                    default: left
-                    width: 50
-                -
-                  import: section_options
-            image_text:
-              display: 'Picture and text'
-              instructions: 'A picture (or a few) beside a heading, text and a button.'
-              image: image-text.jpg
-              fields:
-                -
-                  handle: image
-                  field:
-                    type: assets
-                    display: Picture
-                    container: assets
-                    folder: images
-                    max_files: 1
-                    mode: grid
-                    validate:
-                      - required
-                -
-                  handle: image_position
-                  field:
-                    type: button_group
-                    display: 'Picture on the'
-                    options:
-                      left: Left
-                      right: Right
-                    default: left
-                    width: 50
-                -
-                  handle: image_shape
-                  field:
-                    type: button_group
-                    display: 'Picture shape'
-                    options:
-                      landscape: Landscape
-                      square: Square
-                      portrait: Portrait
-                    default: landscape
-                    width: 50
-                -
-                  handle: more_images
-                  field:
-                    type: assets
-                    display: 'More pictures'
-                    instructions: 'Up to three more, shown with the first. Each picture’s caption is the one in its details (Assets).'
-                    container: assets
-                    folder: images
-                    max_files: 3
-                    mode: grid
-                    width: 50
-                -
-                  handle: pictures_layout
-                  field:
-                    type: button_group
-                    display: 'Several pictures as'
-                    options:
-                      collage: 'A collage'
-                      stacked: 'A column'
-                    default: collage
-                    width: 50
-                -
-                  handle: eyebrow
-                  field:
-                    type: text
-                    display: Eyebrow
-                    character_limit: 40
-                    width: 33
-                -
-                  handle: heading
-                  field:
-                    type: text
-                    display: Heading
-                    character_limit: 90
-                    width: 66
-                -
-                  handle: content
-                  field:
-                    type: bard
-                    display: Text
-                    buttons:
-                      - h2
-                      - h3
-                      - bold
-                      - italic
-                      - unorderedlist
-                      - orderedlist
-                      - quote
-                      - anchor
-                    save_html: false
-                    toolbar_mode: fixed
-                    reading_time: false
-                    remove_empty_nodes: trailing
-                -
-                  import: buttons
-                -
-                  import: section_options
-            gallery:
-              display: Gallery
-              instructions: 'A grid of pictures that open larger when clicked.'
-              image: gallery.jpg
-              fields:
-                -
-                  handle: eyebrow
-                  field:
-                    type: text
-                    display: Eyebrow
-                    instructions: 'A few words above the heading. Optional.'
-                    character_limit: 40
-                    width: 33
-                -
-                  handle: heading
-                  field:
-                    type: text
-                    display: Heading
-                    character_limit: 90
-                    width: 66
-                -
-                  handle: intro
-                  field:
-                    type: bard
-                    display: Introduction
-                    buttons:
-                      - bold
-                      - italic
-                      - anchor
-                    inline: true
-                    inline_hard_breaks: true
-                    save_html: false
-                    toolbar_mode: floating
-                    reading_time: false
-                    remove_empty_nodes: trailing
-                    character_limit: 280
-                -
-                  handle: layout
-                  field:
-                    type: button_group
-                    display: Layout
-                    options:
-                      grid: 'Even grid'
-                      masonry: 'Masonry (each picture its own shape)'
-                    default: grid
-                    width: 50
-                -
-                  handle: columns
-                  field:
-                    type: button_group
-                    display: Columns
-                    options:
-                      2: '2'
-                      3: '3'
-                      4: '4'
-                    default: '3'
-                    width: 50
-                -
-                  handle: images
-                  field:
-                    type: assets
-                    display: Pictures
-                    instructions: 'Each picture’s caption and alt text are the ones in its details (Assets).'
-                    container: assets
-                    folder: images
-                    mode: grid
-                    validate:
-                      - required
-                -
-                  handle: captions
-                  field:
-                    type: toggle
-                    display: 'Show captions'
-                    default: true
-                    width: 50
-                -
-                  handle: lightbox
-                  field:
-                    type: toggle
-                    display: 'Open larger when clicked'
-                    default: true
-                    width: 50
-                -
-                  import: section_options
-            video:
-              display: Video
-              instructions: 'A YouTube or Vimeo video, or your own, that loads only when played.'
-              image: video.jpg
-              fields:
-                -
-                  handle: eyebrow
-                  field:
-                    type: text
-                    display: Eyebrow
-                    instructions: 'A few words above the heading. Optional.'
-                    character_limit: 40
-                    width: 33
-                -
-                  handle: heading
-                  field:
-                    type: text
-                    display: Heading
-                    character_limit: 90
-                    width: 66
-                -
-                  handle: intro
-                  field:
-                    type: bard
-                    display: Introduction
-                    buttons:
-                      - bold
-                      - italic
-                      - anchor
-                    inline: true
-                    inline_hard_breaks: true
-                    save_html: false
-                    toolbar_mode: floating
-                    reading_time: false
-                    remove_empty_nodes: trailing
-                    character_limit: 280
-                -
-                  handle: source
-                  field:
-                    type: button_group
-                    display: 'Video from'
-                    options:
-                      youtube: YouTube
-                      vimeo: Vimeo
-                      file: 'An uploaded file'
-                    default: youtube
-                    width: 50
-                -
-                  handle: url
-                  field:
-                    type: text
-                    display: Address
-                    instructions: 'The video’s address, copied from your browser or the Share button.'
-                    width: 50
-                    unless:
-                      source: 'equals file'
-                -
-                  handle: file
-                  field:
-                    type: assets
-                    display: 'Video file'
-                    instructions: MP4.
-                    container: assets
-                    folder: videos
-                    max_files: 1
-                    width: 50
-                    if:
-                      source: 'equals file'
-                -
-                  handle: title
-                  field:
-                    type: text
-                    display: 'What it shows'
-                    instructions: 'For people who can’t see it, and for the play button.'
-                    validate:
-                      - required
-                    character_limit: 100
-                -
-                  handle: poster
-                  field:
-                    type: assets
-                    display: 'Cover picture'
-                    container: assets
-                    folder: images
-                    max_files: 1
-                    mode: grid
-                    instructions: 'Shown until the video is played. Without one, a plain panel with a play button. (YouTube’s and Vimeo’s own covers would load from their sites before the visitor asks.)'
-                -
-                  handle: layout
-                  field:
-                    type: button_group
-                    display: Layout
-                    options:
-                      wide: Wide
-                      split: 'Beside text'
-                    default: wide
-                    width: 50
-                -
-                  handle: video_position
-                  field:
-                    type: button_group
-                    display: 'Video on the'
-                    options:
-                      left: Left
-                      right: Right
-                    default: right
-                    width: 50
-                    if:
-                      layout: 'equals split'
-                -
-                  handle: content
-                  field:
-                    type: bard
-                    display: Text
-                    buttons:
-                      - h2
-                      - h3
-                      - bold
-                      - italic
-                      - unorderedlist
-                      - orderedlist
-                      - quote
-                      - anchor
-                    save_html: false
-                    toolbar_mode: fixed
-                    reading_time: false
-                    remove_empty_nodes: trailing
-                    if:
-                      layout: 'equals split'
-                -
-                  import: buttons
-                -
-                  import: section_options
+        feature_sections:
+          display: 'Feature sections'
+          icon: layout-hero-three-columns
+          instructions: 'What you offer and how it works.'
+          sets:
             feature_grid:
               display: Features
-              instructions: 'What you offer or why choose you, as a grid of short points.'
+              instructions: 'What you offer or why choose you, as a grid of short points (services, benefits).'
               image: feature-grid.jpg
               fields:
                 -
@@ -2722,7 +2351,7 @@ fields:
                   import: section_options
             steps:
               display: Steps
-              instructions: 'How it works, as numbered steps.'
+              instructions: 'How it works, as numbered steps (process, timeline).'
               image: steps.jpg
               fields:
                 -
@@ -5024,10 +4653,263 @@ fields:
                           instructions: 'Beside the text.'
                 -
                   import: section_options
-            product_cards:
-              display: Products
-              instructions: 'Product cards from the Products collection.'
-              image: product-cards.jpg
+        content_sections:
+          display: 'Content sections'
+          icon: text-formatting-image-left
+          instructions: 'Text, pictures, video and tables for the body of the page.'
+          sets:
+            text:
+              display: Text
+              instructions: 'Paragraphs, headings, lists and tables.'
+              image: text.jpg
+              fields:
+                -
+                  handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    instructions: 'A few words above the heading. Optional.'
+                    character_limit: 40
+                    width: 33
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    width: 66
+                -
+                  handle: intro
+                  field:
+                    type: bard
+                    display: Introduction
+                    buttons:
+                      - bold
+                      - italic
+                      - anchor
+                    inline: true
+                    inline_hard_breaks: true
+                    save_html: false
+                    toolbar_mode: floating
+                    reading_time: false
+                    remove_empty_nodes: trailing
+                    character_limit: 280
+                -
+                  handle: content
+                  field:
+                    type: bard
+                    display: Text
+                    buttons:
+                      - h2
+                      - h3
+                      - bold
+                      - italic
+                      - unorderedlist
+                      - orderedlist
+                      - quote
+                      - anchor
+                      - table
+                    save_html: false
+                    toolbar_mode: fixed
+                    reading_time: false
+                    remove_empty_nodes: trailing
+                -
+                  handle: alignment
+                  field:
+                    type: button_group
+                    display: Alignment
+                    options:
+                      left: Left
+                      centre: Centred
+                    default: left
+                    width: 50
+                -
+                  import: section_options
+            image_text:
+              display: 'Picture and text'
+              instructions: 'A picture (or a few) beside a heading, text and buttons. Use it anywhere below the hero.'
+              image: image-text.jpg
+              fields:
+                -
+                  handle: image
+                  field:
+                    type: assets
+                    display: Picture
+                    container: assets
+                    folder: images
+                    max_files: 1
+                    mode: grid
+                    validate:
+                      - required
+                -
+                  handle: image_position
+                  field:
+                    type: button_group
+                    display: 'Picture on the'
+                    options:
+                      left: Left
+                      right: Right
+                    default: left
+                    width: 50
+                -
+                  handle: image_shape
+                  field:
+                    type: button_group
+                    display: 'Picture shape'
+                    options:
+                      landscape: Landscape
+                      square: Square
+                      portrait: Portrait
+                    default: landscape
+                    width: 50
+                -
+                  handle: more_images
+                  field:
+                    type: assets
+                    display: 'More pictures'
+                    instructions: 'Up to three more, shown with the first. Each picture’s caption is the one in its details (Assets).'
+                    container: assets
+                    folder: images
+                    max_files: 3
+                    mode: grid
+                    width: 50
+                -
+                  handle: pictures_layout
+                  field:
+                    type: button_group
+                    display: 'Several pictures as'
+                    options:
+                      collage: 'A collage'
+                      stacked: 'A column'
+                    default: collage
+                    width: 50
+                -
+                  handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    character_limit: 40
+                    width: 33
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    width: 66
+                -
+                  handle: content
+                  field:
+                    type: bard
+                    display: Text
+                    buttons:
+                      - h2
+                      - h3
+                      - bold
+                      - italic
+                      - unorderedlist
+                      - orderedlist
+                      - quote
+                      - anchor
+                    save_html: false
+                    toolbar_mode: fixed
+                    reading_time: false
+                    remove_empty_nodes: trailing
+                -
+                  handle: buttons
+                  field: buttons.buttons
+                  config:
+                    max_rows: null
+                -
+                  import: section_options
+            gallery:
+              display: Gallery
+              instructions: 'A grid of pictures that open larger when clicked.'
+              image: gallery.jpg
+              fields:
+                -
+                  handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    instructions: 'A few words above the heading. Optional.'
+                    character_limit: 40
+                    width: 33
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    width: 66
+                -
+                  handle: intro
+                  field:
+                    type: bard
+                    display: Introduction
+                    buttons:
+                      - bold
+                      - italic
+                      - anchor
+                    inline: true
+                    inline_hard_breaks: true
+                    save_html: false
+                    toolbar_mode: floating
+                    reading_time: false
+                    remove_empty_nodes: trailing
+                    character_limit: 280
+                -
+                  handle: layout
+                  field:
+                    type: button_group
+                    display: Layout
+                    options:
+                      grid: 'Even grid'
+                      masonry: 'Masonry (each picture its own shape)'
+                    default: grid
+                    width: 50
+                -
+                  handle: columns
+                  field:
+                    type: button_group
+                    display: Columns
+                    options:
+                      2: '2'
+                      3: '3'
+                      4: '4'
+                    default: '3'
+                    width: 50
+                -
+                  handle: images
+                  field:
+                    type: assets
+                    display: Pictures
+                    instructions: 'Each picture’s caption and alt text are the ones in its details (Assets).'
+                    container: assets
+                    folder: images
+                    mode: grid
+                    validate:
+                      - required
+                -
+                  handle: captions
+                  field:
+                    type: toggle
+                    display: 'Show captions'
+                    default: true
+                    width: 50
+                -
+                  handle: lightbox
+                  field:
+                    type: toggle
+                    display: 'Open larger when clicked'
+                    default: true
+                    width: 50
+                -
+                  import: section_options
+            video:
+              display: Video
+              instructions: 'A YouTube or Vimeo video, or your own, that loads only when played.'
+              image: video.jpg
               fields:
                 -
                   handle: eyebrow
@@ -5064,55 +4946,173 @@ fields:
                   handle: source
                   field:
                     type: button_group
-                    display: Show
+                    display: 'Video from'
                     options:
-                      featured: Featured
-                      latest: 'In list order'
-                      picked: 'Chosen below'
-                    default: featured
+                      youtube: YouTube
+                      vimeo: Vimeo
+                      file: 'An uploaded file'
+                    default: youtube
                     width: 50
                 -
-                  handle: columns
+                  handle: url
                   field:
-                    type: button_group
-                    display: Columns
-                    options:
-                      3: '3'
-                      4: '4'
-                    default: '3'
-                    width: 25
-                -
-                  handle: limit
-                  field:
-                    type: integer
-                    display: 'How many'
-                    default: 3
-                    min: 1
-                    width: 25
+                    type: text
+                    display: Address
+                    instructions: 'The video’s address, copied from your browser or the Share button.'
+                    width: 50
                     unless:
-                      source: 'equals picked'
+                      source: 'equals file'
                 -
-                  handle: products
+                  handle: file
                   field:
-                    type: entries
-                    display: Products
-                    collections:
-                      - products
-                    mode: default
+                    type: assets
+                    display: 'Video file'
+                    instructions: MP4.
+                    container: assets
+                    folder: videos
+                    max_files: 1
+                    width: 50
                     if:
-                      source: 'equals picked'
+                      source: 'equals file'
                 -
-                  handle: all_link
+                  handle: title
                   field:
-                    type: toggle
-                    display: 'Link to every product'
-                    default: true
+                    type: text
+                    display: 'What it shows'
+                    instructions: 'For people who can’t see it, and for the play button.'
+                    validate:
+                      - required
+                    character_limit: 100
+                -
+                  handle: poster
+                  field:
+                    type: assets
+                    display: 'Cover picture'
+                    container: assets
+                    folder: images
+                    max_files: 1
+                    mode: grid
+                    instructions: 'Shown until the video is played. Without one, a plain panel with a play button. (YouTube’s and Vimeo’s own covers would load from their sites before the visitor asks.)'
+                -
+                  handle: layout
+                  field:
+                    type: button_group
+                    display: Layout
+                    options:
+                      wide: Wide
+                      split: 'Beside text'
+                    default: wide
+                    width: 50
+                -
+                  handle: video_position
+                  field:
+                    type: button_group
+                    display: 'Video on the'
+                    options:
+                      left: Left
+                      right: Right
+                    default: right
+                    width: 50
+                    if:
+                      layout: 'equals split'
+                -
+                  handle: content
+                  field:
+                    type: bard
+                    display: Text
+                    buttons:
+                      - h2
+                      - h3
+                      - bold
+                      - italic
+                      - unorderedlist
+                      - orderedlist
+                      - quote
+                      - anchor
+                    save_html: false
+                    toolbar_mode: fixed
+                    reading_time: false
+                    remove_empty_nodes: trailing
+                    if:
+                      layout: 'equals split'
+                -
+                  import: buttons
                 -
                   import: section_options
-            team:
-              display: Team
-              instructions: 'Your people, from the Team collection.'
-              image: team.jpg
+            table:
+              display: Table
+              instructions: 'Rows and columns: a comparison, a price list, delivery areas.'
+              image: table.jpg
+              fields:
+                -
+                  handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    instructions: 'A few words above the heading. Optional.'
+                    character_limit: 40
+                    width: 33
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    width: 66
+                -
+                  handle: intro
+                  field:
+                    type: bard
+                    display: Introduction
+                    buttons:
+                      - bold
+                      - italic
+                      - anchor
+                    inline: true
+                    inline_hard_breaks: true
+                    save_html: false
+                    toolbar_mode: floating
+                    reading_time: false
+                    remove_empty_nodes: trailing
+                    character_limit: 280
+                -
+                  handle: table
+                  field:
+                    type: table
+                    display: Table
+                    validate:
+                      - required
+                -
+                  handle: header_row
+                  field:
+                    type: toggle
+                    display: 'First row is the heading'
+                    default: true
+                    width: 50
+                -
+                  handle: header_column
+                  field:
+                    type: toggle
+                    display: 'First column names each row'
+                    default: false
+                    width: 50
+                -
+                  handle: caption
+                  field:
+                    type: text
+                    display: 'Note under the table'
+                    character_limit: 200
+                -
+                  import: section_options
+        social_proof:
+          display: 'Stats and social proof'
+          icon: favorite-star-badge
+          instructions: 'Figures, customer voices and logos.'
+          sets:
+            stats:
+              display: Figures
+              instructions: 'A few numbers that tell your story (stats, metrics).'
+              image: stats.jpg
               fields:
                 -
                   handle: eyebrow
@@ -5151,88 +5151,52 @@ fields:
                     type: button_group
                     display: Layout
                     options:
-                      cards: Portraits
-                      compact: 'Small photos'
-                    default: cards
+                      row: Row
+                      split: 'Beside a picture'
+                    default: row
                     width: 50
                 -
-                  handle: members
+                  handle: image
                   field:
-                    type: entries
-                    display: People
-                    instructions: 'Leave empty for everyone, in the Team collection’s order.'
-                    collections:
-                      - team
-                    mode: default
+                    type: assets
+                    display: Picture
+                    container: assets
+                    folder: images
+                    max_files: 1
+                    mode: grid
+                    if:
+                      layout: 'equals split'
                 -
-                  import: section_options
-            recent_posts:
-              display: 'Latest articles'
-              instructions: 'The newest blog articles.'
-              image: recent-posts.jpg
-              fields:
-                -
-                  handle: eyebrow
+                  handle: stats
                   field:
-                    type: text
-                    display: Eyebrow
-                    instructions: 'A few words above the heading. Optional.'
-                    character_limit: 40
-                    width: 33
-                -
-                  handle: heading
-                  field:
-                    type: text
-                    display: Heading
-                    character_limit: 90
-                    width: 66
-                -
-                  handle: intro
-                  field:
-                    type: bard
-                    display: Introduction
-                    buttons:
-                      - bold
-                      - italic
-                      - anchor
-                    inline: true
-                    inline_hard_breaks: true
-                    save_html: false
-                    toolbar_mode: floating
-                    reading_time: false
-                    remove_empty_nodes: trailing
-                    character_limit: 280
-                -
-                  handle: layout
-                  field:
-                    type: button_group
-                    display: Layout
-                    options:
-                      cards: Cards
-                      list: List
-                    default: cards
-                    width: 50
-                -
-                  handle: limit
-                  field:
-                    type: integer
-                    display: 'How many'
-                    default: 3
-                    min: 1
-                    max: 12
-                    width: 25
-                -
-                  handle: all_link
-                  field:
-                    type: toggle
-                    display: 'Link to the blog'
-                    default: true
-                    width: 25
+                    type: grid
+                    display: Figures
+                    mode: table
+                    min_rows: 1
+                    max_rows: 4
+                    add_row: 'Add a figure'
+                    fields:
+                      -
+                        handle: value
+                        field:
+                          type: text
+                          display: Figure
+                          character_limit: 12
+                          validate:
+                            - required
+                      -
+                        handle: label
+                        field:
+                          type: text
+                          display: Label
+                          character_limit: 60
+                          validate:
+                            - required
                 -
                   import: section_options
             testimonial:
               display: Testimonials
-              instructions: 'What customers say.'
+              instructions: 'What customers say (reviews).'
               image: testimonial.jpg
               fields:
                 -
@@ -5427,7 +5391,7 @@ fields:
                   import: section_options
             logo_strip:
               display: Logos
-              instructions: 'Clients, partners or press, as a row of logos.'
+              instructions: 'Clients, partners or press, as a row of logos (trusted by).'
               image: logo-strip.jpg
               fields:
                 -
@@ -5460,10 +5424,15 @@ fields:
                       - required
                 -
                   import: section_options
-            stats:
-              display: Figures
-              instructions: 'A few numbers that tell your story.'
-              image: stats.jpg
+        products_pricing:
+          display: 'Products and pricing'
+          icon: shopping-store
+          instructions: 'Your products and your prices.'
+          sets:
+            product_cards:
+              display: Products
+              instructions: 'Product cards from the Products collection.'
+              image: product-cards.jpg
               fields:
                 -
                   handle: eyebrow
@@ -5497,122 +5466,57 @@ fields:
                     remove_empty_nodes: trailing
                     character_limit: 280
                 -
-                  handle: layout
+                  handle: source
                   field:
                     type: button_group
-                    display: Layout
+                    display: Show
                     options:
-                      row: Row
-                      split: 'Beside a picture'
-                    default: row
+                      featured: Featured
+                      latest: 'In list order'
+                      picked: 'Chosen below'
+                    default: featured
                     width: 50
                 -
-                  handle: image
+                  handle: columns
                   field:
-                    type: assets
-                    display: Picture
-                    container: assets
-                    folder: images
-                    max_files: 1
-                    mode: grid
+                    type: button_group
+                    display: Columns
+                    options:
+                      3: '3'
+                      4: '4'
+                    default: '3'
+                    width: 25
+                -
+                  handle: limit
+                  field:
+                    type: integer
+                    display: 'How many'
+                    default: 3
+                    min: 1
+                    width: 25
+                    unless:
+                      source: 'equals picked'
+                -
+                  handle: products
+                  field:
+                    type: entries
+                    display: Products
+                    collections:
+                      - products
+                    mode: default
                     if:
-                      layout: 'equals split'
+                      source: 'equals picked'
                 -
-                  handle: stats
-                  field:
-                    type: grid
-                    display: Figures
-                    mode: table
-                    min_rows: 1
-                    max_rows: 4
-                    add_row: 'Add a figure'
-                    fields:
-                      -
-                        handle: value
-                        field:
-                          type: text
-                          display: Figure
-                          character_limit: 12
-                          validate:
-                            - required
-                      -
-                        handle: label
-                        field:
-                          type: text
-                          display: Label
-                          character_limit: 60
-                          validate:
-                            - required
-                -
-                  import: section_options
-            table:
-              display: Table
-              instructions: 'Rows and columns: a comparison, a price list, delivery areas.'
-              image: table.jpg
-              fields:
-                -
-                  handle: eyebrow
-                  field:
-                    type: text
-                    display: Eyebrow
-                    instructions: 'A few words above the heading. Optional.'
-                    character_limit: 40
-                    width: 33
-                -
-                  handle: heading
-                  field:
-                    type: text
-                    display: Heading
-                    character_limit: 90
-                    width: 66
-                -
-                  handle: intro
-                  field:
-                    type: bard
-                    display: Introduction
-                    buttons:
-                      - bold
-                      - italic
-                      - anchor
-                    inline: true
-                    inline_hard_breaks: true
-                    save_html: false
-                    toolbar_mode: floating
-                    reading_time: false
-                    remove_empty_nodes: trailing
-                    character_limit: 280
-                -
-                  handle: table
-                  field:
-                    type: table
-                    display: Table
-                    validate:
-                      - required
-                -
-                  handle: header_row
+                  handle: all_link
                   field:
                     type: toggle
-                    display: 'First row is the heading'
+                    display: 'Link to every product'
                     default: true
-                    width: 50
-                -
-                  handle: header_column
-                  field:
-                    type: toggle
-                    display: 'First column names each row'
-                    default: false
-                    width: 50
-                -
-                  handle: caption
-                  field:
-                    type: text
-                    display: 'Note under the table'
-                    character_limit: 200
                 -
                   import: section_options
             pricing:
               display: Prices
-              instructions: 'Packages or plans side by side, with what each includes.'
+              instructions: 'Packages or plans side by side, with what each includes (pricing).'
               image: pricing.jpg
               fields:
                 -
@@ -5718,9 +5622,140 @@ fields:
                     character_limit: 200
                 -
                   import: section_options
+        blog_listings:
+          display: 'Blog and listings'
+          icon: media-news-paper
+          instructions: 'Lists from your collections: articles and people.'
+          sets:
+            recent_posts:
+              display: 'Latest articles'
+              instructions: 'The newest blog articles (blog, news).'
+              image: recent-posts.jpg
+              fields:
+                -
+                  handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    instructions: 'A few words above the heading. Optional.'
+                    character_limit: 40
+                    width: 33
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    width: 66
+                -
+                  handle: intro
+                  field:
+                    type: bard
+                    display: Introduction
+                    buttons:
+                      - bold
+                      - italic
+                      - anchor
+                    inline: true
+                    inline_hard_breaks: true
+                    save_html: false
+                    toolbar_mode: floating
+                    reading_time: false
+                    remove_empty_nodes: trailing
+                    character_limit: 280
+                -
+                  handle: layout
+                  field:
+                    type: button_group
+                    display: Layout
+                    options:
+                      cards: Cards
+                      list: List
+                    default: cards
+                    width: 50
+                -
+                  handle: limit
+                  field:
+                    type: integer
+                    display: 'How many'
+                    default: 3
+                    min: 1
+                    max: 12
+                    width: 25
+                -
+                  handle: all_link
+                  field:
+                    type: toggle
+                    display: 'Link to the blog'
+                    default: true
+                    width: 25
+                -
+                  import: section_options
+            team:
+              display: Team
+              instructions: 'Your people, from the Team collection.'
+              image: team.jpg
+              fields:
+                -
+                  handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    instructions: 'A few words above the heading. Optional.'
+                    character_limit: 40
+                    width: 33
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    character_limit: 90
+                    width: 66
+                -
+                  handle: intro
+                  field:
+                    type: bard
+                    display: Introduction
+                    buttons:
+                      - bold
+                      - italic
+                      - anchor
+                    inline: true
+                    inline_hard_breaks: true
+                    save_html: false
+                    toolbar_mode: floating
+                    reading_time: false
+                    remove_empty_nodes: trailing
+                    character_limit: 280
+                -
+                  handle: layout
+                  field:
+                    type: button_group
+                    display: Layout
+                    options:
+                      cards: Portraits
+                      compact: 'Small photos'
+                    default: cards
+                    width: 50
+                -
+                  handle: members
+                  field:
+                    type: entries
+                    display: People
+                    instructions: 'Leave empty for everyone, in the Team collection’s order.'
+                    collections:
+                      - team
+                    mode: default
+                -
+                  import: section_options
+        faq_sections:
+          display: 'FAQ sections'
+          icon: mail-chat-bubble-text
+          instructions: 'Questions and answers.'
+          sets:
             faq:
               display: Questions
-              instructions: 'Frequently asked questions, each opening to its answer.'
+              instructions: 'Frequently asked questions, each opening to its answer (FAQ).'
               image: faq.jpg
               fields:
                 -
@@ -5794,9 +5829,14 @@ fields:
                             - required
                 -
                   import: section_options
+        cta_contact:
+          display: 'CTA and contact'
+          icon: megaphone
+          instructions: 'Ask the visitor to act, and help them get in touch.'
+          sets:
             cta:
               display: 'Call to action'
-              instructions: 'Ask the visitor to take the next step.'
+              instructions: 'Ask the visitor to take the next step (CTA, banner).'
               image: cta.jpg
               fields:
                 -
@@ -5857,7 +5897,7 @@ fields:
                   import: section_options
             contact_form:
               display: 'Enquiry form'
-              instructions: 'The enquiry form, with your contact details beside it.'
+              instructions: 'The enquiry form, with your contact details beside it (contact us).'
               image: contact-form.jpg
               fields:
                 -
@@ -5923,7 +5963,7 @@ fields:
                   import: section_options
             map_address:
               display: 'Map and address'
-              instructions: 'A map of where you are, the address, opening hours and directions.'
+              instructions: 'A map of where you are, the address, opening hours and directions (location).'
               image: map-address.jpg
               fields:
                 -

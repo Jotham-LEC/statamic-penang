@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.7.0 (2026-11-17)
+
+### Changed
+
+- **The section picker is grouped.** The twenty sections sit in eight tabs, named the way block libraries (Flowbite, Tailwind UI) name their categories: Hero sections, Feature sections, Content sections, Stats and social proof, Products and pricing, Blog and listings, FAQ sections, and CTA and contact. Each group has an icon and a one-line description.
+- **Sections are easier to find by search.** The picker searches each section's name and its hint, so the hints now end with the words an editor would type where the name is plainer: Figures (stats, metrics), Questions (FAQ), Enquiry form (contact us), Testimonials (reviews), Logos (trusted by), Prices (pricing), Call to action (CTA, banner)… No section is renamed.
+- **Picture and text takes any number of buttons** (other sections keep three), and its hint says it's the one for a picture, heading, text and buttons below the hero.
+- The `penang-sections` Boost tool lists the sections by group; the guideline, the `penang-add-section` skill (which group a new section goes in, and how to write its hint), the README and the user manual describe the groups.
+
+### Fixed
+
+- **Every page has exactly one h1.** A page that opened with a section other than a Hero had none: it now gets its title as a hidden h1. The Hero's h1 goes to the first section actually shown, and the Components page's sections no longer add a second h1 under its own heading.
+
+### Upgrading from 1.6
+
+- Saved pages are untouched: content stores only each section's handle, never its group.
+- `resources/fieldsets/page_builder.yaml`: copy it from the kit, or move your sets into the groups yourself (`sets: {group: {display, icon, instructions, sets: {…}}}`); a site with its own sections puts them in the group that fits.
+- `resources/views/components/blocks.blade.php`: copy it from the kit, and pass the page's title where a view renders sections: `<x-blocks :blocks="$page->blocks" :title="$page->title" />` (in `page`, `search`, `articles/index` and `products/index`); a view with its own h1 above the sections passes `:opens="false"`.
+
 ## 1.6.1 (2026-10-12)
 
 - The README introduces the Laravel Boost extension at the top. No code changed.

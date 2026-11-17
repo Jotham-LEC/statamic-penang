@@ -21,13 +21,15 @@ A page is made of **sections**, stacked from top to bottom: a big opening (the h
 ![The Home page in the control panel: a list of sections](images/cp-page-builder.png)
 
 - **Change a section**: click its row to open it, change the text or pictures, then click **Save & Publish** (top right). Nothing changes on the website until you save.
-- **Add a section**: click **Add a section** under the last one, and choose from the list. Each kind has a picture of how it looks.
+- **Add a section**: click **Add a section** under the last one, and choose one. The tabs along the top sort the sections into groups (*Hero sections*, *Content sections*, *CTA and contact*…), and each section has a picture of how it looks. Or type in the search box what you're after (*FAQ*, *stats*, *contact*, *reviews*): it searches each section's name and its line of description.
 - **Move a section**: drag it by the dots on its left.
 - **Hide a section** without deleting it: switch it off with the switch on its right. Switch it on again to bring it back.
 - **Delete a section**: open the **⋯** menu on its right and choose **Delete**.
 - **See your changes before saving**: click **Live Preview**. The preview updates as you type.
 
-![Adding a section: each kind with a picture of how it looks](images/cp-add-section.png)
+![Adding a section: the groups as tabs, and each section with a picture of how it looks](images/cp-add-section.png)
+
+**Start every page with a Hero**, and use only one. Its heading is the page's main heading, the one Google and screen readers read first. A Hero further down the page is shown, but with a smaller heading; for a picture with a heading, text and buttons further down, use **Picture and text**.
 
 Inside a section, the buttons in a row (like *Centred / Text beside a picture / Text on a photo*) are choices: click one to choose it. Most sections also have, at the bottom:
 
@@ -39,34 +41,36 @@ Fields you leave empty simply don't show on the website, so you never need to fi
 
 Short texts like an introduction have a small toolbar when you select words: **bold**, *italics* and a link.
 
-**Buttons**: a section can have up to three. Choose where each one goes (*Goes to*): a page or web address, **WhatsApp** (your number from Site settings; you can write the first message the visitor sends), **a phone call** or **an email** (your phone or email from Marketing → Brand, unless you type another), or **a file** such as a price list. Then its label and style. A button with nowhere to go doesn't show.
+**Buttons**: a section can have up to three (Picture and text, as many as you like). Choose where each one goes (*Goes to*): a page or web address, **WhatsApp** (your number from Site settings; you can write the first message the visitor sends), **a phone call** or **an email** (your phone or email from Marketing → Brand, unless you type another), or **a file** such as a price list. Then its label and style. A button with nowhere to go doesn't show.
 
 ![A hero section opened for editing](images/cp-hero-open.png)
 
 ### The sections
 
-| Section | What it's for |
-|---|---|
-| **Hero** | The big opening of a page. Centred, beside a picture, or on top of a full-width photo (or a short silent video). Use a short heading. *Show the lowest price* adds "From RM …" from your products. |
-| **Text** | Paragraphs, headings, lists, quotes and tables (the table button adds one). |
-| **Picture and text** | A picture (or up to four, with their captions) beside a heading and some text, with a button if you like. |
-| **Gallery** | A grid of pictures. Visitors click one to see it larger. |
-| **Video** | A YouTube or Vimeo video, or one you upload. It loads only when the visitor presses play. |
-| **Features** | A few short points with icons or pictures: why choose you, what you offer. |
-| **Steps** | How it works, as numbered steps (or with an icon each), or a timeline with dates. |
-| **Tabs** | A few titled panels; the visitor picks one at a time. |
-| **Products** | Product cards: your featured products, the first few in your list, or ones you choose. |
-| **Team** | The people in your Team list, as portraits or small photos. |
-| **Latest articles** | Your newest blog articles. |
-| **Testimonials** | What customers say: one big quote, a grid, or a carousel, with stars and where the review was left. One quote can be a note from your team, signed by several of you: upload each signature, or switch on *Write names by hand*. Buttons can follow. |
-| **Logos** | Logos of clients, partners or press, in a row, a grid or scrolling past. Upload each logo with its name as the alt text, and its website as the link. |
-| **Table** | Rows and columns: a price list, delivery areas, a comparison. |
-| **Prices** | Up to four packages side by side, with what each includes; one can stand out. |
-| **Figures** | A few numbers that tell your story: years in business, customers served. |
-| **Questions** | Frequently asked questions. Each opens to show its answer. Google also reads them. |
-| **Call to action** | Ask the visitor to do something: get in touch, visit, order. Its buttons can open WhatsApp. |
-| **Enquiry form** | The enquiry form, with your phone, email, WhatsApp and address beside it. You can change the send button's label and the thank-you message. |
-| **Map and address** | A map of where you are, your address and opening hours, with directions in Google Maps and Waze. |
+The sections, in the tabs where you'll find them:
+
+| Tab | Section | What it's for |
+|---|---|---|
+| *Hero sections* | **Hero** | The opening of a page, and its main heading: use one, as the first section. Centred, beside a picture, or on top of a full-width photo (or a short silent video). Use a short heading. *Show the lowest price* adds "From RM …" from your products. |
+| *Feature sections* | **Features** | A few short points with icons or pictures: why choose you, what you offer. |
+|  | **Steps** | How it works, as numbered steps (or with an icon each), or a timeline with dates. |
+|  | **Tabs** | A few titled panels; the visitor picks one at a time. |
+| *Content sections* | **Text** | Paragraphs, headings, lists, quotes and tables (the table button adds one). |
+|  | **Picture and text** | A picture (or up to four, with their captions) on the left or right of a heading, some text and as many buttons as you like. The one to use for a picture with text further down a page. |
+|  | **Gallery** | A grid of pictures. Visitors click one to see it larger. |
+|  | **Video** | A YouTube or Vimeo video, or one you upload. It loads only when the visitor presses play. |
+|  | **Table** | Rows and columns: a price list, delivery areas, a comparison. |
+| *Stats and social proof* | **Figures** | A few numbers that tell your story: years in business, customers served. |
+|  | **Testimonials** | What customers say: one big quote, a grid, or a carousel, with stars and where the review was left. One quote can be a note from your team, signed by several of you: upload each signature, or switch on *Write names by hand*. Buttons can follow. |
+|  | **Logos** | Logos of clients, partners or press, in a row, a grid or scrolling past. Upload each logo with its name as the alt text, and its website as the link. |
+| *Products and pricing* | **Products** | Product cards: your featured products, the first few in your list, or ones you choose. |
+|  | **Prices** | Up to four packages side by side, with what each includes; one can stand out. |
+| *Blog and listings* | **Latest articles** | Your newest blog articles. |
+|  | **Team** | The people in your Team list, as portraits or small photos. |
+| *FAQ sections* | **Questions** | Frequently asked questions. Each opens to show its answer. Google also reads them. |
+| *CTA and contact* | **Call to action** | Ask the visitor to do something: get in touch, visit, order. Its buttons can open WhatsApp. |
+|  | **Enquiry form** | The enquiry form, with your phone, email, WhatsApp and address beside it. You can change the send button's label and the thank-you message. |
+|  | **Map and address** | A map of where you are, your address and opening hours, with directions in Google Maps and Waze. |
 
 ### Kinds of page
 
